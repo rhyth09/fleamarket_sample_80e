@@ -1,4 +1,4 @@
-# README
+# DB設計
 
 ## Usersテーブル
 |Column|Type|Options|
@@ -47,7 +47,7 @@
 |send_last_name|string|null: false|
 |send_first_name_kana|string|null: false|
 |send_last_name_kana|string|null: false|
-|postal_code|string|null: false|
+|postal_code|integer(7)|null: false|
 |prefecture|integer|null: false|
 |city|string|null:false|
 |address|string|null:false|
@@ -126,10 +126,9 @@
 
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+
+Things you Thmay want to cover:
 
 * Ruby version
 
