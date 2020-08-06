@@ -14,7 +14,6 @@
 - has_one :credit_card, dependent: :destroy
 - has_one :address, dependent: :destroy
 
-
 ## Profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -29,7 +28,6 @@
 ### Association
 - belongs_to :user
 
-
 ## Credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -38,7 +36,6 @@
 |user_id|references|null:false, foreign_key:true|
 ### Association
 - belongs_to :user
-
 
 ## Addressテーブル
 |Column|Type|Options|
@@ -66,8 +63,8 @@
 |item_status|references|null:false, foreign_key:true|
 |size|string||
 |prefecture|integer|null:false|
-|postage_id|integer|null:false|
-|shipping_date|integer|null:false|
+|postage|references|null:false, foreign_key:true|
+|shipping_date|references|null:false, foreign_key:true|
 |brand|text||
 |image_id|references|null:false, foreign_key:true|
 |category_id|references|foreign_key:true|
@@ -76,12 +73,11 @@
 ### Association
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
-- has_many :images
+- has_many :images, dependent: :destroy
 - belongs_to_active_hash :shipping_date
 - belongs_to_active_hash :postage
 - belongs_to_active_hash :item-status
 - belongs_to :categorise
-
 
 ## Imagesテーブル
 |Column|Type|Options|
@@ -90,31 +86,6 @@
 |item_id|references|foreign_key:true|
 ### Association
 - belongs_to :item
-
-
-## Shipping_dates active_hash
-|Column|Type|Options|
-|------|----|-------|
-|shipping_date|string|null: false|
-### Association
-- has_many :items
-
-
-## Postages active_hash
-|Column|Type|Options|
-|------|----|-------|
-|postage|string|null: false|
-### Association
-- has_many :items
-
-
-## Item-statuses active_hash
-|Column|Type|Options|
-|------|----|-------|
-|item-status|string|null: false|
-### Association
-- has_many :items
-
 
 ## Categoriseテーブル
 |Column|Type|Options|
