@@ -6,7 +6,6 @@
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-
 ### Association
 - has_many :buyed_items, foreign_key: "buyer_id", class_name: "items"
 - has_many :saling_items, foreign_key: "seller_id", class_name: "items"
@@ -27,7 +26,6 @@
 |birth_month|integer(2)|null:false|
 |birth_day|integer(2)|null:false|
 |user_id|references|null:false, foreign_key:true|
-
 ### Association
 - belongs_to :user
 
@@ -38,7 +36,6 @@
 |customer_id|string|null: false|
 |card_id|string|null: false|
 |user_id|references|null:false, foreign_key:true|
-
 ### Association
 - belongs_to :user
 
@@ -57,10 +54,8 @@
 |build_name|string||
 |phone_number|integer||
 |user_id|references|null:false, foreign_key:true|
-
 ### Association
 - belongs_to :user
-
 
 ## Itemsテーブル
 |Column|Type|Options|
@@ -78,7 +73,6 @@
 |category_id|references|foreign_key:true|
 |seller_id|references|null:false, foreign_key:true|
 |buyer_id|references|foreign_key:true|
-
 ### Association
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
@@ -94,7 +88,6 @@
 |------|----|-------|
 |url|string|null: false|
 |item_id|references|foreign_key:true|
-
 ### Association
 - belongs_to :item
 
@@ -103,7 +96,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |shipping_date|string|null: false|
-
 ### Association
 - has_many :items
 
@@ -112,7 +104,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |postage|string|null: false|
-
 ### Association
 - has_many :items
 
@@ -121,7 +112,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |item-status|string|null: false|
-
 ### Association
 - has_many :items
 
@@ -131,7 +121,6 @@
 |------|----|-------|
 |name|string|null: false|
 |ancestry|string|null: false|
-
 ### Association
 - has_many :items
 
