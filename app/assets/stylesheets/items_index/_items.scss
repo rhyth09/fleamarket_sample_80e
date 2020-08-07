@@ -1,30 +1,13 @@
 @import "common";
 @import "top_screen";
 @import "reasons";
+@import "download_invitation";
 
 p {
   font-size: 18px;
 }
 
-.Download-invitation {
-  background-image: image-url('material/pict/bg-topMiddleDl-pict.jpg');
-  background-size: cover;
-  background-position: bottom;
-  padding: 80px 180px;
-  width: 100vw;
-  height: 400px;
-  @include shadow-font;
-  &__content {
-    & > h2 {
-      margin-bottom: 20px;
-      font-size: 27px;
-      font-weight: bold;
-    }
-    & > p {
-      line-height: 30px;
-    }
-  }
-}
+
 
 .Features {
   padding: 60px;
