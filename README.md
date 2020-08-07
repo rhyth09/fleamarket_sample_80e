@@ -57,7 +57,7 @@
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_name|string|null:false|
+|name|string|null:false|
 |price|integer|null:false|
 |explain|text|null:false|
 |item_status|references|null:false, foreign_key:true|
@@ -66,7 +66,6 @@
 |postage|references|null:false, foreign_key:true|
 |shipping_date|references|null:false, foreign_key:true|
 |brand|text||
-|image_id|references|null:false, foreign_key:true|
 |category_id|references|foreign_key:true|
 |seller_id|references|null:false, foreign_key:true|
 |buyer_id|references|foreign_key:true|
@@ -77,7 +76,7 @@
 - belongs_to_active_hash :shipping_date
 - belongs_to_active_hash :postage
 - belongs_to_active_hash :item-status
-- belongs_to :categorise
+- belongs_to :category
 
 ## Imagesテーブル
 |Column|Type|Options|
