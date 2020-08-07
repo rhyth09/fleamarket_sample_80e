@@ -1,0 +1,33 @@
+$white: #fff;
+$gray: #f8f8f8;
+$furima-blue: #3ccace;
+
+@mixin decorated-h1 {
+  font-size: 27px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom: -13px;
+    width: 70px;
+    height: 4px;
+    transform: translateX(-50%);
+    background-color: $furima-blue;
+  }
+}
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin shadow-font($color: $white, $blurry-shadow: 0 0 5px rgba(0,0,0,0.4)) {
+  color: $white;
+  text-shadow: $blurry-shadow;
+}
