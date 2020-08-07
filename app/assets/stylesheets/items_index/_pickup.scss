@@ -1,0 +1,23 @@
+.Pickup {
+  background-color: $gray;
+  padding-top: 100px;
+  text-align: center;
+  &.bottom {
+    padding-bottom: 90px;
+  }
+  & > h1 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  &__link {
+    display: inline-block;
+    padding-bottom: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    color: $furima-blue;
+    text-decoration: none;
+  }
+  .info {
+    text-align: left;
+  }
+}
