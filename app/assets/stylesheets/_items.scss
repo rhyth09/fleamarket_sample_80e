@@ -1,0 +1,279 @@
+$white: #fff;
+$gray: #f8f8f8;
+$furima-blue: #3ccace;
+
+@mixin decorated-h1 {
+  font-size: 27px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom: -13px;
+    width: 70px;
+    height: 4px;
+    transform: translateX(-50%);
+    background-color: $furima-blue;
+  }
+}
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin shadow-font($color: $white, $blurry-shadow: 0 0 5px rgba(0,0,0,0.4)) {
+  color: $white;
+  text-shadow: $blurry-shadow;
+}
+
+///////////////////////////////////////////// Top用CSS
+p {
+  font-size: 18px;
+}
+
+.Top-screen {
+  background-image: image-url('material/pict/bg-mainVisual-pict_pc.jpg');
+  background-size: cover;
+  background-position: bottom;
+  padding: 60px;
+  width: 100vw;
+  height: 560px;
+  @include shadow-font;
+  &__contents {
+    padding-top: 120px;
+    & > h1 {
+      padding-bottom: 18px;
+      font-size: 60px;
+    }
+    & > p {
+      margin: 12px 0;
+    }
+  }
+}
+
+.Reasons {
+  padding: 60px 150px;
+  & > h1 {
+    @include decorated-h1;
+  }
+  &__contents {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.Reason-list {
+  width: 300px;
+  position: relative;
+  &__num {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $furima-blue;
+    border-radius: 2px;
+    width: 55px;
+    height: 55px;
+    @include center-flex;
+    color: $white;
+    font-size: 30px;
+  }
+  & > img {
+    width: inherit;
+  }
+  & > h2 {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    & > span {
+      color: $furima-blue;
+    }
+  }
+  & .space {
+    padding-left: 20px;
+  }
+}
+
+.Download-invitation {
+  background-image: image-url('material/pict/bg-topMiddleDl-pict.jpg');
+  background-size: cover;
+  background-position: bottom;
+  padding: 80px 180px;
+  width: 100vw;
+  height: 400px;
+  @include shadow-font;
+  &__content {
+    & > h2 {
+      margin-bottom: 20px;
+      font-size: 27px;
+      font-weight: bold;
+    }
+    & > p {
+      line-height: 30px;
+    }
+  }
+}
+
+.Features {
+  padding: 60px;
+  & > h1 {
+    @include decorated-h1;
+  }
+  &__contents {
+    margin: 0 auto;
+    width: 75vw;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.Feature-list {
+  padding: 20px 15px 30px;
+  width: 350px;
+  text-align: center;
+  & > img {
+    width: 65%;
+  }
+  & h1 {
+    font-size: 19px;
+    font-weight: bold;
+  }
+  & p {
+    font-size: 17px;
+    text-align: left;
+  }
+}
+
+.Pickup {
+  background-color: $gray;
+  padding-top: 100px;
+  text-align: center;
+  &.bottom {
+    padding-bottom: 90px;
+  }
+  & > h1 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  &__link {
+    display: inline-block;
+    padding-bottom: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    color: $furima-blue;
+    text-decoration: none;
+  }
+  .info {
+    text-align: left;
+  }
+}
+
+.Items {
+  margin: 0 auto;
+  width: 1100px;
+  display: flex;
+  &__item {
+    width: 220px;
+    height: 250px;
+    
+    &--link {
+      position: relative;
+      & a {
+        background-color: $white;
+        width: 220px;
+        height: 250px;
+        display: block;
+        position: relative;
+      }
+      & img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: 150px;
+        object-fit: contain;
+        vertical-align: bottom;
+      }
+      & .info {
+        position: absolute;
+        padding: 16px;
+        width: 220px;
+        height: 100px;
+        bottom: 0;
+        & span {
+          font-size: 10px;
+        }
+      }
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.Last-invitation {
+  background-image: image-url('material/pict/bg-appBanner-pict.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px;
+  width: 100vw;
+  height: 50vh;
+  @include shadow-font;
+  &__content {
+    margin: 0 auto;
+    width: 500#{px};
+    text-align: center;
+    & > h4 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    & > h2 {
+      font-size: 35px;
+    }
+  }
+}
+// //////////////////////////////////////////////////////
+
+.Download-link {
+  &__apple {
+    margin: 10px 0 13px;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &__google:hover {
+    opacity: 0.5;
+  }
+  &.position-center {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.Sell-btn {
+  z-index: 10;
+  background-color: $furima-blue;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 120px;
+  height: 120px;
+  transition: 0.5s;
+  cursor: pointer;
+  @include center-flex;
+  & > p {
+    color: $white;
+  }
+  &:hover {
+    background-color: lighten($furima-blue, 8%);
+  }
+}
