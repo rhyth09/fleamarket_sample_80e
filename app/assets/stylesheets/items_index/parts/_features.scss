@@ -1,0 +1,30 @@
+.Features {
+  padding: 60px;
+  & > h1 {
+    @include decorated-h1;
+  }
+  &__contents {
+    margin: 0 auto;
+    width: 75vw;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.Feature-list {
+  padding: 20px 15px 30px;
+  width: 350px;
+  text-align: center;
+  & > img {
+    width: 65%;
+  }
+  & h1 {
+    font-size: 19px;
+    font-weight: bold;
+  }
+  & p {
+    font-size: 17px;
+    text-align: left;
+  }
+}

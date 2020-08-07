@@ -1,0 +1,46 @@
+@import "common";
+@import "parts/top_screen";
+@import "parts/reasons";
+@import "parts/download_invitation";
+@import "parts/features";
+@import "parts/pickup";
+
+p {
+  font-size: 18px;
+}
+
+.Download-link {
+  &__apple {
+    margin: 10px 0 13px;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &__google:hover {
+    opacity: 0.5;
+  }
+  &.position-center {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.Sell-btn {
+  z-index: 10;
+  background-color: $furima-blue;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 120px;
+  height: 120px;
+  transition: 0.5s;
+  cursor: pointer;
+  @include center-flex;
+  & > p {
+    color: $white;
+  }
+  &:hover {
+    background-color: lighten($furima-blue, 8%);
+  }
+}
