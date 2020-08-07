@@ -4,32 +4,13 @@
 @import "download_invitation";
 @import "features";
 @import "pickup";
+@import "last_invitation";
 
 p {
   font-size: 18px;
 }
 
-.Last-invitation {
-  background-image: image-url('material/pict/bg-appBanner-pict.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 100px;
-  width: 100vw;
-  height: 50vh;
-  @include shadow-font;
-  &__content {
-    margin: 0 auto;
-    width: 500#{px};
-    text-align: center;
-    & > h4 {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    & > h2 {
-      font-size: 35px;
-    }
-  }
-}
+
 // //////////////////////////////////////////////////////
 
 .Download-link {
