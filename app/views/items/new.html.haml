@@ -27,7 +27,6 @@
             商品の説明
             %span.form--caution 
               必須
-            %form.Form
             %textarea.Form__textareaContent{type: "textarea", placeholder: '商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。 ',rows:' 5 '}
       .product-details
         %h3.product-details__name 商品の詳細
@@ -99,32 +98,32 @@
         %a.btn--bule{ href: ''}
           もどる
         .subimit-button__text
-          =link_to "" do
+          %a.submit__text{ href: ''}
             禁止されている出品
           、
-          =link_to "" do
+          %a.submit__text{ href: ''}
             行為
           を必ずご確認ください。
           %p.sell--content5__p
             またブランド品でシリアルナンバー等がある場合はご記載ください。
-            =link_to "" do
+            %a.submit__text{ href: ''}
               偽ブランドの販売
             は犯罪であり処罰される可能性があります。
           %p.sell--content5__p
             また、出品をもちまして
-            =link_to "" do
+            %a.submit__text{ href: ''}
               加盟店規約
             に同意したことになります。
 
-  -# .exhibit-page__footer
-  -#   .exhibit-page__footer__content
-  -#     .exhibit-page__footer__content__main
-  -#       %ul.exhibit-page__footer__lists
-  -#         %li.exhibit-page__footer__list
-  -#           プライバシーポリシー
-  -#         %li.exhibit-page__footer__list
-  -#           FURIMA利用規約
-  -#         %li.exhibit-page__footer__list
-  -#           特定商取引に関する表記
-  -#         %p.exhibit-page__footer__copyright
-  -#           2020 FURIMA
+  .exhibit-page__footer
+    .exhibit-page__footer__content
+      .exhibit-page__footer__content__main
+        %ul.exhibit-page__footer__lists
+          %li.exhibit-page__footer__list
+            プライバシーポリシー
+          %li.exhibit-page__footer__list
+            FURIMA利用規約
+          %li.exhibit-page__footer__list
+            特定商取引に関する表記
+          %p.exhibit-page__footer__copyright
+            2020 FURIMA

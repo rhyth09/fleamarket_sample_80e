@@ -18,7 +18,6 @@
         font-weight: bold;
         text-align: center;
       }
-
       .form-content {
         border-top: 1px solid #EEEEEE;
         .img-form {
@@ -56,12 +55,12 @@
         }
       }  // 商品名
       .sell--content{
-        height: 300px;
+        height: 390px;
         padding:40px;
         border-bottom: 1px solid #EEEEEE;
         &__name {
           &__name {
-            font-size:14px;
+            font-size:16px;
             color:#333;
             .form--caution {
               @include form-caution;
@@ -73,11 +72,12 @@
           height:50px;
           border-radius: 4px;
           border: 1px solid #ccc;
+          margin-top: 10px;
         }
         &__description {
           margin-top:40px;
           &__description {
-            font-size:14px;
+            font-size:16px;
             color:#333;
             .form--caution {
               @include form-caution;
@@ -88,6 +88,7 @@
             height:150px;
             border: 1px solid #ccc;
             resize: none;
+            margin-top: 10px;
           }
         }
       }
@@ -141,7 +142,7 @@
               .select--wrap{
                 @include select-wrap;
                 &__box{
-                  width: 95%;
+                  width: 100%;
                   height: 48px;
                   border: 1px solid #ccc;
                   background: 0;
@@ -176,7 +177,7 @@
         }
         // 配送について
         .delivery-form {
-          height: 380px;
+          height: 400px;
           padding:40px;
           border-bottom: 1px solid #EEEEEE;
           &__about__delivery {
@@ -188,7 +189,6 @@
             @include form-question;
           }
           &__box {
-            // float: right;
             width: 100%;
             &__top {
               .delivery-form__box__top__name {
@@ -209,7 +209,7 @@
             }
             &__middle {
               .delivery-form__box__top__name {
-                margin-top: 40px;
+                margin-top: 20px;
                 .form--caution {
                   @include form-caution;
                 }
@@ -247,7 +247,7 @@
         }
         // 販売価格
         .product-price {
-          height: 200px; 
+          height: 260px; 
           padding:40px;
           border-bottom: 1px solid #EEEEEE;
           &__name{
@@ -274,8 +274,8 @@
               padding: 30px 0;
               .form--caution {
                 @include form-caution;
-                margin-top: 25px;
                 margin-left: 20px;
+                margin-top: 6px;
               }
             }
             .select--wrap {
@@ -299,11 +299,7 @@
         }
         // 出品ボタン
         .submit-button {
-          width:88%;
           padding:40px;
-          &__text {
-            font-size: 14px;
-          }
           .btn--red {
             margin: 40px 0 0;
             background: #ea352d;
@@ -325,42 +321,50 @@
             text-align: center;
             text-decoration: none;
             margin: 24px auto 0px;
-            color: blue;
+            color: #87cefa;
+          }
+          &__text {
+            font-size: 14px;
+          }
+          .submit__text{
+            color:#87cefa;
           }
         }
       }
     }
   }
 
-// .exhibit-page__footer {
-//   width: 100%;
-//   background-color: #EEEEEE;
-//   &__content {
-//     width: 30%;
-//     margin:0 auto; 
-//     padding: 40px 0px;
-//     &__main {
-//       .exhibit-page__footer__lists {
-//         font-size:12px;
-//         .exhibit-page__footer__list {
-//           display:inline-block;
-//           text-align: center;
-//           width: 32%;
-//           color:black;
-//         }
-//       }
-//     }
-//     .exhibit-page__footer__link {
-//       display:block;
-//       padding-top:30px;
-//       height:90px;
-//       width:90px;
-//       margin:0 auto;
-//     }
-//     .exhibit-page__footer__copyright {
-//       font-size: 12px;
-//       text-align: center;
-//       color:black;
-//     }
-//   }
-// }
+.exhibit-page__footer {
+  width: 100%;
+  background-color: #EEEEEE;
+  &__content {
+    width: 60%;
+    margin:0 auto; 
+    padding: 40px 0px;
+    &__main {
+      .exhibit-page__footer__lists {
+        font-size:12px;
+        .exhibit-page__footer__list {
+          display:inline-block;
+          text-align: center;
+          width: 32%;
+          color:black;
+        }
+      }
+    }
+    .exhibit-page__footer__link {
+      display:block;
+      padding-top:30px;
+      height:90px;
+      width:90px;
+      margin:0 auto;
+    }
+    .exhibit-page__footer__copyright {
+      font-size: 12px;
+      text-align: center;
+      color:black;
+      margin-top: 30px;
+      padding-right: 20px;
+    }
+  }
+}
