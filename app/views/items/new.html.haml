@@ -29,3 +29,26 @@
               必須
             %form.Form
             %textarea.Form__textareaContent{type: "textarea", placeholder: '商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。 ',rows:' 5 '}
+      .product-details
+        %h3.product-details__name 商品の詳細
+        .product-details__form
+          .product-details__form__category
+            %h3.product-details__form__category__name
+              カテゴリー
+              %span.form--caution 必須
+              .select--wrap
+                %select.select--wrap__box{:name => "category",required:""}
+                %i.fa-angle-down
+          .product-details__form__brand
+            %h3.product-details__form__brand__name
+              ブランド
+              %span.form--caution 任意
+              .select--wrap
+                %input.select--wrap__box{type: "text", placeholder: '例）シャネル'}
+          .product-details__form__status
+            %h3.product-details__form__status__name
+              商品の状態
+              %span.form--caution 必須
+              .select--wrap
+                %select.select--wrap__box{:name => "item_status",required:""}
+                %i.fa-angle-down
