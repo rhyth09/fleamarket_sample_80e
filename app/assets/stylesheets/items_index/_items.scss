@@ -9,49 +9,6 @@ p {
   font-size: 18px;
 }
 
-.Items {
-  margin: 0 auto;
-  width: 1100px;
-  display: flex;
-  &__item {
-    width: 220px;
-    height: 250px;
-    
-    &--link {
-      position: relative;
-      & a {
-        background-color: $white;
-        width: 220px;
-        height: 250px;
-        display: block;
-        position: relative;
-      }
-      & img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: inherit;
-        height: 150px;
-        object-fit: contain;
-        vertical-align: bottom;
-      }
-      & .info {
-        position: absolute;
-        padding: 16px;
-        width: 220px;
-        height: 100px;
-        bottom: 0;
-        & span {
-          font-size: 10px;
-        }
-      }
-      &:hover {
-        opacity: 0.5;
-      }
-    }
-  }
-}
-
 .Last-invitation {
   background-image: image-url('material/pict/bg-appBanner-pict.jpg');
   background-size: cover;
