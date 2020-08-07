@@ -14,3 +14,18 @@
             %label{class: "dropbox__img"}
               %input{type: "file"}
               %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+      .sell--content
+        .sell--content__name
+          %h3.sell--content__name__name
+            商品名
+            %span.form--caution 
+              必須
+          %div
+            %input.Form__textContent{type: "text", placeholder: '商品名（必須40文字まで）'}
+        .sell--content__description
+          %h3.sell--content__description__description
+            商品の説明
+            %span.form--caution 
+              必須
+            %form.Form
+            %textarea.Form__textareaContent{type: "textarea", placeholder: '商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。 ',rows:' 5 '}

@@ -17,6 +17,79 @@
         font-weight: bold;
         text-align: center;
       }
+
+      .form-content {
+        border-top: 1px solid #EEEEEE;
+        .img-form {
+          padding:40px;
+          border-bottom: 1px solid #EEEEEE;
+          .img__upload__text {
+            font-size:16px;
+            color:#333;
+            .form--caution {
+              @include form-caution;
+            }
+          }
+          .img__upload__comment {
+            font-size: 12px;
+            margin:8px 0 0;
+          }
+          .dropbox {
+            &__img {
+              display: block;
+              text-align: center;
+              border: 1px dashed lightgray;
+              min-width: 115px;
+              height: 160px;
+              background: #f5f5f5;
+              margin-top: 5px;
+              p {
+                font-size: 13px;
+                margin-top: 55px;
+              }
+              input[type="file"] {
+                display: none;
+              }
+            }
+          }
+        }
+      }  // 商品名
+      .sell--content{
+        height: 300px;
+        padding:40px;
+        border-bottom: 1px solid #EEEEEE;
+        &__name {
+          &__name {
+            font-size:14px;
+            color:#333;
+            .form--caution {
+              @include form-caution;
+            }
+          }
+        }
+        .Form__textContent{
+          width:100%;
+          height:50px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+        &__description {
+          margin-top:40px;
+          &__description {
+            font-size:14px;
+            color:#333;
+            .form--caution {
+              @include form-caution;
+            }
+          }
+          .Form__textareaContent {
+            width:100%;
+            height:150px;
+            border: 1px solid #ccc;
+            resize: none;
+          }
+        }
+      }
     }
   }
 }
