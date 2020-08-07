@@ -1,52 +1,9 @@
 @import "common";
 @import "top_screen";
+@import "reasons";
 
 p {
   font-size: 18px;
-}
-
-.Reasons {
-  padding: 60px 150px;
-  & > h1 {
-    @include decorated-h1;
-  }
-  &__contents {
-    padding-top: 50px;
-    display: flex;
-    justify-content: space-evenly;
-  }
-}
-
-.Reason-list {
-  width: 300px;
-  position: relative;
-  &__num {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: $furima-blue;
-    border-radius: 2px;
-    width: 55px;
-    height: 55px;
-    @include center-flex;
-    color: $white;
-    font-size: 30px;
-  }
-  & > img {
-    width: inherit;
-  }
-  & > h2 {
-    margin: 20px 0;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    & > span {
-      color: $furima-blue;
-    }
-  }
-  & .space {
-    padding-left: 20px;
-  }
 }
 
 .Download-invitation {
