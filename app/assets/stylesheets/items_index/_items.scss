@@ -1,17 +1,13 @@
 @import "common";
-@import "top_screen";
-@import "reasons";
-@import "download_invitation";
-@import "features";
-@import "pickup";
-@import "last_invitation";
+@import "parts/top_screen";
+@import "parts/reasons";
+@import "parts/download_invitation";
+@import "parts/features";
+@import "parts/pickup";
 
 p {
   font-size: 18px;
 }
-
-
-// //////////////////////////////////////////////////////
 
 .Download-link {
   &__apple {
