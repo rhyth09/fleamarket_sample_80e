@@ -52,3 +52,43 @@
               .select--wrap
                 %select.select--wrap__box{:name => "item_status",required:""}
                 %i.fa-angle-down
+      .delivery-form
+        %h3.delivery-form__about__delivery 配送について
+        %a.form--question{ href: ''}
+          ?
+        .delivery-form__box
+          .delivery-form__box__top
+            %h3.delivery-form__box__top__name
+              配送料の負担
+              %span.form--caution 必須
+            .select--wrap
+              %select.select--wrap__box{:name => "postage",required:""}
+              %i.fa-angle-down
+          .delivery-form__box__middle
+            %h3.delivery-form__box__top__name
+              発送元の地域
+              %span.form--caution 必須
+            .select--wrap
+              %select.select--wrap__box{:name => "prefecture",required:""}
+              %i.fa-angle-down
+          .delivery-form__box__bottom
+            %h3.delivery-form__box__top__name
+              発送までの日数
+              %span.form--caution 必須
+            .select--wrap
+              %select.select--wrap__box{:name => "shipping_date",required:""}
+              %i.fa-angle-down
+      .product-price
+        %h3.product-price__name 価格(300〜9,999,999)
+        %a.form--question{ href: ''}
+          ?
+        .product-price__form
+          .product-price__form__left
+            %h3.product-price__form__name
+              販売価格
+            %span.form--caution 必須
+          .select--wrap
+            ¥
+            %select.select--wrap__box{:name => "shipping_date",required:""}
+            %i.fa-angle-down
+          
