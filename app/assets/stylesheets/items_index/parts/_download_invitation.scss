@@ -1,7 +1,6 @@
 .Download-invitation {
   background-image: image-url('material/pict/bg-topMiddleDl-pict.jpg');
-  background-size: cover;
-  background-position: bottom;
+  @include background;
   padding: 80px 180px;
   width: 100vw;
   height: 400px;

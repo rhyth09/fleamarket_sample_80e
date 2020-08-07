@@ -1,7 +1,6 @@
 .Footer-invitation {
   background-image: image-url('material/pict/bg-appBanner-pict.jpg');
-  background-size: cover;
-  background-position: center;
+  @include background(cover, center);
   padding: 100px;
   width: 100vw;
   height: 50vh;

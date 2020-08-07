@@ -17,19 +17,10 @@
     color: $furima-blue;
     text-decoration: none;
   }
-  .info {
-    text-align: left;
-  }
-}
-
-.Items {
-  margin: 0 auto;
-  width: 1100px;
-  display: flex;
-  &__item {
-    width: 220px;
-    height: 250px;
-    
+  &__items {
+    margin: 0 auto;
+    width: 1100px;
+    display: flex;
     &--link {
       position: relative;
       & a {
@@ -54,6 +45,7 @@
         width: 220px;
         height: 100px;
         bottom: 0;
+        text-align: left;
         & span {
           font-size: 10px;
         }
@@ -64,3 +56,4 @@
     }
   }
 }
+

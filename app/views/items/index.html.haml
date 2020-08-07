@@ -45,7 +45,6 @@
       %p.space
         最大3%でお得に出品&購入！
 
-
 .Download-invitation
   .Download-invitation__content
     %h2
@@ -56,7 +55,6 @@
   .Download-link
     = link_to image_tag('http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', alt: 'Download on the App Store', width: '175px', class: 'Download-link__apple'), root_path
     = link_to image_tag('badge/google-play-badge.png', alt: 'GET IT ON Google Play', width: '200px', class: 'Download-link__google'), root_path
-
 
 .Features
   %h1
@@ -83,12 +81,13 @@
       %p
         お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
+// 始めは商品一覧がきます
 .Pickup
   %h1
     ピックアップカテゴリー
   = link_to '新規投稿商品', root_path, class: 'Pickup__link'
-  .Items
-    .Items__item--link
+  .Pickup__items
+    .Pickup__items--link
       = link_to image_tag('material/icon/icon-01.png', alt: '商品の画像'), root_path
       .info
         %p
@@ -97,7 +96,7 @@
           金額
         %span
           (税込)
-    .Items__item--link
+    .Pickup__items--link
       = link_to image_tag('material/icon/icon-02.png', alt: '商品の画像'), root_path
       .info
         %p
@@ -106,7 +105,7 @@
           金額
         %span
           (税込)
-    .Items__item--link
+    .Pickup__items--link
       = link_to image_tag('material/icon/icon-03.png', alt: '商品の画像'), root_path
       .info
         %p
@@ -115,7 +114,7 @@
           金額
         %span
           (税込)
-    .Items__item--link
+    .Pickup__items--link
       = link_to image_tag('material/icon/icon-04.png', alt: '商品の画像'), root_path
       .info
         %p
@@ -124,7 +123,7 @@
           金額
         %span
           (税込)
-    .Items__item--link
+    .Pickup__items--link
       = link_to image_tag('material/icon/icon-01.png', alt: '商品の画像'), root_path
       .info
         %p
@@ -134,62 +133,57 @@
         %span
           (税込)
 
-
+// 始めは商品一覧がきます
 .Pickup.bottom
   %h1
     ピックアップブランド
   = link_to 'アーカイブ', root_path, class: 'Pickup__link'
-  .Items
-    .Items__item
-      .Items__item--link
-        = link_to image_tag('material/icon/icon-01.png', alt: '商品の画像'), root_path
-        .info
-          %p
-            商品
-          %p
-            金額
-          %span
-            (税込)
-    .Items__item
-      .Items__item--link
-        = link_to image_tag('material/icon/icon-02.png', alt: '商品の画像'), root_path
-        .info
-          %p
-            商品
-          %p
-            金額
-          %span
-            (税込)
-    .Items__item
-      .Items__item--link
-        = link_to image_tag('material/icon/icon-03.png', alt: '商品の画像'), root_path
-        .info
-          %p
-            商品
-          %p
-            金額
-          %span
-            (税込)
-    .Items__item
-      .Items__item--link
-        = link_to image_tag('material/icon/icon-04.png', alt: '商品の画像'), root_path
-        .info
-          %p
-            商品
-          %p
-            金額
-          %span
-            (税込)
-    .Items__item
-      .Items__item--link
-        = link_to image_tag('material/icon/icon-01.png', alt: '商品の画像'), root_path
-        .info
-          %p
-            商品
-          %p
-            金額
-          %span
-            (税込)
+  .Pickup__items
+    .Pickup__items--link
+      = link_to image_tag('material/icon/icon-01.png', alt: '商品の画像'), root_path
+      .info
+        %p
+          商品
+        %p
+          金額
+        %span
+          (税込)
+    .Pickup__items--link
+      = link_to image_tag('material/icon/icon-02.png', alt: '商品の画像'), root_path
+      .info
+        %p
+          商品
+        %p
+          金額
+        %span
+          (税込)
+    .Pickup__items--link
+      = link_to image_tag('material/icon/icon-03.png', alt: '商品の画像'), root_path
+      .info
+        %p
+          商品
+        %p
+          金額
+        %span
+          (税込)
+    .Pickup__items--link
+      = link_to image_tag('material/icon/icon-04.png', alt: '商品の画像'), root_path
+      .info
+        %p
+          商品
+        %p
+          金額
+        %span
+          (税込)
+    .Pickup__items--link
+      = link_to image_tag('material/icon/icon-01.png', alt: '商品の画像'), root_path
+      .info
+        %p
+          商品
+        %p
+          金額
+        %span
+          (税込)
 
 .Sell-btn
   %p 出品する

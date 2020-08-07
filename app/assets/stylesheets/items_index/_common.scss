@@ -2,6 +2,18 @@ $white: #fff;
 $gray: #f8f8f8;
 $furima-blue: #3ccace;
 
+@mixin background ($size: cover, $position: bottom){
+  background-size: $size;
+  background-position: $position;
+}
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 @mixin decorated-h1 {
   font-size: 27px;
   font-weight: bold;
@@ -18,13 +30,6 @@ $furima-blue: #3ccace;
     transform: translateX(-50%);
     background-color: $furima-blue;
   }
-}
-
-@mixin center-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 @mixin shadow-font($color: $white, $blurry-shadow: 0 0 5px rgba(0,0,0,0.4)) {
