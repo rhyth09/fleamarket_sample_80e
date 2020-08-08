@@ -1,3 +1,56 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+  height: 100px;
+  margin: 0 50px;
+  .header-top {
+    margin-top:20px;
+    height:60px;
+    display: flex;
+    &__logo{
+      width: 140px;
+      margin-right: 30px;
+      padding-bottom: 10px;
+    }
+    &__search-bar {
+      width:100%;
+      padding-top: 5px;
+      .item-search{
+        padding:5px;
+        font-size: 20px;
+        height: 40px;
+        width:100%;
+        border: 1px solid black;
+      }
+    }
+  }
+  .header-bottom {
+    height: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    &__left {
+      ul {
+        li {
+          display: inline-block;
+          margin-right: 30px;
+          h2 {
+          }
+        }
+      }
+    }
+    &__right {
+      ul {
+        li {
+          display: inline-block;
+          margin-left: 30px;
+          h2 {
+          }
+        }
+      }
+    }
+  }
+}
