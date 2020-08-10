@@ -1,0 +1,18 @@
+.Download-invitation {
+  background-image: image-url('material/pict/bg-topMiddleDl-pict.jpg');
+  @include background;
+  padding: 80px 180px;
+  width: 100vw;
+  height: 400px;
+  @include shadow-font;
+  &__content {
+    & > h2 {
+      margin-bottom: 20px;
+      font-size: 27px;
+      font-weight: bold;
+    }
+    & > p {
+      line-height: 30px;
+    }
+  }
+}
