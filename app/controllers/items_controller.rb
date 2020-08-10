@@ -3,9 +3,16 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create
+    @item = Item.new(set_item)
+    if @item.save
+      redirect_to new_items_path, notice: "作成しました"
+    else
+      render :new
+    end
   end
 
   private
