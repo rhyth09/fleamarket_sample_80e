@@ -1,122 +1,122 @@
 .exhibit__page
-  .exhibit__page__main
-    .exhibit__page__main__contents
-      %h3.exhibit__page__main__contents__message
-        商品の情報を入力
-      .form-content
-        .img-form
-          %h3.img__upload__text
-            出品画像
-            %span.form--caution 
-              必須
-          %p.img__upload__comment 最大10枚までアップロードできます
-          .dropbox
-            %label{class: "dropbox__img"}
-              %input{type: "file"}
-              %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
-      .sell--content
-        .sell--content__name
-          %h3.sell--content__name__name
-            商品名
-            %span.form--caution 
-              必須
-          %div
-            %input.Form__textContent{type: "text", placeholder: '商品名（必須40文字まで）'}
-        .sell--content__description
-          %h3.sell--content__description__description
-            商品の説明
-            %span.form--caution 
-              必須
-            %textarea.Form__textareaContent{type: "textarea", placeholder: '商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。 ',rows:' 5 '}
-      .product-details
-        %h3.product-details__name 商品の詳細
-        .product-details__form
-          .product-details__form__category
-            %h3.product-details__form__category__name
-              カテゴリー
-              %span.form--caution 必須
+  = form_with model: @item, local: true do |f|
+    .exhibit__page__main
+      .exhibit__page__main__contents
+        %h3.exhibit__page__main__contents__message
+          商品の情報を入力
+        .form-content
+          .img-form
+            %h3.img__upload__text
+              出品画像
+              %span.form--caution 
+                必須
+            %p.img__upload__comment 最大10枚までアップロードできます
+            .dropbox
+              %label{class: "dropbox__img"}
+                %input{type: "file"}
+                %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+        .sell--content
+          .sell--content__name
+            %h3.sell--content__name__name
+              商品名
+              %span.form--caution 
+                必須
+            %div
+              = f.text_field :name,  class: "Form__textContent", placeholder:"商品名（必須40文字まで）" 
+          .sell--content__description
+            %h3.sell--content__description__description
+              商品の説明
+              %span.form--caution 
+                必須
+              = f.text_area :explain, class: "Form__textareaContent", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+        .product-details
+          %h3.product-details__name 商品の詳細
+          .product-details__form
+            .product-details__form__category
+              %h3.product-details__form__category__name
+                カテゴリー
+                %span.form--caution 必須
+                .select--wrap
+                  %select.select--wrap__box{:name => "category",required:""}
+                  %i.fa-angle-down
+            .product-details__form__brand
+              %h3.product-details__form__brand__name
+                ブランド
+                %span.form--caution 任意
+                .select--wrap
+                  = f.text_field :brand, class: "select--wrap__box", placeholder:"例）シャネル" 
+            .product-details__form__status
+              %h3.product-details__form__status__name
+                商品の状態
+                %span.form--caution 必須
+                .select--wrap
+                  = f.collection_select :item_status_id, ItemStatus.all, :id, :choice, {prompt: "選択してください"}, {class: "select--wrap__box"}
+                  %i.fa-angle-down
+        .delivery-form
+          %h3.delivery-form__about__delivery 配送について
+          = link_to '?', new_items_path, class: 'form--question'
+          .delivery-form__box
+            .delivery-form__box__top
+              %h3.delivery-form__box__top__name
+                配送料の負担
+                %span.form--caution 必須
               .select--wrap
-                %select.select--wrap__box{:name => "category",required:""}
+                = f.collection_select :postage_id, Postage.all, :id, :choice, {prompt: "選択してください"}, {class: "select--wrap__box"}
                 %i.fa-angle-down
-          .product-details__form__brand
-            %h3.product-details__form__brand__name
-              ブランド
-              %span.form--caution 任意
+            .delivery-form__box__middle
+              %h3.delivery-form__box__top__name
+                発送元の地域
+                %span.form--caution 必須
               .select--wrap
-                %input.select--wrap__box{type: "text", placeholder: '例）シャネル'}
-          .product-details__form__status
-            %h3.product-details__form__status__name
-              商品の状態
-              %span.form--caution 必須
-              .select--wrap
-                %select.select--wrap__box{:name => "item_status",required:""}
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}, {class: "select--wrap__box"}
                 %i.fa-angle-down
-      .delivery-form
-        %h3.delivery-form__about__delivery 配送について
-        = link_to '?', new_items_path, class: 'form--question'
-        .delivery-form__box
-          .delivery-form__box__top
-            %h3.delivery-form__box__top__name
-              配送料の負担
+            .delivery-form__box__bottom
+              %h3.delivery-form__box__top__name
+                発送までの日数
+                %span.form--caution 必須
+              .select--wrap
+                = f.collection_select :shipping_date_id, ShippingDate.all, :id, :choice, {prompt: "選択してください"}, {class: "select--wrap__box"}
+                %i.fa-angle-down
+        .product-price
+          %h3.product-price__name 価格(300〜9,999,999)
+          = link_to '?', new_items_path, class: 'form--question'
+          .product-price__form
+            .product-price__form__left
+              %h3.product-price__form__name
+                販売価格
               %span.form--caution 必須
             .select--wrap
-              %select.select--wrap__box{:name => "postage",required:""}
+              ¥
+              = f.number_field :price, in: 300..9999999, step:1, class: "select--wrap__box"
               %i.fa-angle-down
-          .delivery-form__box__middle
-            %h3.delivery-form__box__top__name
-              発送元の地域
-              %span.form--caution 必須
-            .select--wrap
-              %select.select--wrap__box{:name => "prefecture",required:""}
-              %i.fa-angle-down
-          .delivery-form__box__bottom
-            %h3.delivery-form__box__top__name
-              発送までの日数
-              %span.form--caution 必須
-            .select--wrap
-              %select.select--wrap__box{:name => "shipping_date",required:""}
-              %i.fa-angle-down
-      .product-price
-        %h3.product-price__name 価格(300〜9,999,999)
-        = link_to '?', new_items_path, class: 'form--question'
-        .product-price__form
-          .product-price__form__left
-            %h3.product-price__form__name
-              販売価格
-            %span.form--caution 必須
-          .select--wrap
-            ¥
-            %select.select--wrap__box{:name => "shipping_date",required:""}
-            %i.fa-angle-down
-          
-      .submit-button
-        .actions
-          %button.btn--lightblue{type: "submit"}
-            出品する
-        = link_to 'もどる', new_items_path, class: 'btn--bule'
-        .subimit-button__text
-          = link_to '禁止されている出品', new_items_path, class: 'submit__text'
-          、
-          = link_to '行為', new_items_path, class: 'submit__text'
-          を必ずご確認ください。
-          %p.sell--content5__p
-            またブランド品でシリアルナンバー等がある場合はご記載ください。
-            = link_to '偽ブランドの販売', new_items_path, class: 'submit__text'
-            は犯罪であり処罰される可能性があります。
-          %p.sell--content5__p
-            また、出品をもちまして
-            = link_to '加盟店規約', new_items_path, class: 'submit__text'
-            に同意したことになります。
+            
+        .submit-button
+          .actions
+            = f.submit "出品する", class: "btn--lightblue"
+          = link_to 'もどる', new_items_path, class: 'btn--bule'
+          .subimit-button__text
+            = link_to '禁止されている出品', new_items_path, class: 'submit__text'
+            、
+            = link_to '行為', new_items_path, class: 'submit__text'
+            を必ずご確認ください。
+            %p.sell--content5__p
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              = link_to '偽ブランドの販売', new_items_path, class: 'submit__text'
+              は犯罪であり処罰される可能性があります。
+            %p.sell--content5__p
+              また、出品をもちまして
+              = link_to '加盟店規約', new_items_path, class: 'submit__text'
+              に同意したことになります。
 
-  .exhibit-page__footer
-    .exhibit-page__footer__content
-      .exhibit-page__footer__content__main
-        %ul.exhibit-page__footer__lists
-          %li.exhibit-page__footer__list
-            プライバシーポリシー
-          %li.exhibit-page__footer__list
-            FURIMA利用規約
-          %li.exhibit-page__footer__list
-            特定商取引に関する表記
-          %p.exhibit-page__footer__copyright
-            2020 FURIMA
+.exhibit-page__footer
+  .exhibit-page__footer__content
+    .exhibit-page__footer__content__main
+      %ul.exhibit-page__footer__lists
+        %li.exhibit-page__footer__list
+          プライバシーポリシー
+        %li.exhibit-page__footer__list
+          FURIMA利用規約
+        %li.exhibit-page__footer__list
+          特定商取引に関する表記
+        %p.exhibit-page__footer__copyright
+          2020 FURIMA
