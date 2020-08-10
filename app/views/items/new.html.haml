@@ -23,12 +23,14 @@
                 必須
             %div
               = f.text_field :name,  class: "Form__textContent", placeholder:"商品名（必須40文字まで）" 
+              = render partial: 'error_message', locals: { column: :name }
           .sell--content__description
             %h3.sell--content__description__description
               商品の説明
               %span.form--caution 
                 必須
               = f.text_area :explain, class: "Form__textareaContent", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+              = render partial: 'error_message', locals: { column: :explain }
         .product-details
           %h3.product-details__name 商品の詳細
           .product-details__form
@@ -38,6 +40,7 @@
                 %span.form--caution 必須
                 .select--wrap
                   = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "選択してください"}, {class: "select--wrap__box"}
+                  = render partial: 'error_message', locals: { column: :category }
                   %i.fa-angle-down
             .product-details__form__brand
               %h3.product-details__form__brand__name
@@ -45,12 +48,14 @@
                 %span.form--caution 任意
                 .select--wrap
                   = f.text_field :brand, class: "select--wrap__box", placeholder:"例）シャネル" 
+                  = render partial: 'error_message', locals: { column: :brand }
             .product-details__form__status
               %h3.product-details__form__status__name
                 商品の状態
                 %span.form--caution 必須
                 .select--wrap
                   = f.collection_select :item_status_id, ItemStatus.all, :id, :choice, {prompt: "選択してください"}, {class: "select--wrap__box"}
+                  = render partial: 'error_message', locals: { column: :item_status_id }
                   %i.fa-angle-down
         .delivery-form
           %h3.delivery-form__about__delivery 配送について
@@ -62,6 +67,7 @@
                 %span.form--caution 必須
               .select--wrap
                 = f.collection_select :postage_id, Postage.all, :id, :choice, {prompt: "選択してください"}, {class: "select--wrap__box"}
+                = render partial: 'error_message', locals: { column: :postage_id }
                 %i.fa-angle-down
             .delivery-form__box__middle
               %h3.delivery-form__box__top__name
@@ -69,6 +75,7 @@
                 %span.form--caution 必須
               .select--wrap
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}, {class: "select--wrap__box"}
+                = render partial: 'error_message', locals: { column: :prefecture_id }
                 %i.fa-angle-down
             .delivery-form__box__bottom
               %h3.delivery-form__box__top__name
@@ -76,6 +83,7 @@
                 %span.form--caution 必須
               .select--wrap
                 = f.collection_select :shipping_date_id, ShippingDate.all, :id, :choice, {prompt: "選択してください"}, {class: "select--wrap__box"}
+                = render partial: 'error_message', locals: { column: :shipping_date_id }
                 %i.fa-angle-down
         .product-price
           %h3.product-price__name 価格(300〜9,999,999)
@@ -88,6 +96,7 @@
             .select--wrap
               ¥
               = f.number_field :price, in: 300..9999999, step:1, class: "select--wrap__box"
+              = render partial: 'error_message', locals: { column: :price }
               %i.fa-angle-down
             
         .submit-button
