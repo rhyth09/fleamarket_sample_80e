@@ -53,8 +53,7 @@
                 %i.fa-angle-down
       .delivery-form
         %h3.delivery-form__about__delivery 配送について
-        %a.form--question{ href: ''}
-          ?
+        = link_to '?', new_items_path, class: 'form--question'
         .delivery-form__box
           .delivery-form__box__top
             %h3.delivery-form__box__top__name
@@ -79,8 +78,7 @@
               %i.fa-angle-down
       .product-price
         %h3.product-price__name 価格(300〜9,999,999)
-        %a.form--question{ href: ''}
-          ?
+        = link_to '?', new_items_path, class: 'form--question'
         .product-price__form
           .product-price__form__left
             %h3.product-price__form__name
@@ -95,24 +93,19 @@
         .actions
           %button.btn--lightblue{type: "submit"}
             出品する
-        %a.btn--bule{ href: ''}
-          もどる
+        = link_to 'もどる', new_items_path, class: 'btn--bule'
         .subimit-button__text
-          %a.submit__text{ href: ''}
-            禁止されている出品
+          = link_to '禁止されている出品', new_items_path, class: 'submit__text'
           、
-          %a.submit__text{ href: ''}
-            行為
+          = link_to '行為', new_items_path, class: 'submit__text'
           を必ずご確認ください。
           %p.sell--content5__p
             またブランド品でシリアルナンバー等がある場合はご記載ください。
-            %a.submit__text{ href: ''}
-              偽ブランドの販売
+            = link_to '偽ブランドの販売', new_items_path, class: 'submit__text'
             は犯罪であり処罰される可能性があります。
           %p.sell--content5__p
             また、出品をもちまして
-            %a.submit__text{ href: ''}
-              加盟店規約
+            = link_to '加盟店規約', new_items_path, class: 'submit__text'
             に同意したことになります。
 
   .exhibit-page__footer
