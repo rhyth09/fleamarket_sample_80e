@@ -1,0 +1,171 @@
+.Top-screen
+  .Top-screen__contents
+    %h1
+      人生を変えるフリマアプリ
+    %p
+      FURIMAはだれでもかんたんに出品・購入できる
+      %br フリマアプリです
+
+    .Download-link
+      = link_to image_tag('http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', alt: 'Download on the App Store', width: '175px', class: 'Download-link__apple'), root_path
+      = link_to image_tag('badge/google-play-badge.png', alt: 'GET IT ON Google Play', width: '200px', class: 'Download-link__google'), root_path
+
+.Reasons
+  %h1
+    FURIMAが選ばれる3つの理由
+  .Reasons__contents
+    .Reason-list
+      .Reason-list__num
+        1
+      = image_tag 'material/pict/pict-reason-01.jpg', alt: '使用例の画像'
+      %h2
+        %span
+          3分
+        ですぐに出品
+      %p
+        スマホで入力するだけで簡単に出品できる！
+    .Reason-list
+      .Reason-list__num
+        2
+      = image_tag 'material/pict/pict-reason-02.jpg', alt: '使用例の画像'
+      %h2
+        %span
+          シンプル 
+        で使いやすい
+      %p
+        めんどくさい入力は必要なく、検索も購入もスムーズ！
+    .Reason-list
+      .Reason-list__num
+        3
+      = image_tag 'material/pict/pict-reason-03.jpg', alt: '使用例の画像'
+      %h2
+        手数料 
+        %span
+          業界最安
+      %p.space
+        最大3%でお得に出品&購入！
+
+.Download-invitation
+  .Download-invitation__content
+    %h2
+      会員数日本一位
+    %p FURIMAは、フリマアプリで最も人気。
+    %p 出品・購入回数も業界最多です！
+    %p ほしかったあの商品に出会えるかもしれません。
+  .Download-link
+    = link_to image_tag('http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', alt: 'Download on the App Store', width: '175px', class: 'Download-link__apple'), root_path
+    = link_to image_tag('badge/google-play-badge.png', alt: 'GET IT ON Google Play', width: '200px', class: 'Download-link__google'), root_path
+
+.Features
+  %h1
+    FURIMAの特徴
+  .Features__contents
+    .Feature-list
+      = image_tag 'material/icon/icon-01.png', alt: 'アプリケーションの特徴を表す画像'
+      %h1
+        簡単に売り買いできる
+      %p
+        スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+
+    .Feature-list
+      = image_tag 'material/icon/icon-03.png', alt: 'アプリケーションの特徴を表す画像'
+      %h1
+        売上金は即日振込みに対応
+      %p
+        午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+
+    .Feature-list
+      = image_tag 'material/icon/icon-04.png', alt: 'アプリケーションの特徴を表す画像'
+      %h1
+        様々な支払いに対応
+      %p
+        お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+// 始めは商品一覧がきます
+.Pickup
+  %h1
+    ピックアップカテゴリー
+  = link_to '新規投稿商品', root_path, class: 'Pickup__link'
+  .Pickup__items
+    .Item-link
+      = link_to '', root_path
+      = image_tag('material/icon/icon-01.png', alt: '商品の画像')
+      %div
+        %p 商品
+        %p 金額
+        %span (税込)
+    .Item-link
+      = link_to '', root_path
+      = image_tag('material/icon/icon-02.png', alt: '商品の画像')
+      %div
+        %p 商品
+        %p 金額
+        %span (税込)
+    .Item-link
+      = link_to '', root_path
+      = image_tag('material/icon/icon-03.png', alt: '商品の画像')
+      %div
+        %p 商品
+        %p 金額
+        %span (税込)
+    .Item-link
+      = link_to '', root_path
+      = image_tag('material/icon/icon-04.png', alt: '商品の画像')
+      %div
+        %p 商品
+        %p 金額
+        %span (税込)
+    .Item-link
+      = link_to '', root_path
+      = image_tag('material/icon/icon-01.png', alt: '商品の画像')
+      %div
+        %p 商品
+        %p 金額
+        %span (税込)
+
+// 始めは商品一覧がきます
+.Pickup.bottom
+  %h1
+    ピックアップブランド
+  = link_to 'アーカイブ', root_path, class: 'Pickup__link'
+  .Pickup__items
+    .Item-link
+      = link_to '', root_path
+      = image_tag('material/icon/icon-01.png', alt: '商品の画像')
+      %div
+        %p 商品
+        %p 金額
+        %span (税込)
+    .Item-link
+      = link_to '', root_path
+      = image_tag('material/icon/icon-02.png', alt: '商品の画像')
+      %div
+        %p 商品
+        %p 金額
+        %span (税込)
+    .Item-link
+      = link_to '', root_path
+      = image_tag('material/icon/icon-03.png', alt: '商品の画像')
+      %div
+        %p 商品
+        %p 金額
+        %span (税込)
+    .Item-link
+      = link_to '', root_path
+      = image_tag('material/icon/icon-04.png', alt: '商品の画像')
+      %div
+        %p 商品
+        %p 金額
+        %span (税込)
+    .Item-link
+      = link_to '', root_path
+      = image_tag('material/icon/icon-01.png', alt: '商品の画像')
+      %div
+        %p 商品
+        %p 金額
+        %span (税込)
+
+.Sell-btn
+  %p 出品する
+  = link_to image_tag('material/icon/icon_camera.png', alt: '出品ページへのリンクボタン', width: '54', height: '54'), root_path
+
