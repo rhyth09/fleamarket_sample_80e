@@ -1,0 +1,19 @@
+.header
+  .header-top
+    .header-top__logo
+      = image_tag 'material/logo/logo.png' , alt: '使用例の画像', :size => '140x50'
+    %form.header-top__search-bar
+      %input.item-search{name: "keyword", placeholder: "キーワードから探す", type: "search", value: ""}
+      .search-icon
+        = image_tag 'material/icon/icon-search 1.png', alt: '検索ボタン', class: "search-icon_btn"
+  .header-bottom
+    %ul.header-bottom__left
+      %li 
+        =link_to "カテゴリーから探す"
+      %li 
+        =link_to "ブランドから探す"
+    %ul.header-bottom__right
+      %li 
+        =link_to "ログイン"
+      %li
+        =link_to "新規会員登録"
