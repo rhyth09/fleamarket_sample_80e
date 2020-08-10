@@ -37,7 +37,7 @@
                 カテゴリー
                 %span.form--caution 必須
                 .select--wrap
-                  = f.collection_select :category_ids, Category.where(ancestry: nil), :id, :name, {prompt: "選択してください"}, {class: "select--wrap__box"}
+                  = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "選択してください"}, {class: "select--wrap__box"}
                   %i.fa-angle-down
             .product-details__form__brand
               %h3.product-details__form__brand__name
