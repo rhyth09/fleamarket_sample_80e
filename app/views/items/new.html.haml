@@ -15,6 +15,7 @@
               %label{class: "dropbox__img"}
                 %input{type: "file"}
                 %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+              = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]"
         .sell--content
           .sell--content__name
             %h3.sell--content__name__name
