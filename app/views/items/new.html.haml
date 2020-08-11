@@ -18,7 +18,8 @@
               // 画像投稿ヘルパー
               = f.fields_for :images do |i|
                 = i.file_field :src
-              
+              = render partial: 'error_message', locals: { column: :images }
+
         .sell--content
           .sell--content__name
             %h3.sell--content__name__name
