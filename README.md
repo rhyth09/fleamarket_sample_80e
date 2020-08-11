@@ -60,11 +60,11 @@
 |name|string|null:false|
 |price|integer|null:false|
 |explain|text|null:false|
-|item_status|references|null:false, foreign_key:true|
+|item_status_id|integer|null:false|
 |size|string||
-|prefecture|integer|null:false|
-|postage|references|null:false, foreign_key:true|
-|shipping_date|references|null:false, foreign_key:true|
+|prefecture_id|integer|null:false|
+|postage_id|integer|null:false|
+|shipping_date_id|integer|null:false|
 |brand|text||
 |category_id|references|foreign_key:true|
 |seller_id|references|null:false, foreign_key:true|
@@ -73,6 +73,7 @@
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 - has_many :images, dependent: :destroy
+- belongs_to_active_hash :prefecture
 - belongs_to_active_hash :shipping_date
 - belongs_to_active_hash :postage
 - belongs_to_active_hash :item-status
@@ -86,7 +87,7 @@
 ### Association
 - belongs_to :item
 
-## Categoriseテーブル
+## Categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
