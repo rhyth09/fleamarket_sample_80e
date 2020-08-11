@@ -2,31 +2,41 @@
   .AccountPageHeader
     %h1
       = link_to image_tag("material/logo/logo.png", alt: "FURIMAアプリのロゴ画像", width: '180', height: '50'), root_path, class: "LogoImage"
-  .AccountPageMain
-    .LoginNoAccount
-      %p アカウントをお持ちではない方はこちら
-      = link_to '新規会員登録', new_user_registration_path, class: "SignUpBtn"
+  .AccountPageSignUp
+    %h2.registration
+      会員情報入力
     .LoginForm
       = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
         .Field
           = f.label :ニックネーム
+          %span.form--caution 
+            必須
           %br/
           = f.text_field :nickname, autofocus: true
         .Field
-          = f.label :email
+          = f.label :メールアドレス
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email"
         .Field
-          = f.label :password
-          - if @minimum_password_length
-            %em
-              (#{@minimum_password_length} characters minimum)
+          = f.label :パスワード
           %br/
           = f.password_field :password, autocomplete: "new-password"
         .Field
-          = f.label :password_confirmation
+          %h3
+            本人確認
+            %p
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .Field
+          = f.label :お名前（全角）
           %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password"
+          = f.text_field :first_name_kana, autocomplete: "true"
+          = f.text_field :last_name_kana, autocomplete: "true"
+        .Field
+          = f.label :生年月日
+          %br/
+          = f.text_field :birth_year, autocomplete: "true"
+          = f.text_field :birth_month, autocomplete: "true"
+          = f.text_field :birth_day, autocomplete: "true"
         .Actions
           = f.submit "Sign up"
   .AccountPageFooter
