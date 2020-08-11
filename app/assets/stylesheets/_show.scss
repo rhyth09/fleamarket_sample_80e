@@ -1,0 +1,112 @@
+.sai__main {
+  background-color: white;
+  &__showMain{
+    background-color: white;
+    &__contentright{
+      background-color: white;
+      &__topcontent{
+        background-color: white;
+        &__itembox{
+          background-color: white;
+          text-align: center;
+          // display: flex;
+          &__name{
+            background-color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+          }
+          .itembox__body{
+            background-color: white;
+            text-align: center;
+          }
+          .itembox__price{
+            background-color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 50px;
+            &__detail{
+            background-color: white;
+            text-align: center;
+            font-weight: normal;
+            font-size: 24px;
+            }
+          }
+          .itemDetail{
+            
+            margin: 0px 0px 30px;
+          }
+          .itemTable{
+            width:100%;
+            background-color: white;
+            
+            table th {
+              margin: 0;
+              padding: 0;
+              background-color: #EEEEEE;
+              border: solid 1px black;
+            }
+            table td {
+              border: solid 1px black;
+            }
+            & > tr {}
+            & > tr {
+              & > td {
+                display: block;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  } 
+}
+
+
+// .itembox__price__detail{
+//   background-color: #EEEEEE;
+//   text-align: center;
+//   font-size: 24px;
+// }
+
+
+// .itembox__body{
+//   background-color: #EEEEEE;
+//   text-align: center;
+// }
+
+
+// .itemTable{
+//   background-color: #EEEEEE;
+//   text-align: center;
+// }
+
+
+
+
+
+
+
+
+// .sai__main {
+//   width: 100%;
+//   background-color: #EEEEEE;
+//   &__showMain{
+//     background-color: #EEEEEE;
+//     width: 700px;
+//     display: block;
+//     margin: 0 auto;
+//     &__contentright {
+//       background-color:white;
+//       width: 100%;
+//       margin: 0 auto;
+//       &__topcontent {
+//       }
+//       &__message {
+//         font-size: 22px;
+//         display: block;
+//         padding: 32px 16px;
+//         font-weight: bold;
+//         text-align: center;
+//       }
