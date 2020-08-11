@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root 'items#index'
-  resource :items, only: [:new,]
-
-  resource :items do
+  resource :items, only: [:new,] do
     member do
       get 'buy'
     end
