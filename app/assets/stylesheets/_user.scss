@@ -1,0 +1,108 @@
+body {
+  background-color: #f5f5f5;
+  font-size: 14px;
+  color: #333;
+}
+
+.AccountPageHeader {
+  height: 130px;
+  text-align: center;
+  h1 {
+    padding-top: 40px;
+  }
+}
+
+.LogoImage:hover {
+  opacity:0.6;
+}
+
+.AccountPageMain {
+  box-sizing: border-box;
+  width: 450px;
+  height: 650px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.LoginNoAccount {
+  padding: 60px;
+  text-align: center;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 14px;
+}
+
+.SignUpBtn {
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: #0099e8;
+  margin-top: 8px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  line-height: 40px;
+}
+
+.LoginForm {
+  padding: 60px;
+}
+
+.Field {
+  margin-bottom: 25px;
+  input[type="email"] {
+    width: 100%;
+    height: 40px;
+  }
+  input[type="password"] {
+    width: 100%;
+    height: 40px;
+  }
+}
+
+.Actions {
+  input[type="submit"] {
+    margin-bottom: 40px;
+    background-color: #3ccace;
+    color: #fff;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    line-height: 50px;
+    font-size: 14px;
+    text-align: center;
+    border-style: none;
+    cursor: pointer;
+  }
+}
+
+.ForgetPassword {
+  color: #0099e8;
+  text-decoration: none;
+  &:hover {
+    opacity:0.6;
+    text-decoration: underline;
+  }
+}
+
+.AccountPageFooter {
+  height: 220px;
+  padding: 40px;
+  text-align: center;
+  h1 {
+    padding-top: 40px;
+  }
+  &__list {
+    display: inline-block;
+    margin-left: 16px;
+    font-size: 12px;
+  }
+}
+
+.FooterContent {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    opacity:0.6;
+    text-decoration: underline;
+  }
+}

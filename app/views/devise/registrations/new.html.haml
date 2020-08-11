@@ -1,6 +1,14 @@
-%h2 Sign up
+.AccountPage
+  .AccountPageTitle
+    %h1
+      = link_to image_tag("material/logo/logo.png", alt: "FURIMAアプリのロゴ画像"), root_path
+  %h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :nickname
+    %br/
+    = f.text_field :nickname, autofocus: true
   .field
     = f.label :email
     %br/
