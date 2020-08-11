@@ -4,3 +4,12 @@
 @import "items_index/items";
 @import "footer_invitation";
 
+input:focus, textarea:focus, select:focus {
+  background-color: #fff;
+  outline: 0;
+  box-shadow: 0 0 8px 0 #3ccace;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
