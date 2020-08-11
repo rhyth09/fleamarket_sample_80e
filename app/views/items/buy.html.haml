@@ -1,17 +1,17 @@
-%main.buy-main 
+.buy-main 
   .buy-item-container
     %h2.buy-item-head 購入内容の確認
     %section.buy-content.buy-item
       .buy-content-inner
         .buy-item-box
           .buy-item-image
-            -# =image_tag(@product.images[0].product_image.url,class:"buy-image")
+            = image_tag('material/icon/icon-01.png', alt: '商品の画像')
           .buy-item-detail
             %p.buy-item-name
-              -# =@product.name
+              商品名
               %p.buy-item-price.bold
-                -# = number_to_currency(@product.price,format: "%u%n",unit:"¥",precision: 0)
-                %span.item-shipping-fee.f14.bold
+                ¥500
+                %span.item-shipping-fee
                   (税込)送料込み
     %section.buy-content.buy-user-info
       .buy-content-inner
