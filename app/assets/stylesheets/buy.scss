@@ -31,6 +31,14 @@
   margin: 0 auto;
   &-box{
     display: flex;
+    justify-content: space-between;
+  }
+  &-name {
+    text-align: left;
+  }
+  &-detail {
+    width: 80%;
+    text-align: right;
   }
   &-image{
     height: 80px;
@@ -50,17 +58,17 @@
   //商品名
 .buy-item-table{
   display: flex;
-  position: relative;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10px;
   .item-shipping-fee{
-    padding-left: 110px;
     font-size: 12px;
-    margin-top: 10px;
+    margin-right: 10px;
   }
-  .buy-item-price{
-    position: absolute;
-    right: -65px;
-    font-weight: 600;
-    margin-top: 10px;
+  .item-buy-money{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 1px;
   }
 }
 
