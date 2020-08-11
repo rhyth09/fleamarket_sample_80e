@@ -27,6 +27,8 @@
 
 .buy-item{
   text-align: center;
+  width: 60%;
+  margin: 0 auto;
   &-box{
     display: flex;
   }
@@ -83,6 +85,18 @@
 .buy-user-info{
   padding: 32px 0;
   text-align: left;
+  margin: 0 auto;
+  width: 60%;
+
+}
+
+.creditcard{
+  color:#87cefa;
+  text-decoration: none;
+}
+.address{
+  color:#87cefa;
+  text-decoration: none;
 }
 
 .disabled-button{
