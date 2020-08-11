@@ -68,7 +68,39 @@
   font-weight: 600;
 }
 
-.purchase{
+.buy-user-info{
+  padding: 32px 0;
+  text-align: left;
+  margin: 0 auto;
+  width: 60%;
+
+}
+
+.buy-price-table{
+  display: flex;
+  position: relative;
+  .buy-price-cell{
+    font-size: 18px;
+  }
+  .buy-price-money{
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+  }
+}
+
+
+.creditcard{
+  color:#87cefa;
+  text-decoration: none;
+
+}
+.address{
+  color:#87cefa;
+  text-decoration: none;
+}
+
+.btn--lightblue{
   width: 100%;
   background: #3ccace;
   cursor: hand;
@@ -80,34 +112,5 @@
   text-align: center;
   font-weight: 600;
   font-size: 14px;
-}
-
-.buy-user-info{
-  padding: 32px 0;
-  text-align: left;
-  margin: 0 auto;
-  width: 60%;
-
-}
-
-.creditcard{
-  color:#87cefa;
-  text-decoration: none;
-}
-.address{
-  color:#87cefa;
-  text-decoration: none;
-}
-
-.disabled-button{
-  text-align: center;
-  margin: 16px 0 0;
-  background: #888888;
-  color: #fff;
-  display: block;
-  width: 100%;
-  font-size: 24px;
-  line-height: 60px;
-  cursor: not-allowed;
 }
 
