@@ -8,18 +8,19 @@
             = image_tag('material/icon/icon-01.png', alt: '商品の画像')
           .buy-item-detail
             %p.buy-item-name
-              商品名
-              %p.buy-item-price.bold
-                ¥500
-                %span.item-shipping-fee
-                  (税込)送料込み
+              商品名テスト
+              .buy-item-table
+                .item-shipping-fee
+                  送料込み(税込)
+                .buy-item-price
+                  ¥1,000
     .buy-content.buy-user-info
       .buy-content-inner
         .buy-price-table
           .buy-price-cell 
             支払い金額
           .buy-price-money
-            ¥500
+            ¥1,000
     .buy-content.buy-user-info
       .buy-content-inner
         %h3 支払方法

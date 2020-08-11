@@ -26,7 +26,6 @@
 }
 
 .buy-item{
-  text-align: center;
   width: 60%;
   margin: 0 auto;
   &-box{
@@ -41,31 +40,27 @@
     align-items: center;
     & > img {
       width: 220px;
-      height: 150px;
+      height: 120px;
       object-fit: contain;
       vertical-align: bottom;
     }
   }
-  &-detail{
-    margin-left: 16px;
-  }
-  &-name{
-    font-size: 14px;
-    margin: 0;
-    padding: 0 0 8px;
-    line-height: 1.5;
-    text-align: left;
-  }
-  &-price{
-    margin: 0;
-    text-align: right;
-    font-size: 15px;
-  }
 }
-
-
-.bold{
-  font-weight: 600;
+  //商品名
+.buy-item-table{
+  display: flex;
+  position: relative;
+  .item-shipping-fee{
+    padding-left: 110px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .buy-item-price{
+    position: absolute;
+    right: -65px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
 }
 
 .buy-user-info{
@@ -76,6 +71,7 @@
 
 }
 
+//支払い項目
 .buy-price-table{
   display: flex;
   position: relative;
@@ -100,6 +96,7 @@
   text-decoration: none;
 }
 
+//購入ボタン
 .btn--lightblue{
   width: 100%;
   background: #3ccace;
