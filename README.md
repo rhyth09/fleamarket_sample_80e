@@ -82,7 +82,7 @@
 ## Imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|url|string|null: false|
+|src|string|null: false|
 |item_id|references|null:false, foreign_key:true|
 ### Association
 - belongs_to :item
