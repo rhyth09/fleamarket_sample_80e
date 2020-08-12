@@ -5,7 +5,7 @@
       %p アカウントをお持ちではない方はこちら
       = link_to '新規会員登録', new_user_registration_path, class: "SignUpBtn"
     .LogInForm
-      = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+      = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
         .Field
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "Field__InputBox"
         .Field
