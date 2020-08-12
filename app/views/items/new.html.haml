@@ -15,10 +15,13 @@
               %label{class: "dropbox__img"}
                 %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
 
-                // 画像投稿ヘルパー
-                = f.fields_for :images do |i|
-                  = i.file_field :src
-                = render partial: 'error_message', locals: { column: :images }
+            // 画像投稿ヘルパー
+            #image-box
+              = f.fields_for :images do |image|
+                %div.js-file_group{data: {index: image.index}}
+                  = image.file_field :src, class: "js-file"
+                
+              = render partial: 'error_message', locals: { column: :images }
 
         .sell--content
           .sell--content__name
