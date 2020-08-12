@@ -1,0 +1,4 @@
+- if @item.errors.any?
+  .Error-message
+    %p
+      = @item.errors.full_messages_for(column).first
