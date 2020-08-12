@@ -8,7 +8,7 @@
         background-color: white;
         &__itembox{
           background-color: white;
-          text-align: center;
+          // text-align: center;
           // display: flex;
           &__name{
             background-color: white;
@@ -39,22 +39,46 @@
           .itemTable{
             width:100%;
             background-color: white;
-            
+            display: flex;
+            justify-content:center;
             table th {
+              text-align: center;
+              width: 152px;
               margin: 0;
-              padding: 0;
+              padding: 8px;
               background-color: #EEEEEE;
               border: solid 1px black;
             }
             table td {
+              width: 467px;
               border: solid 1px black;
+              padding: 15px;
             }
-            & > tr {}
-            & > tr {
-              & > td {
-                display: block;
-              }
+            &__link1 {
+              color:#3CCACE;
             }
+            &__link2 {
+              color:#3CCACE;
+            }
+            &__link3 {
+              color:#3CCACE;
+            }
+            &__link4 {
+              color:#3CCACE;
+            }
+
+            // & > table {
+            //   & > tbody {
+            //     & > tr {}
+            //     & > tr {
+            //       & > td {
+            //         // color:#3CCACE;
+            //         // display: block;
+            //       }
+            //     }
+            //   }
+            // }
+            
 
           }
         }
