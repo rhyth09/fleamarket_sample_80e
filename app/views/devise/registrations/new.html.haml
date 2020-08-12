@@ -5,6 +5,7 @@
       会員情報入力
     .SignUpForm
       = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+        = render "devise/shared/error_messages", resource: resource
         .FormContent
           .Field
             = f.label :ニックネーム
