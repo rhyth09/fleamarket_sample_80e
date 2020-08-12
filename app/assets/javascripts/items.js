@@ -1,14 +1,16 @@
 $(document).on('turbolinks:load', ()=> {
   const buildFileField = (index) => {
     const html = `<div class="js-file_group" data-index="${index}">
-                    <input class="js-file" type="file" name="item[images_attributes][${index}][src]" id="item_images_attributes_${index}_src"><br>
-                    <a href="/items/new">編集</a>
+                    <input class="js-file" type="file" name="item[images_attributes][${index}][src]" id="item_images_attributes_${index}_src">
                   </div>`;
     return html;
   }
 
   const buildImage = (index, url) => {
-    const html = `<img data-index="${index}" src="${url}" width="120px" height="120px">`;
+    const html = `<div class="preview">
+    <img data-index="${index}" src="${url}" width="120px" height="120px">
+    <a href=''>編集</a>
+    </div>`;
     return html;
   }
 
@@ -22,8 +24,9 @@ $(document).on('turbolinks:load', ()=> {
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
-      $('#previews').append(buildImage(targetIndex, blobUrl));
+      $('.dropbox__img').before(buildImage(targetIndex, blobUrl));
       count ++;
+      $('.dropbox__img').attr('for', `item_images_attributes_${count}_src`);
       if (count === 5) {
         $('label').hide();
       }

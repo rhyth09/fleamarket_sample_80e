@@ -25,9 +25,16 @@ label {
 }
 #previews {
   display: flex;
-  flex-flow: row-reverse;
-  & > img {
-    margin: 0 2px;
+  .preview-image {
+    margin: 0 5px;
+  }
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  & > a {
+    text-decoration: none;
   }
 }
 
@@ -37,4 +44,11 @@ label {
 
 .js-file_group {
   font-size: 10px;
+}
+
+.File-fields {
+  display: flex;
+}
+.js-file {
+  display: none;
 }
