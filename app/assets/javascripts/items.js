@@ -6,9 +6,22 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
+  const buildImage = (index, url) => {
+    const html = `<img data-index="${index}" src="${url}" width="120px" height="120px">`;
+    return html;
+  }
+
   let fileIndex = [1, 2, 3, 4];
 
-  $('#image-box').on('change', function(e) {
+  $('#image-box').on('change', '.js-file', function(e) {
+    const targetIndex = $(this).parent().data('index');
+    const file = e.target.files[0];
+    const blobUrl = window.URL.createObjectURL(file);
+    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      img.setAttribute('src', blobUrl);
+    } else {
+      $('#previews').append(buildImage(targetIndex, blobUrl));
+    }
     $('#image-box').append(buildFileField(fileIndex[0]));
     fileIndex.shift();    
   });
