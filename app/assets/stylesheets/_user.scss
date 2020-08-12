@@ -1,12 +1,51 @@
+// mergeする時に削除
+@mixin form-caution {
+  display: inline-block;
+  background-color:red;
+  color: white;
+  font-size: 8px;
+  margin-top: 4px;
+  margin-left:8px;
+  padding:2px 4px;
+  border-radius: 2px;
+  vertical-align: top;
+  font-weight: bold;
+}
+// ここまで
+
+@mixin hover-underline {
+  opacity:0.6;
+  text-decoration: underline;
+}
+
+$lightgray: #f5f5f5;
+$white: #fff;
+$lightblue: #0099e8;
+$furima-color: #3ccace;
+
+html,
+body,
+div.background {
+  height: 100%;
+}
+
+div.background {
+  min-width: 100%;
+}
+
+body > div.background {
+  height: auto;
+}
+
 body {
-  background-color: #f5f5f5;
-  font-size: 14px;
+  background-color: $lightgray;
   color: #333;
+  font-size: 14px;
 }
 
 .AccountPage {
-  height: 100vh;
-  }
+  background-color: $lightgray;
+ }
 
 .AccountPageHeader {
   height: 130px;
@@ -23,83 +62,112 @@ body {
 .AccountPageLogIn {
   width: 450px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: $white;
 }
 
 .AccountPageSignUp {
   width: 700px;
   margin: 0 auto;
-  background-color: #fff;
-  .registration {
-    text-align: center;
+  background-color: $white;
+  .Registration {
+    padding: 35px;
+    border-bottom: 1px solid $lightgray;
     font-size: 22px;
-    padding: 32px;
     font-weight: bold;
-    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
   }
 }
 
 .LoginNoAccount {
   padding: 40px 65px;
+  border-bottom: 1px solid $lightgray;
   text-align: center;
-  border-bottom: 1px solid #f5f5f5;
-  font-size: 14px;
 }
 
 .SignUpBtn {
   display: block;
-  height: 40px;
   width: 100%;
-  background-color: #0099e8;
-  margin-top: 8px;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
+  height: 40px;
   line-height: 40px;
+  margin-top: 8px;
+  border-radius: 4px;
+  background-color: $lightblue;
+  color: $white;
+  text-decoration: none;
 }
 
-.LoginForm {
-  padding: 25px 65px 32px;
+.LogInForm, .SignUpForm {
+  padding: 0 65px 40px;
+}
+
+.FormContent {
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 .Field {
-  margin-bottom: 25px;
-  input[type="text"] {
-    width: 100%;
-    height: 40px;
+  margin-top: 25px;
+  label {
+    font-weight: 600;
   }
-  input[type="email"] {
-    width: 100%;
-    height: 40px;
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
   }
-  input[type="password"] {
+  &__InputBox {
     width: 100%;
     height: 40px;
+    margin-top: 8px;
+    padding: 10px 15px;
+  }
+  &__MultiInputBox {
+    display: flex;
+    margin-top: 8px;
+    span {
+      margin: 0 2px;
+    }
+  }
+  &__InputBoxHalf {
+    width: calc(50% - 6px);
+    height: 40px;
+    margin-right: 8px;
+    padding: 10px 15px;
+  }
+  &__SelectBox {
+    width: 75px;
+    height: 40px;
+    padding: 0 10px;
+  }
+  .form--caution  {
+    @include form_caution;
   }
 }
 
-.Actions {
-  input[type="submit"] {
-    margin-bottom: 40px;
-    background-color: #3ccace;
-    color: #fff;
-    border-radius: 4px;
-    display: block;
-    width: 100%;
-    line-height: 50px;
-    font-size: 14px;
-    text-align: center;
-    border-style: none;
-    cursor: pointer;
-  }
+.FormInfoText {
+  margin-top: 8px;
+  color: #888;
+}
+
+.ActionBtn {
+  width: 100%;
+  line-height: 50px;
+  margin-top: 25px;
+  border-radius: 4px;
+  border-style: none;
+  background-color: $furima-color;
+  color: $white;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .ForgetPassword {
-  color: #0099e8;
+  display: block;
+  margin-top: 40px;
+  color: $lightblue;
   text-decoration: none;
   &:hover {
-    opacity:0.6;
-    text-decoration: underline;
+    @include hover-underline
   }
 }
 
@@ -107,9 +175,6 @@ body {
   height: 220px;
   padding: 40px;
   text-align: center;
-  h1 {
-    padding-top: 40px;
-  }
   &__list {
     display: inline-block;
     margin-left: 16px;
@@ -118,10 +183,9 @@ body {
 }
 
 .FooterContent {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
   &:hover {
-    opacity:0.6;
-    text-decoration: underline;
+    @include hover-underline
   }
 }

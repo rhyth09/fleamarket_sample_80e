@@ -1,25 +1,16 @@
 .AccountPage
-  .AccountPageHeader
-    %h1
-      = link_to image_tag("material/logo/logo.png", alt: "FURIMAアプリのロゴ画像", width: '180', height: '50'), root_path, class: "LogoImage"
+  = render partial: 'devise/shared/header'
   .AccountPageLogIn
     .LoginNoAccount
       %p アカウントをお持ちではない方はこちら
       = link_to '新規会員登録', new_user_registration_path, class: "SignUpBtn"
-    .LoginForm
+    .LogInForm
       = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
         .Field
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "Field__InputBox"
         .Field
-          = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+          = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "Field__InputBox"
         .Actions
-          = f.submit "ログイン"
+          = f.submit "ログイン", class: "ActionBtn"
       = link_to 'パスワードをお忘れの方', new_password_path(resource_name), class: "ForgetPassword"
-  .AccountPageFooter
-    %ul.AccountPageFooter__lists
-      %li.AccountPageFooter__list
-        = link_to 'プライバシーポリシー', '#', class: "FooterContent"
-      %li.AccountPageFooter__list
-        = link_to 'FURIMA利用規約', '#', class: "FooterContent"
-      %li.AccountPageFooter__list
-        =link_to '特定商取引に関する表記', '#', class: "FooterContent"
+  = render partial: 'devise/shared/footer'
