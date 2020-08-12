@@ -3,7 +3,11 @@
 @import "new";
 @import "items_index/items";
 @import "footer_invitation";
+
 @import "buy";
+@import "users";
+@import "header";
+@import "footer";
 
 input:focus, textarea:focus, select:focus {
   background-color: #fff;
