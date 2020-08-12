@@ -10,13 +10,17 @@
               出品画像
               %span.form--caution 
                 必須
-            %p.img__upload__comment 最大10枚までアップロードできます
-            .dropbox
-              %label{class: "dropbox__img"}
-                %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+            -# %p.img__upload__comment 最大10枚までアップロードできます
+            -# .dropbox
+            -#   %label{class: "dropbox__img"}
+            -#     %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
 
             // 画像投稿ヘルパー
             #image-box
+              #previews
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    = image_tag image.src.url, {data: {index: i}}, width: "120px", height: "120px"
               = f.fields_for :images do |image|
                 %div.js-file_group{data: {index: image.index}}
                   = image.file_field :src, class: "js-file"
