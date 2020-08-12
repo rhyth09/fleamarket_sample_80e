@@ -1,7 +1,8 @@
 $(document).on('turbolinks:load', ()=> {
   const buildFileField = (index) => {
     const html = `<div class="js-file_group" data-index="${index}">
-                    <input class="js-file" type="file" name="item[images_attributes][${index}][src]" id="item_images_attributes_${index}_src">
+                    <input class="js-file" type="file" name="item[images_attributes][${index}][src]" id="item_images_attributes_${index}_src"><br>
+                    <a href="/items/new">編集</a>
                   </div>`;
     return html;
   }
@@ -11,6 +12,7 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
+  let count = 0;
   let fileIndex = [1, 2, 3, 4];
 
   $('#image-box').on('change', '.js-file', function(e) {
@@ -21,6 +23,10 @@ $(document).on('turbolinks:load', ()=> {
       img.setAttribute('src', blobUrl);
     } else {
       $('#previews').append(buildImage(targetIndex, blobUrl));
+      count ++;
+      if (count === 5) {
+        $('label').hide();
+      }
     }
     $('#image-box').append(buildFileField(fileIndex[0]));
     fileIndex.shift();    

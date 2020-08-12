@@ -18,3 +18,23 @@ input:-webkit-autofill {
 label {
   cursor: pointer;
 }
+
+
+#image-box {
+  margin-top: 5px;
+}
+#previews {
+  display: flex;
+  flex-flow: row-reverse;
+  & > img {
+    margin: 0 2px;
+  }
+}
+
+.dropbox__img {
+  flex-grow: 2;
+}
+
+.js-file_group {
+  font-size: 10px;
+}
