@@ -3,6 +3,7 @@
 @import "reset";
 @import "error_message";
 @import "new";
+@import "js_preview";
 @import "items_index/items";
 @import "footer_invitation";
 @import "buy";
@@ -19,53 +20,4 @@ input:-webkit-autofill {
 
 label {
   cursor: pointer;
-}
-
-
-#image-box {
-  margin-top: 5px;
-}
-
-#previews {
-  display: flex;
-  .preview-image {
-    margin: 0 5px;
-  }
-}
-
-.preview {
-  display: flex;
-  flex-direction: column;
-  & > img {
-    margin-bottom: 15px;
-  }
-  .img-dele-btn {
-    border: 1px solid #3ccace;
-    border-radius: 3px;
-    margin: 0 auto;
-    width: 80%;
-    text-align: center;
-    line-height: 23px;
-    cursor: pointer;
-  }
-}
-
-.dropbox__img {
-  flex-grow: 2;
-}
-
-.js-file_group {
-  font-size: 10px;
-}
-
-.File-fields {
-  display: flex;
-}
-.js-file {
-  display: none;
-}
-
-.fa-camera {
-  width: 24px;
-  height: 24px;
 }
