@@ -2,7 +2,7 @@
   = render partial: 'devise/shared/header'
   .AccountPageSignUp
     %h2.Registration
-      商品送付先
+      お届け先情報の登録
     .SignUpForm
       = form_with model: @address, local: true do |f|
         = render "devise/shared/error_messages", resource: @address

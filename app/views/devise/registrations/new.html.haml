@@ -2,7 +2,7 @@
   = render partial: 'devise/shared/header'
   .AccountPageSignUp
     %h2.Registration
-      会員情報入力
+      会員情報の登録
     .SignUpForm
       = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
         = render "devise/shared/error_messages", resource: @user
@@ -33,6 +33,9 @@
               必須
             %br/
             = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう一度入力してください", class: "Field__InputBox"
+          .ShowPassword
+            = f.check_box class: "ShowPassword__CheckBox"
+            = f.label :パスワードを表示する, class: "ShowPassword__Text"
           .Field
             %h3
               本人確認
