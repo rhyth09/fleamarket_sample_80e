@@ -28,9 +28,8 @@ $(document).on('turbolinks:load', ()=> {
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
-      $('.dropbox__img').before(buildImage(targetIndex, blobUrl));
       count ++;
-      $('.dropbox__img').attr('for', `item_images_attributes_${count}_src`);
+      $('.dropbox__img').attr('for', `item_images_attributes_${count}_src`).before(buildImage(targetIndex, blobUrl));
       if ($('.preview').length === 5) {
         $('label').hide();
       }
@@ -41,10 +40,12 @@ $(document).on('turbolinks:load', ()=> {
     fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
   });
 
-  // プレビューの削除
+  // 画像の要素とプレビューの削除
   $(document).on('click', '.img-dele-btn', function() {
+    let id = $(this).attr('id').slice(11);
+    $(`#item_images_attributes_${id}_src`).parent().remove();
     $(this).parent().remove();
-    count --;
+    
     if ($('.preview').length < 5) {
       $('#image-box').append(buildFileField(fileIndex[0]));
       $('label').show();
