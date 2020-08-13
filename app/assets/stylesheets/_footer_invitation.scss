@@ -1,0 +1,20 @@
+.Footer-invitation {
+  background-image: image-url('material/pict/bg-appBanner-pict.jpg');
+  @include background(cover, center);
+  padding: 100px;
+  width: 100vw;
+  height: 50vh;
+  @include shadow-font;
+  &__content {
+    margin: 0 auto;
+    width: 500#{px};
+    text-align: center;
+    & > h4 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    & > h2 {
+      font-size: 35px;
+    }
+  }
+}
