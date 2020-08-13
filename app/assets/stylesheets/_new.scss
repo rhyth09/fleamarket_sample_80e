@@ -36,14 +36,16 @@
           }
           .dropbox {
             &__img {
-              display: block;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
               text-align: center;
               border: 1px dashed lightgray;
               height: 160px;
               background: #f5f5f5;
               p {
                 font-size: 13px;
-                margin-top: 55px;
               }
               input[type="file"] {
                 display: none;

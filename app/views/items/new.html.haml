@@ -10,7 +10,7 @@
               出品画像
               %span.form--caution 
                 必須
-            %p.img__upload__comment 最大10枚までアップロードできます
+            %p.img__upload__comment 最大5枚までアップロードできます
             .dropbox
               
             #image-box
@@ -21,7 +21,9 @@
                     .img-dele-btn#delete_btn_0
                       削除
                 %label{for: "item_images_attributes_0_src", class: "dropbox__img"}
-                  %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+                  = icon('fas', 'camera')
+                  -# %p ドラッグアンドドロップ<br>または
+                  %p クリックしてファイルをアップロード
 
                 = f.fields_for :images do |image|
                   %div.js-file_group{data: {index: image.index}}
