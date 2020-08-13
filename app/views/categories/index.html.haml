@@ -1,0 +1,8 @@
+
+.categrory__container
+  .search__section
+    %h2.search__section--title カテゴリー一覧
+    %ul.search__section--nav
+      - @parents.each do |parent|
+        %li.search__section--nav-parent
+          = link_to parent.name, "#category-#{parent.id}", id: "scroll"
