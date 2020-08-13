@@ -1,0 +1,47 @@
+.my-page-main{
+  padding: 40px;
+  display: flex;
+  background-color: #f8f8f8;
+  .side-bar {
+    margin-right: 40px;
+    width: 300px;
+    ul.my-page {
+      background-color: #ffffff;
+      li {
+        border-bottom: 1px solid #f8f8f8;
+        font-size: 14px;
+        a {
+          margin-left: 10px;
+          line-height: 50px;
+          text-decoration: none;
+          color: #000000;
+        }
+      }
+    }
+  }
+  .main-content {
+    width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    &__photo {
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      background-color: #e0ffff;
+      background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #F9F9F9), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #F9F9F9),color-stop(.75, #F9F9F9), color-stop(.75, transparent),to(transparent));
+      -webkit-background-size: 7px 7px;
+    }
+    &__name {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      background-color: #e0ffff;
+      background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #F9F9F9), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #F9F9F9),color-stop(.75, #F9F9F9), color-stop(.75, transparent),to(transparent));
+      -webkit-background-size: 7px 7px;
+      font-size: 50px;
+    }
+    &__text {
+      width: 100%;
+    }
+  }
+}
