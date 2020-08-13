@@ -1,6 +1,7 @@
 $(document).on('turbolinks:load', ()=> {
+  
 
-  // 追加する<input type="file">
+  // 画像用input要素
   const buildFileField = (index) => {
     const html = `<div class="js-file_group" data-index="${index}">
                     <input class="js-file" type="file" name="item[images_attributes][${index}][src]" id="item_images_attributes_${index}_src">
@@ -8,7 +9,7 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
-  // 追加するプレビュー
+  // プレビュー
   const buildImage = (index, url) => {
     const html = `<div class="preview">
                     <img data-index="${index}" src="${url}" width="120px" height="120px">
