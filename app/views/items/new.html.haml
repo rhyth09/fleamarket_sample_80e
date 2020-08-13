@@ -55,7 +55,7 @@
                 .select--wrap
                   = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "選択してください"}, {class: "select--wrap__box"}
                   = render partial: 'error_message', locals: { column: :category }
-                  %i.fa-angle-down
+  
             .product-details__form__brand
               %h3.product-details__form__brand__name
                 ブランド
@@ -70,7 +70,7 @@
                 .select--wrap
                   = f.collection_select :item_status_id, ItemStatus.all, :id, :choice, {prompt: "選択してください"}, {class: "select--wrap__box"}
                   = render partial: 'error_message', locals: { column: :item_status_id }
-                  %i.fa-angle-down
+  
         .delivery-form
           %h3.delivery-form__about__delivery 配送について
           = link_to '?', new_items_path, class: 'form--question'
@@ -82,7 +82,7 @@
               .select--wrap
                 = f.collection_select :postage_id, Postage.all, :id, :choice, {prompt: "選択してください"}, {class: "select--wrap__box"}
                 = render partial: 'error_message', locals: { column: :postage_id }
-                %i.fa-angle-down
+
             .delivery-form__box__middle
               %h3.delivery-form__box__top__name
                 発送元の地域
@@ -90,7 +90,7 @@
               .select--wrap
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}, {class: "select--wrap__box"}
                 = render partial: 'error_message', locals: { column: :prefecture_id }
-                %i.fa-angle-down
+
             .delivery-form__box__bottom
               %h3.delivery-form__box__top__name
                 発送までの日数
@@ -98,7 +98,7 @@
               .select--wrap
                 = f.collection_select :shipping_date_id, ShippingDate.all, :id, :choice, {prompt: "選択してください"}, {class: "select--wrap__box"}
                 = render partial: 'error_message', locals: { column: :shipping_date_id }
-                %i.fa-angle-down
+
         .product-price
           %h3.product-price__name 価格(300〜9,999,999)
           = link_to '?', new_items_path, class: 'form--question'
@@ -111,7 +111,6 @@
               ¥
               = f.number_field :price, in: 300..9999999, step:1, class: "select--wrap__box"
               = render partial: 'error_message', locals: { column: :price }
-              %i.fa-angle-down
             
         .submit-button
           .actions

@@ -116,10 +116,6 @@
                 &__box{
                   @include select-wrap-box;
                 }
-                .fa-angle-down {
-                  position: absolute;
-                  @include angle-down;
-                }
               }
             }
           }
@@ -148,10 +144,6 @@
                 background: 0;
                 padding: 0 16px;
               }
-              .fa-angle-down {
-                position: absolute;
-                @include angle-down;
-              }
             }
           }
           
@@ -166,10 +158,6 @@
               @include select-wrap;
               &__box{
                 @include select-wrap-box;
-              }
-              .fa-angle-down {
-                position: absolute;
-                @include angle-down;
               }
             }
           }
@@ -200,10 +188,6 @@
               &__box{
                 @include select-wrap-box;
               }
-              .fa-angle-down {
-                position: absolute;
-                @include angle-down;
-              }
             }
           }
           &__middle {
@@ -218,10 +202,6 @@
               &__box{
                 @include select-wrap-box;
               }
-              .fa-angle-down {
-                position: absolute;
-                @include angle-down;
-              }
             }
           }
           &__bottom {
@@ -235,10 +215,6 @@
               @include select-wrap;
               &__box{
                 @include select-wrap-box;
-              }
-              .fa-angle-down {
-                position: absolute;
-                @include angle-down;
               }
             }
           }
