@@ -23,6 +23,7 @@ label {
 #image-box {
   margin-top: 5px;
 }
+
 #previews {
   display: flex;
   .preview-image {
@@ -33,8 +34,17 @@ label {
 .preview {
   display: flex;
   flex-direction: column;
-  & > a {
-    text-decoration: none;
+  & > img {
+    margin-bottom: 15px;
+  }
+  .img-dele-btn {
+    border: 1px solid #3ccace;
+    border-radius: 3px;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    line-height: 23px;
+    cursor: pointer;
   }
 }
 
