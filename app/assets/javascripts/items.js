@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load', ()=> {
-  
 
   // 画像用input要素
   const buildFileField = (index) => {
@@ -53,4 +52,5 @@ $(document).on('turbolinks:load', ()=> {
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }  
   });
+  
 });

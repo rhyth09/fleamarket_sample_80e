@@ -20,7 +20,7 @@
                   -# %p ドラッグアンドドロップ<br>または
                   %p クリックしてファイルをアップロード
 
-                = f.fields_for :images do |image|
+                = f.fields_for :images, @item.images.build do |image|
                   %div.js-file_group{data: {index: image.index}}
                     = image.file_field :src, class: "js-file"
                 
