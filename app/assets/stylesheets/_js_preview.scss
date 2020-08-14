@@ -1,0 +1,44 @@
+#image-box {
+  margin-top: 5px;
+  
+  #previews {
+    display: flex;
+    .preview-image {
+      margin: 0 5px;
+    }
+  }
+}
+
+
+.preview {
+  width: 120px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & > img {
+    margin-bottom: 5px;
+  }
+  .img-dele-btn {
+    border: 1px solid #3ccace;
+    border-radius: 3px;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    line-height: 23px;
+    cursor: pointer;
+  }
+  .fa-camera {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+.js-file_group {
+  font-size: 10px;
+  
+  .js-file {
+    display: none;
+  }
+}

@@ -78,3 +78,7 @@ gem 'rails-i18n', '~> 6.0.0'
 
 gem 'rspec-rails', '~> 4.0.0.beta2'
 gem 'factory_bot_rails'
+
+gem 'jquery-rails'
+gem 'font-awesome-sass'
+
