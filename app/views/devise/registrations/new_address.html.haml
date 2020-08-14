@@ -13,16 +13,16 @@
               必須
             %br/
             .Field__MultiInputBox
-              = f.text_field :send_first_name, autocomplete: "true", placeholder: "例)山田", class: "Field__InputBoxHalf"
-              = f.text_field :send_last_name, autocomplete: "true", placeholder: "例)太郎", class: "Field__InputBoxHalf"
+              = f.text_field :send_last_name, autocomplete: "true", placeholder: "例)山田", class: "Field__InputBoxHalf"
+              = f.text_field :send_first_name, autocomplete: "true", placeholder: "例)太郎", class: "Field__InputBoxHalf"
           .Field
             = f.label :送付先氏名カナ（全角）
             %span.RequiredItem
               必須
             %br/
             .Field__MultiInputBox
-              = f.text_field :send_first_name_kana, autocomplete: "true", placeholder: "例)ヤマダ", class: "Field__InputBoxHalf"
-              = f.text_field :send_last_name_kana, autocomplete: "true", placeholder: "例)タロウ", class: "Field__InputBoxHalf"
+              = f.text_field :send_last_name_kana, autocomplete: "true", placeholder: "例)ヤマダ", class: "Field__InputBoxHalf"
+              = f.text_field :send_first_name_kana, autocomplete: "true", placeholder: "例)タロウ", class: "Field__InputBoxHalf"
           .Field
             = f.label :郵便番号
             %span.RequiredItem
