@@ -14,6 +14,7 @@ class Item < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :postage_id, presence: true
   validates :shipping_date_id, presence: true
+  validates :seller_id, presence: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
