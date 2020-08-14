@@ -113,16 +113,22 @@
               .form--caution {
                 @include form-caution;
               }
-              .select--wrap{
-                @include select-wrap;
-                &__box{
-                  @include select-wrap-box;
-                }
+            }
+            .select--wrap{
+              @include select-wrap;
+              &__box1{
+                @include select-wrap-box;
+              }
+              &__box2{
+                @include select-wrap-box;
+              }
                 .fa-angle-down {
                   position: absolute;
                   @include angle-down;
                 }
-              }
+              &__box3{
+                @include select-wrap-box;
+              }  
             }
           }
           &__brand {

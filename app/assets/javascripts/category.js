@@ -7,8 +7,8 @@ $(function(){
   // 子カテゴリーの表示作成
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<div class='select--wrap__added' id= 'children_wrapper'>
-                        <select class="select--wrap__box" id="child_category" name="category_id">
+    childSelectHtml = `<div class='select--wrap' id= 'children_wrapper'>
+                        <select class='select--wrap__box1' id="child_category" name="category_id">
                           <option value="---" data-category="---">---</option>
                           ${insertHTML}
                         <select>
@@ -19,8 +19,8 @@ $(function(){
   // 孫カテゴリーの表示作成
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
-    grandchildSelectHtml = `<div class='class='select--wrap__added' id= 'grandchildren_wrapper'>
-                              <select class="select--wrap__box" id="grandchild_category" name="category_id">
+    grandchildSelectHtml = `<div class='class='select--wrap' id= 'grandchildren_wrapper'>
+                              <select class='select--wrap__box1' id="grandchild_category" name="category_id">
                                 <option value="---" data-category="---">---</option>
                                 ${insertHTML}
                               </select>
