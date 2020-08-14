@@ -68,6 +68,7 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'ancestry'
 gem 'active_hash'
 gem 'payjp'
+gem 'devise'
 
 gem 'carrierwave'
 gem 'mini_magick'
@@ -79,5 +80,5 @@ gem 'rspec-rails', '~> 4.0.0.beta2'
 gem 'factory_bot_rails'
 
 gem 'jquery-rails'
-
 gem 'font-awesome-sass'
+
