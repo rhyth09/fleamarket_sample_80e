@@ -38,6 +38,8 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -75,9 +77,6 @@ gem 'mini_magick'
 gem 'fog-aws'
 
 gem 'rails-i18n', '~> 6.0.0'
-
-gem 'rspec-rails', '~> 4.0.0.beta2'
-gem 'factory_bot_rails'
 
 gem 'jquery-rails'
 gem 'font-awesome-sass'
