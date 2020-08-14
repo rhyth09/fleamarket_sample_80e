@@ -67,15 +67,19 @@
             }
             &__link1 {
               color:#3CCACE;
+              text-decoration: none;
             }
             &__link2 {
               color:#3CCACE;
+              text-decoration: none;
             }
             &__link3 {
               color:#3CCACE;
+              text-decoration: none;
             }
             &__link4 {
               color:#3CCACE;
+              text-decoration: none;
             }
           }
         }
@@ -110,6 +114,7 @@
     margin-top: 33px;
     &__link{
       color:#333333;
+      text-decoration: none;
     }
   }
 }
@@ -157,9 +162,105 @@
 }
 
 .links{
+  // background-color: red;
+  width: 700px;
+  height: 24px;
+  margin-top:15px;
+  margin-right:auto;
+  margin-bottom:15px;
+  margin-left:auto;
+  display: flex;
+  justify-content: space-between;
   &__before{
-    &__Btn{
+    &__icon{
+      width: 5.72px;
+      height: 16px;
       color:#3CCACE;
     }
+    &__Btn{
+      color:#3CCACE;
+      text-decoration: none;
+    }
   }
+  &__after{
+    &__icon{
+      width: 5.72px;
+      height: 16px;
+      color:#3CCACE;
+    }
+    &__Btn{
+      color:#3CCACE;
+      text-decoration: none;
+    }
+  }
+}
+
+.relatedItems{
+  // background-color: red;
+  width: 700px;
+  height: 328px;
+  margin-top:15px;
+  margin-right:auto;
+  margin-bottom:15px;
+  margin-left:auto;
+  &__Btn{
+    width: 700px;
+    height: 33px;
+    margin: 24px 0px 8px;
+    color:#3CCACE;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+  }
+  
+  // .productLists{
+  //   .productList{
+  //     width: 233.33px;
+  //     height: 277px;
+  //     margin: 0;
+  //     // background-color: #FFFFFF;
+  //     &__img{
+  //       width: 220px;
+  //       height: 150px;
+  //       background-color: #FFFFFF;
+  //     }
+  //     &__body{
+  //       background-color: #FFFFFF;
+  //       width: 233.33px;
+  //       height: 95px;
+  //       padding: 16px;
+  //       margin: 0;
+  //       &__name{
+  //         // background-color: yellow;
+  //         width: 201.33px;
+  //         height: 24px;
+  //         font-size: 16px;
+  //       }
+  //       &__details{
+  //         &__kakaku{
+  //           width: 201.33px;
+  //           height: 24px;
+  //           display: flex;
+  //           justify-content: space-between;
+  //           &__yen{
+  //             width: 60.5px;
+  //             height: 24px;
+  //             text-align: left;
+  //           }
+  //           &__icon{
+  //             width: 28.2px;
+  //             height: 18px;
+  //             text-align: right;
+  //             // text-align: -webkit-match-
+  //           }
+  //         }
+  //         &__zei{
+  //           width: 201.33px;
+  //           height: 15px;
+  //           font-size: 10px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
