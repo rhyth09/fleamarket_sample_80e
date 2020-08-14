@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
+
   def index
     @items = Item.includes(:images)
   end
@@ -6,7 +8,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    @category_parent_array = Category.where(ancestry: nil)
   end
   
   def get_category_children
@@ -30,6 +31,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :price, :explain, :size, :prefecture_id, :brand, :shipping_date_id, :item_status_id, :postage_id, :category_id, images_attributes: [:src])
+  end
+
+  def set_category  
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
   def buy
