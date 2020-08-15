@@ -77,7 +77,7 @@ $(function(){
         alert('カテゴリー取得に失敗しました');
       })
     }else{
-      $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
+      $('#grandchildren_wrapper').remove();
     }
   });
 });
