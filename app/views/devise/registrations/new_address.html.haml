@@ -34,7 +34,7 @@
             %span.RequiredItem
               必須
             %br/
-            = f.text_field :prefecture_id, autofocus: true, class: "Field__InputBox"
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}, {class: "Field__InputBox"}
           .Field
             = f.label :市区町村
             %span.RequiredItem
