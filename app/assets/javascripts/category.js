@@ -12,7 +12,7 @@ $(function(){
                           <option value="">---</option>
                           ${insertHTML}
                         <select>
-                        <i class='fa-angle-down'></i>
+                       
                       </div>`;
     $('.product-details__form__category').append(childSelectHtml);
   }
@@ -24,7 +24,7 @@ $(function(){
                                 <option value="">---</option>
                                 ${insertHTML}
                               <select>
-                              <i class='fa-angle-down'></i>
+                              
                             </div>`;
     $('.product-details__form__category').append(grandchildSelectHtml);
   }
