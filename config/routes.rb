@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index,]
-  resources :users, only: :show
+  resources :users, only: [:show]
+  resources :cards, only: [:new]
 
 end
