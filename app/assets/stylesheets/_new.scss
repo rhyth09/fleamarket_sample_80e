@@ -125,7 +125,6 @@
               }
                 .fa-angle-down {
                   position: absolute;
-                  @include angle-down;
                 }
               &__box3{
                 @include select-wrap-box;
