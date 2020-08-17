@@ -23,7 +23,6 @@ Rails.application.routes.draw do
       get 'update_done'
     end
   end
-
   resources :categories, only: [:index,]
   resources :users, only: [:show]
   resources :cards, only: [:new]
