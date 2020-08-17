@@ -1,0 +1,49 @@
+.card
+  .card__main
+    .card__main__title
+      %h2 クレジットカード情報入力
+    %form{action:""}
+      .card__main__number
+        .card__main__number__text カード番号
+        %input{type:"text", name:"card-number" ,placeholder:"半角数字のみ/16桁" ,maxlength:16, class:"card-number"}
+        %br
+      .card__main__name
+        .card__main__name__text カード名義
+        %input{type:"text",name:"name",class:"card-name"}
+        %br
+      .card__main__expiration-date
+        .card__main__expiration-date__text 有効期限(月/年)
+        %select{name:"expiration_month",type:"text",required:"", class:"month"}
+          %option{value: ""}--
+          %option{value: "1"}01
+          %option{value: "2"}02
+          %option{value: "3"}03
+          %option{value: "4"}04
+          %option{value: "5"}05
+          %option{value: "6"}06
+          %option{value: "7"}07
+          %option{value: "8"}08
+          %option{value: "9"}09
+          %option{value: "10"}10
+          %option{value: "11"}11
+          %option{value: "12"}12
+        %select{name:"expiration_year",type:"text",required:"",class:"year"}
+          %option{value: ""}--
+          %option{value: "20"}20
+          %option{value: "21"}21
+          %option{value: "22"}22
+          %option{value: "23"}23
+          %option{value: "24"}24
+          %option{value: "25"}25
+          %option{value: "26"}26
+          %option{value: "27"}27
+          %option{value: "28"}28
+          %option{value: "29"}29
+          %option{value: "30"}30
+          %option{value: "31"}31    
+      .card__main__security-code
+        .card__main__security-code__text セキュリティコード
+        %input{type:"text", name:"security-number",placeholder:"半角数字のみ",maxlength:4, class:"number"}
+        %br
+      .card__main__submit
+        %input{type:"submit",value:"登録", class: "submit-btn"}
