@@ -1,0 +1,33 @@
+.footer {
+  height: 350px;
+  width: 100%;
+  padding: 50px 0px;
+  background-color: #333333;
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .footer-content{
+    padding: 0px 120px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    color: #ffffff;
+    ul.left-content,.center-content,.right-content {
+      h2{
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .footer-logo {
+    margin-left: calc(50% - 120px);
+  }
+  .footer-copyright {
+    margin-left: calc(50% - 70px);
+    color: #ffffff;
+  }
+}

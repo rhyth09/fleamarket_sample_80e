@@ -1,10 +1,19 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "reset";
+@import "user";
 @import "error_message";
 @import "new";
+@import "js_preview";
 @import "items_index/items";
 @import "footer_invitation";
+
 @import "buy";
 @import "categories";
+@import "users";
+@import "header";
+@import "footer";
+
 
 input:focus, textarea:focus, select:focus {
   background-color: #fff;
