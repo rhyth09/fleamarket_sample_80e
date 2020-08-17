@@ -1,12 +1,12 @@
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.id}">${category.name}</option>`;
+    let html = `<option value="${category.id}">${category.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
   function appendChidrenBox(insertHTML){
-    var childSelectHtml = '';
+    let childSelectHtml = '';
     childSelectHtml = `<div class='select--wrap' id= 'children_wrapper'>
                         <select id="child__category" name="item[category_id]" class="select--wrap__box1">
                           <option value="">---</option>
@@ -18,7 +18,7 @@ $(function(){
   }
   // 孫カテゴリーの表示作成
   function appendGrandchildrenBox(insertHTML){
-    var grandchildSelectHtml = '';
+    let grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='select--wrap' id= 'grandchildren_wrapper'>
                               <select id="grandchild__category" name="item[category_id]" class="select--wrap__box1">
                                 <option value="">---</option>
@@ -30,7 +30,7 @@ $(function(){
   }
   // 親カテゴリー選択後のイベント
   $('#item_category_id').on('change', function(){
-    var parentId = document.getElementById('item_category_id').value; 
+    let parentId = document.getElementById('item_category_id').value; 
     if (parentId != "---"){ 
       $.ajax({
         url: '/items/get_category_children/',
@@ -41,7 +41,7 @@ $(function(){
       .done(function(children){
         $('#children_wrapper').remove(); 
         $('#grandchildren_wrapper').remove();
-        var insertHTML = '';
+        let insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendOption(child);
         });
@@ -57,7 +57,7 @@ $(function(){
   });
   // 子カテゴリー選択後のイベント
   $('.product-details__form__category').on('change', '#child__category', function(){
-    var childId = document.getElementById('child__category').value;
+    let childId = document.getElementById('child__category').value;
     if(childId != "" && childId != 46 && childId != 74 && childId != 134 && childId != 142 && childId != 147 && childId != 150 && childId != 158){
       $.ajax({
         url: '/items/get_category_grandchildren',
@@ -67,7 +67,7 @@ $(function(){
       })
       .done(function(grandchildren){
         $('#grandchildren_wrapper').remove();
-        var insertHTML = '';
+        let insertHTML = '';
         grandchildren.forEach(function(grandchild){
           insertHTML += appendOption(grandchild);
         });
