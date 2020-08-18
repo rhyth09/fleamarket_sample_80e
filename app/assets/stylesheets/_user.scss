@@ -113,6 +113,9 @@ $furima-color: #3ccace;
     font-size: 16px;
     font-weight: bold;
   }
+  p {
+    font-size: 14px
+  }
   label {
     font-weight: 600;
   }
@@ -139,7 +142,7 @@ $furima-color: #3ccace;
     }
   }
   &__InputBoxHalf {
-    width: calc(50% - 6px);
+    width: 171.5px;
     margin-right: 8px;
     padding: 10px 15px;
     @include form-box;
@@ -153,6 +156,7 @@ $furima-color: #3ccace;
 
 .FormInfoText {
   margin-top: 8px;
+  font-size: 14px;
   color: #888;
 }
 
@@ -184,5 +188,14 @@ $furima-color: #3ccace;
     &:hover {
       @include hover-underline
     }
+  }
+}
+
+.alert.alert-warning {
+  padding: 10px 0;
+  li {
+    font-size: 14px;
+    text-align: left;
+    color: #ff0211;
   }
 }
