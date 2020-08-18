@@ -6,61 +6,66 @@
     padding: 40px;
     .contentright{
       .topcontent{
-        .itembox{
-          background-color: #FFFFFF;
-          width: 700px;
-          margin: 0 auto;
-          height: 1230px;
-          padding: 24px 40px 40px;
-          &__name{
-            text-align: center;
-            font-weight: bold;
-            font-size: 24px;
-            width: 620px;
-            height: 36px;
-          }
-          .itembox__body{
-            text-align: center;
-          }
-          .itembox__price{
-            text-align: center;
-            font-weight: bold;
-            font-size: 50px;
-            &__detail{
-            text-align: center;
-            font-weight: normal;
-            font-size: 24px;
-            }
-          }
-          .itemDetail{
-            margin: 0px 0px 30px;
-          }
-          .itemTable{
-            width: 620px;
-            display: flex;
-            justify-content:center;
-            table th {
-              text-align: center;
-              width: 152px;
-              margin: 0;
-              padding: 8px;
-              background-color: #EEEEEE;
-              border: solid 1px black;
-            }
-            table td {
-              width: 467px;
-              border: solid 1px black;
-              padding: 15px;
-            }
-            table td a {
-              color: #3ccace;
-              text-decoration: none;
-            }
-          }
-        }
       }
     }
   } 
+}
+
+.itembox{
+  background-color: #FFFFFF;
+  width: 700px;
+  margin: 0 auto;
+  height: 1230px;
+  padding: 24px 40px 40px;
+  &__name{
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    width: 620px;
+    height: 36px;
+  }
+}
+
+.itembox__body{
+  text-align: center;
+}
+
+.itembox__price{
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  &__detail{
+  text-align: center;
+  font-weight: normal;
+  font-size: 24px;
+  }
+}
+
+.itemDetail{
+  margin: 0px 0px 30px;
+}
+
+.itemTable{
+  width: 620px;
+  display: flex;
+  justify-content:center;
+  table th {
+    text-align: center;
+    width: 152px;
+    margin: 0;
+    padding: 8px;
+    background-color: #EEEEEE;
+    border: solid 1px black;
+  }
+  table td {
+    width: 467px;
+    border: solid 1px black;
+    padding: 15px;
+  }
+  table td a {
+    color: #3ccace;
+    text-decoration: none;
+  }
 }
 
 .optionalBtn{
