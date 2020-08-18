@@ -1,0 +1,122 @@
+.buy-main{
+  background-color: #EEEEEE;
+} 
+
+.buy-item-container{
+  width: 700px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.buy-item-head{
+  font-size: 22px;
+  padding: 32px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
+.buy-content{
+  border-top: 1px solid #f5f5f5;
+  padding: 32px 16px;
+  &-inner{
+    max-width: 343px;
+    margin: 0 auto;
+  }
+}
+
+//商品画像
+.buy-item{
+  width: 60%;
+  margin: 0 auto;
+  &-box{
+    display: flex;
+    justify-content: space-between;
+  }
+  &-name {
+    text-align: left;
+  }
+  &-detail {
+    width: 80%;
+    text-align: right;
+  }
+  &-image{
+    height: 80px;
+    width: 80px;
+    min-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > img {
+      width: 220px;
+      height: 120px;
+      object-fit: contain;
+      vertical-align: bottom;
+    }
+  }
+}
+  //商品名
+.buy-item-table{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10px;
+  .item-shipping-fee{
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  .item-buy-money{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 1px;
+  }
+}
+
+.buy-user-info{
+  padding: 32px 0;
+  text-align: left;
+  margin: 0 auto;
+  width: 60%;
+
+}
+
+//支払い項目
+.buy-price-table{
+  display: flex;
+  position: relative;
+  .buy-price-cell{
+    font-size: 18px;
+  }
+  .buy-price-money{
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+  }
+}
+
+
+.creditcard{
+  color:#87cefa;
+  text-decoration: none;
+
+}
+.address{
+  color:#87cefa;
+  text-decoration: none;
+}
+
+//購入ボタン
+.btn--lightblue{
+  width: 100%;
+  background: #3ccace;
+  cursor: hand;
+  height: 48px;
+  line-height: 48px;
+  display: block;
+  margin: 16px 0 0;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+

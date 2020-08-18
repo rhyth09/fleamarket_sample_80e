@@ -1,0 +1,356 @@
+@import "mixin";
+.exhibit__page {
+  width: 100%;
+  background-color: #EEEEEE;
+  &__main{
+    background-color: #EEEEEE;
+    width: 700px;
+    display: block;
+    margin: 0 auto;
+    &__contents {
+      background-color:white;
+      width: 100%;
+      margin: 0 auto;
+      &__message {
+        font-size: 22px;
+        display: block;
+        padding: 32px 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .form-content {
+        border-top: 1px solid #EEEEEE;
+        .img-form {
+          padding:40px;
+          border-bottom: 1px solid #EEEEEE;
+          .img__upload__text {
+            font-size:16px;
+            color:#333;
+            .form--caution {
+              @include form-caution;
+            }
+          }
+          .img__upload__comment {
+            font-size: 12px;
+            margin:8px 0 0;
+          }
+          .dropbox {
+            &__img {
+              flex-grow: 2;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              text-align: center;
+              border: 1px dashed lightgray;
+              height: 160px;
+              background: #f5f5f5;
+              p {
+                font-size: 13px;
+              }
+              input[type="file"] {
+                display: none;
+              }
+            }
+          }
+        }
+      }  // 商品名
+      .sell--content{
+        padding:40px;
+        border-bottom: 1px solid #EEEEEE;
+        &__name {
+          &__name {
+            font-size:16px;
+            color:#333;
+            .form--caution {
+              @include form-caution;
+            }
+          }
+        }
+        .Form__textContent{
+          width:100%;
+          height:50px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          margin-top: 10px;
+          padding-top: 3px;
+          padding-left: 16px;
+        }
+        &__description {
+          margin-top:40px;
+          &__description {
+            font-size:16px;
+            color:#333;
+            .form--caution {
+              @include form-caution;
+            }
+          }
+          .Form__textareaContent {
+            width:100%;
+            height:150px;
+            border: 1px solid #ccc;
+            resize: none;
+            margin-top: 10px;
+            padding-top: 7px;
+            padding-left: 16px;
+          }
+        }
+      }
+      // 商品詳細
+      .product-details{
+        height: 100%;
+        padding:40px;
+        border-bottom: 1px solid #EEEEEE;
+        &__name {
+          font-size: 14px;
+          color: #888;
+          display: inline;
+        }
+        &__form {
+          width: 100%;
+          &__category {
+            &__name {
+              margin-top:30px;
+              .form--caution {
+                @include form-caution;
+              }
+            }
+            .select--wrap{
+              @include select-wrap;
+              &__box1{
+                @include select-wrap-box;
+              }
+              &__box2{
+                @include select-wrap-box;
+              }
+                .fa-angle-down {
+                  position: absolute;
+                }
+              &__box3{
+                @include select-wrap-box;
+              }  
+            }
+          }
+          &__brand {
+            margin-top:40px;
+            &__name {
+              .form--caution {
+                display: inline-block;
+                background-color: #aaa;
+                color: white;
+                font-size: 10px;
+                margin-top: 4px;
+                margin-left:8px;
+                padding:2px 4px;
+                border-radius: 2px;
+                vertical-align: top;
+                font-weight: bold;
+              }
+            }
+            .select--wrap{
+              @include select-wrap;
+              &__box{
+                width: 100%;
+                height: 48px;
+                border: 1px solid #ccc;
+                background: 0;
+                padding: 0 16px;
+              }
+            }
+          }
+          
+          &__status {
+            margin-top:40px;
+            &__name {
+              .form--caution {
+                @include form-caution;
+              }
+            }
+            .select--wrap{
+              @include select-wrap;
+              &__box{
+                @include select-wrap-box;
+              }
+            }
+          }
+        }
+      }
+      // 配送について
+      .delivery-form {
+        padding:40px;
+        border-bottom: 1px solid #EEEEEE;
+        &__about__delivery {
+          font-size: 14px;
+          color: #888;
+          display:inline;
+        }
+        .form--question{
+          @include form-question;
+        }
+        &__box {
+          width: 100%;
+          &__top {
+            .delivery-form__box__top__name {
+              .form--caution {
+                @include form-caution;
+              }
+            }
+            .select--wrap{
+              @include select-wrap;
+              &__box{
+                @include select-wrap-box;
+              }
+            }
+          }
+          &__middle {
+            .delivery-form__box__top__name {
+              margin-top: 20px;
+              .form--caution {
+                @include form-caution;
+              }
+            }
+            .select--wrap{
+              @include select-wrap;
+              &__box{
+                @include select-wrap-box;
+              }
+            }
+          }
+          &__bottom {
+            .delivery-form__box__top__name {
+              margin-top: 10px;
+              .form--caution {
+                @include form-caution;
+              }
+            }
+            .select--wrap{
+              @include select-wrap;
+              &__box{
+                @include select-wrap-box;
+              }
+            }
+          }
+        }
+      }
+      // 販売価格
+      .product-price {
+        height: 260px; 
+        padding:40px;
+        border-bottom: 1px solid #EEEEEE;
+        &__name{
+          font-size: 14px;
+          color: #888;
+          display:inline;
+        }
+        .form--question{
+          @include form-question;
+          margin-left: 5px;
+        }
+        &__form__name {
+          font-size:19px;
+          color:black;
+          display:inline;
+          float: left;
+        }
+        &__form {
+          float:right;
+          width:100%;
+          &__left {
+            width:100%;
+            padding: 30px 0;
+            .form--caution {
+              @include form-caution;
+              margin-left: 20px;
+              margin-top: 6px;
+            }
+          }
+          .select--wrap {
+            // float: right;
+            width:100%;
+            display: inline;
+            margin-top: 23px;
+            @include select-wrap;
+              &__box{
+                width: 97%;
+                height: 48px;
+                border: 1px solid #ccc;
+                position: relative;
+                background: 0;
+                // -webkit-appearance: none;
+                padding: 0 40px;
+              }
+          }
+        }
+      }
+      // 出品ボタン
+      .submit-button {
+        padding:40px;
+        .btn--lightblue {
+          margin: 40px 0 0;
+          background: #3ccace;
+          border: 1px solid #3ccace;
+          color: #fff;
+          display: block;
+          width: 50%;
+          line-height: 48px;
+          font-size: 14px;
+          transition: all ease-out .3s;
+          text-align: center;
+          height: 46px;
+          margin: 0 auto;
+          cursor: pointer;
+        }
+        .btn--bule {
+          display: block;
+          line-height: 48px;
+          font-size: 14px;
+          text-align: center;
+          text-decoration: none;
+          margin: 24px auto 0px;
+          color: #87cefa;
+        }
+        &__text {
+          font-size: 14px;
+        }
+        .submit__text{
+          color:#87cefa;
+        }
+      }
+    }
+  }
+}
+
+.exhibit-page__footer {
+  width: 100%;
+  background-color: #EEEEEE;
+  &__content {
+    width: 60%;
+    margin:0 auto; 
+    padding: 40px 0px;
+    &__main {
+      .exhibit-page__footer__lists {
+        font-size:12px;
+        .exhibit-page__footer__list {
+          display:inline-block;
+          text-align: center;
+          width: 32%;
+          color:black;
+        }
+      }
+    }
+    .exhibit-page__footer__link {
+      display:block;
+      padding-top:30px;
+      height:90px;
+      width:90px;
+      margin:0 auto;
+    }
+    .exhibit-page__footer__copyright {
+      font-size: 12px;
+      text-align: center;
+      color:black;
+      margin-top: 30px;
+      padding-right: 20px;
+    }
+  }
+}
