@@ -55,7 +55,7 @@ $(document).on('turbolinks:load', ()=> {
     }
     
     // 画像用input要素に入れるindex番号の削除と追加
-    $('#image-box').append(buildFileField(fileIndex[0]));
+    $('#image-box').append(buildFileField(fileIndex[1]));
     fileIndex.shift();
     fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
   });
