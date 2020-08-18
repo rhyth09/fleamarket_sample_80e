@@ -19,7 +19,23 @@ $(document).on('turbolinks:load', ()=> {
 
   let count = 0;
   //  画像用input要素に入れるindex番号
-  let fileIndex = [1, 2, 3, 4];
+  let fileIndex = [1, 2, 3, 4, 5, 6];
+
+  // データベースに保存されていた画像分のfileIndex番号を除外
+  let lastIndex = $('.js-file_group:last').data('index');
+  fileIndex.splice(0, lastIndex);
+  count = fileIndex[0];
+
+  // データベースに保存されていた画像の削除ボタンが押されたときの処理
+  $(document).on('click', '.data-dele-btn', function() {
+    // 削除ボタンの番号の取得
+    let targetIndex = $(this).attr('id').slice(11);
+    // 削除ボタンを押された画像と同じ番号を持つチェックボックスの取得
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    if (hiddenCheck) {
+      hiddenCheck.prop('checked', true);
+    }
+  });
 
 
   // 画像用input要素に入力があったときの処理
@@ -45,7 +61,7 @@ $(document).on('turbolinks:load', ()=> {
 
   // 削除ボタンが押されたときの処理
   $(document).on('click', '.img-dele-btn', function() {
-    // 削除ボタンのidの取得
+    // 削除ボタンの番号の取得
     let id = $(this).attr('id').slice(11);
     // 削除ボタンが押された画像の、input要素部分の削除
     $(`#item_images_attributes_${id}_src`).parent().remove();
