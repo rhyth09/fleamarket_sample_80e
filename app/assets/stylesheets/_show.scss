@@ -1,12 +1,12 @@
 .sai__main {
-  &__showMain{
+  .showMain{
     background-color: #EEEEEE;
     width:100%;
     height: 2020px;
     padding: 40px;
-    &__contentright{
-      &__topcontent{
-        &__itembox{
+    .contentright{
+      .topcontent{
+        .itembox{
           background-color: #FFFFFF;
           width: 700px;
           margin: 0 auto;
@@ -52,20 +52,8 @@
               border: solid 1px black;
               padding: 15px;
             }
-            &__link1 {
-              color:#3CCACE;
-              text-decoration: none;
-            }
-            &__link2 {
-              color:#3CCACE;
-              text-decoration: none;
-            }
-            &__link3 {
-              color:#3CCACE;
-              text-decoration: none;
-            }
-            &__link4 {
-              color:#3CCACE;
+            table td a {
+              color: #3ccace;
               text-decoration: none;
             }
           }
@@ -75,7 +63,7 @@
   } 
 }
 
-.optionalArea{
+.optionalBtn{
   width: 620px;
   height: 76px;
   display: flex;
@@ -115,6 +103,7 @@
   margin-left:auto;
   padding: 24px;
   &__Form{
+    resize: none;
     width: 652px;
     height: 104px;
     padding: 10px;
@@ -185,6 +174,7 @@
   &__Btn{
     width: 700px;
     height: 33px;
+    // height: 33px;
     margin: 24px 0px 8px;
     color:#3CCACE;
     font-weight: bold;
@@ -194,18 +184,20 @@
   
   .productLists{
     .productList{
+      background-color: #fff;
+      text-align: center;
       width: 233.33px;
       height: 245px;
       position: relative;
       & a {
         position: absolute;
         top: 0;
-        bottom: 0;
+        left: 0;
         width: 100%;
         height: 100%;
       }
       &__img{
-        width: 220px;
+        width: 233.33px;
         height: 150px;
         background-color: #fff;
         vertical-align: bottom;
@@ -232,7 +224,6 @@
               height: 24px;
               font-weight: bold;
             }
-            &__icon {}
           }
           &__zei{
             width: 201.33px;
