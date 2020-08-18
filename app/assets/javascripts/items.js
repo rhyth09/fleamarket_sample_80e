@@ -19,12 +19,13 @@ $(document).on('turbolinks:load', ()=> {
 
   let count = 0;
   //  画像用input要素に入れるindex番号
-  let fileIndex = [1, 2, 3, 4, 5, 6];
+  let fileIndex = [0, 1, 2, 3, 4, 5, 6];
 
   // データベースに保存されていた画像分のfileIndex番号を除外
   let lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
   count = fileIndex[0];
+  $('label').prop('for', `item_images_attributes_${count}_src`);
 
   // データベースに保存されていた画像の削除ボタンが押されたときの処理
   $(document).on('click', '.data-dele-btn', function() {
