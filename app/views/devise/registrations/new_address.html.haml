@@ -5,7 +5,6 @@
       お届け先情報の登録
     .SignUpForm
       = form_with model: @address, local: true do |f|
-        = render "devise/shared/error_messages", resource: @address
         .FormContent
           .Field
             = f.label :送付先氏名（全角）
@@ -15,6 +14,8 @@
             .Field__MultiInputBox
               = f.text_field :send_last_name, autocomplete: "true", placeholder: "例)山田", class: "Field__InputBoxHalf"
               = f.text_field :send_first_name, autocomplete: "true", placeholder: "例)太郎", class: "Field__InputBoxHalf"
+            = render "devise/shared/error_messages", model: @address, attribute: :send_last_name
+            = render "devise/shared/error_messages", model: @address, attribute: :send_first_name
           .Field
             = f.label :送付先氏名カナ（全角）
             %span.RequiredItem
@@ -23,42 +24,50 @@
             .Field__MultiInputBox
               = f.text_field :send_last_name_kana, autocomplete: "true", placeholder: "例)ヤマダ", class: "Field__InputBoxHalf"
               = f.text_field :send_first_name_kana, autocomplete: "true", placeholder: "例)タロウ", class: "Field__InputBoxHalf"
+            = render "devise/shared/error_messages", model: @address, attribute: :send_last_name_kana
+            = render "devise/shared/error_messages", model: @address, attribute: :send_first_name_kana
           .Field
             = f.label :郵便番号
             %span.RequiredItem
               必須
             %br/
             = f.text_field :postal_code, autofocus: true, placeholder: "例)1234567", class: "Field__InputBox"
+            = render "devise/shared/error_messages", model: @address, attribute: :postal_code
           .Field
             = f.label :都道府県
             %span.RequiredItem
               必須
             %br/
             = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "選択してください"}, {class: "Field__InputBox"}
+            = render "devise/shared/error_messages", model: @address, attribute: :prefecture_id
           .Field
             = f.label :市区町村
             %span.RequiredItem
               必須
             %br/
             = f.text_field :city, autofocus: true, placeholder: "例)横浜市緑区", class: "Field__InputBox"
+            = render "devise/shared/error_messages", model: @address, attribute: :city
           .Field
             = f.label :番地
             %span.RequiredItem
               必須
             %br/
             = f.text_field :address, autofocus: true, placeholder: "例)青山1-1-1", class: "Field__InputBox"
+            = render "devise/shared/error_messages", model: @address, attribute: :address
           .Field
             = f.label :建物名と部屋番号
             %span.AnyItem
               任意
             %br/
             = f.text_field :build_name, autofocus: true, placeholder: "例)柳ビル103", class: "Field__InputBox"
+            = render "devise/shared/error_messages", model: @address, attribute: :build_name
           .Field
             = f.label :お届け先の電話番号
             %span.AnyItem
               任意
             %br/
             = f.text_field :phone_number, autofocus: true, placeholder: "例)09012345678", class: "Field__InputBox"
+            = render "devise/shared/error_messages", model: @address, attribute: :phone_number
           .Actions
             = f.submit "新規登録", class: "ActionBtn"
   = render partial: 'devise/shared/footer'
