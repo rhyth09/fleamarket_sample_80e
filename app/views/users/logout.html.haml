@@ -1,6 +1,11 @@
+.wrapper
+  = render partial: 'items/header'
+
 %main
   .logout-page
     .logout-page__content
       .logout-page__form
         .logout-page__btn
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-default"
+
+= render partial: 'items/footer'
