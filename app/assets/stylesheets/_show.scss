@@ -213,54 +213,253 @@
     text-decoration: none;
   }
   
-  // .productLists{
-  //   .productList{
-  //     width: 233.33px;
-  //     height: 277px;
-  //     margin: 0;
-  //     // background-color: #FFFFFF;
-  //     &__img{
-  //       width: 220px;
-  //       height: 150px;
-  //       background-color: #FFFFFF;
-  //     }
-  //     &__body{
-  //       background-color: #FFFFFF;
-  //       width: 233.33px;
-  //       height: 95px;
-  //       padding: 16px;
-  //       margin: 0;
-  //       &__name{
-  //         // background-color: yellow;
-  //         width: 201.33px;
-  //         height: 24px;
-  //         font-size: 16px;
-  //       }
-  //       &__details{
-  //         &__kakaku{
-  //           width: 201.33px;
-  //           height: 24px;
-  //           display: flex;
-  //           justify-content: space-between;
-  //           &__yen{
-  //             width: 60.5px;
-  //             height: 24px;
-  //             text-align: left;
-  //           }
-  //           &__icon{
-  //             width: 28.2px;
-  //             height: 18px;
-  //             text-align: right;
-  //             // text-align: -webkit-match-
-  //           }
-  //         }
-  //         &__zei{
-  //           width: 201.33px;
-  //           height: 15px;
-  //           font-size: 10px;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+  .productLists{
+    .productList{
+      // background-color: #fff;
+      width: 233.33px;
+      height: 245px;
+      // margin: 0;
+      position: relative;
+      // z-index: 1;
+
+      & a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      &__img{
+        width: 220px;
+        height: 150px;
+        background-color: #fff;
+        // background-color: #FFFFFF;
+        // object-fit: contain;
+        vertical-align: bottom;
+      }
+      &__body{
+        background-color: #fff;
+        // background-color: yellow;
+        width: 233.33px;
+        height: 95px;
+        padding: 16px;
+        margin: 0;
+        &__name{
+          width: 201.33px;
+          height: 24px;
+          font-size: 16px;
+        }
+        &__details{
+          &__kakaku{
+            width: 201.33px;
+            height: 24px;
+            display: flex;
+            justify-content: space-between;
+            &__yen{
+              width: 60.5px;
+              height: 24px;
+              font-weight: bold;
+            }
+            &__icon {}
+          }
+          &__zei{
+            width: 201.33px;
+            height: 15px;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
 }
+
+
+// .productList{
+//   background-color: #fff;
+//   width: 220px;
+//   height: 250px;
+//   // margin: 0;
+//   position: relative;
+//   // z-index: 1;
+
+//   & a {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     width: 100%;
+//     height: 100%;
+//   }
+
+//   &__image{
+//     width: 220px;
+//     height: 150px;
+//     // background-color: #FFFFFF;
+//     object-fit: contain;
+//     vertical-align: bottom;
+//   }
+// }
+
+// .productList a {
+//   // background-color: red;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   // text-indent:-999px;
+//   // z-index: 2;
+//   // display: block;
+// }
+
+// .productList {
+//   background-color: $white;
+//   width: 220px;
+//   height: 250px;
+//   position: relative;
+//   z-index: 1;
+//   & > img {
+//     width: 220px;
+//     height: 150px;
+//     object-fit: contain;
+//     vertical-align: bottom;
+//   }
+//   & > div {
+//     padding: 16px;
+//     text-align: left;
+//   }
+// }
+
+// .Ren-link a {
+  // background-color: red;
+  // display: block;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // width: 233.33px;
+  // height: 95px;
+  // width: 100%;
+  // height: 100%;
+  // text-indent: -100px;
+  // z-index: 2;
+// }
+
+
+// .productLists{
+//   .productList{
+//     // width: 233.33px;
+//     // height: 277px;
+//     margin: 0;
+//     // background-color: #FFFFFF;
+//     position: relative;
+//     // z-index: 1;
+
+
+//     &__image{
+//       // zoom: 1.5;
+//       width: 220px;
+//       height: 150px;
+//       background-color: #FFFFFF;
+//       vertical-align: bottom;
+//     }
+//     &__body{
+//       // position: relative;
+//       // background-color: #FFFFFF;
+//       background-color: yellow;
+//       width: 233.33px;
+//       height: 95px;
+//       padding: 16px;
+//       margin: 0;
+//       &__name{
+//         // background-color: yellow;
+//         width: 201.33px;
+//         height: 24px;
+//         font-size: 16px;
+//       }
+//       &__details{
+//         &__kakaku{
+//           width: 201.33px;
+//           height: 24px;
+//           display: flex;
+//           justify-content: space-between;
+//           &__yen{
+//             width: 60.5px;
+//             height: 24px;
+//             font-weight: bold;
+//             // text-align: left;
+//           }
+//           &__icon:before {
+//             // font-family: FontAwesome;
+//             // font-family: "Font Awesome 5 Free";
+//             // content: "\f005";
+//             // width: 28.2px;
+//             // height: 18px;
+//             // text-align: right;
+//             // text-align: -webkit-match-
+//           }
+//         }
+//         &__zei{
+//           width: 201.33px;
+//           height: 15px;
+//           font-size: 10px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// }
+
+// .productList a {
+  // background-color: red;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // width: 35%;
+  // height: 200px;
+  // text-indent:-999px;
+  // z-index: 2;
+  // display: block;
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  // z-index: 1;
+  // pointer-events: auto;
+  // content: "";
+  // background-color: transparent;
+
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // width: 233.33px;
+  // height: 100px;
+  // width: 100%;
+  // height: 100%;
+  // text-indent: -100px;
+  // z-index: 2;
+// }
+
+
+
+// .productList {
+//   background-color: blue;
+//   width: 233.33px;
+//   height: 400px;
+//   position: relative;
+//   z-index: 1;
+//   &__image {
+//     width: 220px;
+//     height: 150px;
+//     background-color: white;
+//     object-fit: contain;
+//     vertical-align: bottom;
+//   }
+//   & > div {
+//     padding: 16px;
+//     text-align: left;
+//     background-color: yellow;
+//     z-index: 2;
+//   }
+// }
