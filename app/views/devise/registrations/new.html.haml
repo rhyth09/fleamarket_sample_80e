@@ -25,7 +25,7 @@
             %span.RequiredItem
               必須
             %br/
-            = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "Field__InputBox"
+            = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "Field__InputBox", id: "js-password"
             %p.FormInfoText
               ※ 英字と数字の両方を含めて設定してください
             = render "devise/shared/error_messages", model: @user, attribute: :password
@@ -34,9 +34,9 @@
             %span.RequiredItem
               必須
             %br/
-            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう一度入力してください", class: "Field__InputBox"
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "もう一度入力してください", class: "Field__InputBox", id: "js-password_confirmation"
           .ShowPassword
-            = f.check_box class: "ShowPassword__CheckBox"
+            = check_box_tag :passcheck, class: "ShowPassword__CheckBox"
             = f.label :パスワードを表示する, class: "ShowPassword__Text"
             = render "devise/shared/error_messages", model: @user, attribute: :password_confirmation
           .Field
