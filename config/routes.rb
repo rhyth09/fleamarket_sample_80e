@@ -25,10 +25,9 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index,]
-  resources :users, only: [:show]
   resources :cards, only: [:new]
 
-  resources :users, only: :show do
+  resources :users, only: [:show] do
     member do
       get 'logout'
     end
