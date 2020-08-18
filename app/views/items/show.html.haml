@@ -80,7 +80,6 @@
               = link_to '不適切な商品の通報', root_path, class: 'optionalBtn__link'
 
         .commentBox
-          -# %ul.commentContents
           %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
           %p.commentBox__noticeMsg
             相手のことを考え丁寧なコメントを心がけましょう。
@@ -113,55 +112,3 @@
                     = icon('fa', 'star')
                     1
                 %p.productList__body__details__zei (税込)
-
-            -# = link_to image_tag("https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", class: "productList__image"), root_path
-            -# .productList__body
-            -#   %h3.productList__body__name product1
-            -#   %div.productList__body__details
-            -#     %ul.productList__body__details__kakaku
-            -#       %li.productList__body__details__kakaku__yen 10000円
-            -#       %li.productList__body__details__kakaku__icon
-            -#         = icon('fa', 'star')
-            -#         1
-            -#     %p.productList__body__details__zei (税込)
-
-
-
-
-
-
-
-          -# .Ren__link
-          -#   = link_to 'product1', root_path, class: 'Ren__link__link1'
-          -#   -# %br
-          -#   = link_to '10000円　　　　　★１', root_path, class: 'Ren__link__link2'
-          -#   -# %br
-          -#   = link_to '(税込)', root_path, class: 'Ren__link__link3'
-
-            -# = link_to '', root_path
-            -# = image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png', alt: '商品の画像')
-            -# %div
-              -# %p 空白
-              -# %p 空白
-              -# %p 空白
-              -# %p 空白
-              -# %p 空白
-              -# %p 商品
-              -# %p 金額
-              -# %span (税込)
-
-                  -# = icon('fa', 'star')
-
-    -# .Item-link
-    -#   = link_to '', root_path
-    -#   = image_tag('material/icon/icon-03.png', alt: '商品の画像')
-    -#   %div
-    -#     %p 商品
-    -#     %p 金額
-    -#     %span (税込)
-    -#     = link_to '', root_path
-    -#         = image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png')
-    -#         %div
-    -#           %p 商品
-    -#           %p 金額
-    -#           %span (税込)
