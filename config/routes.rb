@@ -12,5 +12,10 @@ Rails.application.routes.draw do
       get 'buy'
     end
   end
-  resources :users, only: :show
+  resources :users, only: :show do
+    member do
+      get 'logout'
+    end
+  end
+
 end
