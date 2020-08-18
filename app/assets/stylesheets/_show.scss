@@ -1,15 +1,9 @@
-.sai__main {
-  .showMain{
-    background-color: #EEEEEE;
-    width:100%;
-    height: 2020px;
-    padding: 40px;
-    .contentright{
-      .topcontent{
-      }
-    }
-  } 
-}
+.showMain{
+  background-color: #EEEEEE;
+  width:100%;
+  height: 2020px;
+  padding: 40px;
+} 
 
 .itembox{
   background-color: #FFFFFF;
@@ -24,20 +18,18 @@
     width: 620px;
     height: 36px;
   }
-}
-
-.itembox__body{
-  text-align: center;
-}
-
-.itembox__price{
-  text-align: center;
-  font-weight: bold;
-  font-size: 50px;
-  &__detail{
-  text-align: center;
-  font-weight: normal;
-  font-size: 24px;
+  &__body{
+    text-align: center;
+  }
+  &__price{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    &__detail{
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+    }
   }
 }
 
@@ -73,7 +65,7 @@
   height: 76px;
   display: flex;
   justify-content: space-between;
-  .optionalBtn__likeBtn{
+  &__likeBtn{
     width: 134.66px;
     height: 38px;
     padding: 6px 10px;
@@ -83,7 +75,7 @@
     border-radius: 19px;
     margin-top: 33px;
   }
-  .optionalBtn__hata{
+  &__hata{
     font-size: 14px;
     width: 165.89px;
     height: 35px;
@@ -179,63 +171,60 @@
   &__Btn{
     width: 700px;
     height: 33px;
-    // height: 33px;
     margin: 24px 0px 8px;
     color:#3CCACE;
     font-weight: bold;
     font-size: 22px;
     text-decoration: none;
   }
-  
-  .productLists{
-    .productList{
-      background-color: #fff;
-      text-align: center;
-      width: 233.33px;
-      height: 245px;
-      position: relative;
-      & a {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      &__img{
-        width: 233.33px;
-        height: 150px;
-        background-color: #fff;
-        vertical-align: bottom;
-      }
-      &__body{
-        background-color: #fff;
-        width: 233.33px;
-        height: 95px;
-        padding: 16px;
-        margin: 0;
-        &__name{
-          width: 201.33px;
+}  
+
+.productList{
+  background-color: #fff;
+  text-align: center;
+  width: 233.33px;
+  height: 245px;
+  position: relative;
+  & a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__img{
+    width: 233.33px;
+    height: 150px;
+    background-color: #fff;
+    vertical-align: bottom;
+  }
+  &__body{
+    background-color: #fff;
+    width: 233.33px;
+    height: 95px;
+    padding: 16px;
+    margin: 0;
+    &__name{
+      width: 201.33px;
+      height: 24px;
+      font-size: 16px;
+    }
+    &__details{
+      &__kakaku{
+        width: 201.33px;
+        height: 24px;
+        display: flex;
+        justify-content: space-between;
+        &__yen{
+          width: 60.5px;
           height: 24px;
-          font-size: 16px;
+          font-weight: bold;
         }
-        &__details{
-          &__kakaku{
-            width: 201.33px;
-            height: 24px;
-            display: flex;
-            justify-content: space-between;
-            &__yen{
-              width: 60.5px;
-              height: 24px;
-              font-weight: bold;
-            }
-          }
-          &__zei{
-            width: 201.33px;
-            height: 15px;
-            font-size: 10px;
-          }
-        }
+      }
+      &__zei{
+        width: 201.33px;
+        height: 15px;
+        font-size: 10px;
       }
     }
   }
