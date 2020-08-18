@@ -14,9 +14,9 @@
 |birth_month|integer(2)|null:false|
 |birth_day|integer(2)|null:false|
 ### Association
-- has_many :buyed_items, foreign_key: "buyer_id", class_name: "items"
-- has_many :saling_items, foreign_key: "seller_id", class_name: "items"
-- has_many :sold_items, foreign_key: "seller_id", class_name: "items"
+- has_many :bought_items, foreign_key: "buyer_id", class_name: "Item"
+- has_many :sales_items, foreign_key: "seller_id", class_name: "Item"
+- has_many :sold_items, foreign_key: "seller_id", class_name: "Item"
 - has_one :credit_card, dependent: :destroy
 - has_one :address, dependent: :destroy
 
@@ -59,11 +59,11 @@
 |shipping_date_id|integer|null:false|
 |brand|text||
 |category_id|references|foreign_key:true|
-|seller_id|references|null:false, foreign_key:true|
-|buyer_id|references|foreign_key:true|
+|seller_id|integer|null:false|
+|buyer_id|integer||
 ### Association
-- belongs_to :seller, class_name: "User"
-- belongs_to :buyer, class_name: "User"
+- belongs_to :seller, class_name: "User", foreign_key: "seller_id"
+- belongs_to :buyer, class_name: "User", foreign_key: "buyer_id", optional: true
 - has_many :images, dependent: :destroy
 - belongs_to_active_hash :prefecture
 - belongs_to_active_hash :shipping_date

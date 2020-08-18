@@ -1,0 +1,85 @@
+.card {
+  display: flex;
+  justify-content: center;
+  &__main{
+    &__title{
+      width:430px;
+      display:flex;
+      justify-content: center;
+      background-color: #e0ffff;
+      border: 1px solid #c8c8c8;
+    }  
+    &__number{
+      display: flex;
+      &__text{
+        line-height: 50px;
+        width:150px;
+        border: 1px solid #c8c8c8;
+        background-color: #f0f0f0;
+      }
+      input.card-number{
+        width: 280px;
+        font-size: 20px;
+        border: 1px solid #c8c8c8;
+        padding-left: 5px;
+      }
+    }
+    &__name{
+      display: flex;
+      &__text{
+        line-height: 50px;
+        width:150px;
+        border: 1px solid #c8c8c8;
+        background-color: #f0f0f0;
+      }
+      input.card-name{
+        width: 280px;
+        font-size: 25px;
+        border: 1px solid #c8c8c8;
+        padding: 0px 5px;
+      }
+    }
+    &__expiration-date{
+      display: flex;
+      &__text{
+        width: 150px;
+        border: 1px solid #c8c8c8;
+        background-color: #f0f0f0;
+      }
+      .month{
+        width: 140px;
+        border: 1px solid #c8c8c8;
+      }
+      .year{
+        width: 140px;
+        border: 1px solid #c8c8c8;
+      }
+    
+    }
+    &__security-code{
+      display: flex;
+      &__text{
+        width:150px;
+        border: 1px solid #c8c8c8;
+        background-color: #f0f0f0;
+      }
+      .number{
+        width: 280px;
+        border: 1px solid #c8c8c8;
+        padding-left: 5px;
+      }
+    }
+
+    &__submit{
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      .submit-btn{
+        height:40px;
+        width: 100px;
+        background-color: #00bfff;
+        color: #ffffff;
+      }
+    }
+  }
+}

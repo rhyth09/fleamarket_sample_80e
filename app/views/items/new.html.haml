@@ -50,7 +50,7 @@
                 カテゴリー
                 %span.form--caution 必須
                 .select--wrap
-                  = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "選択してください"}, {class: "select--wrap__box"}
+                  =f.collection_select :category_id, @category_parent_array, :id, :name,{ include_blank: "選択してください"},class:"select--wrap__box1"
                   = render partial: 'error_message', locals: { column: :category }
   
             .product-details__form__brand
@@ -70,7 +70,7 @@
   
         .delivery-form
           %h3.delivery-form__about__delivery 配送について
-          = link_to '?', new_items_path, class: 'form--question'
+          = link_to '?', new_item_path, class: 'form--question'
           .delivery-form__box
             .delivery-form__box__top
               %h3.delivery-form__box__top__name
@@ -98,7 +98,7 @@
 
         .product-price
           %h3.product-price__name 価格(300〜9,999,999)
-          = link_to '?', new_items_path, class: 'form--question'
+          = link_to '?', new_item_path, class: 'form--question'
           .product-price__form
             .product-price__form__left
               %h3.product-price__form__name
@@ -112,21 +112,21 @@
         .submit-button
           .actions
             = f.submit "出品する", class: "btn--lightblue"
-          = link_to 'もどる', new_items_path, class: 'btn--bule'
+          = link_to 'もどる', new_item_path, class: 'btn--bule'
           .subimit-button__text
-            = link_to '禁止されている出品', new_items_path, class: 'submit__text'
+            = link_to '禁止されている出品', new_item_path, class: 'submit__text'
             、
-            = link_to '行為', new_items_path, class: 'submit__text'
+            = link_to '行為', new_item_path, class: 'submit__text'
             を必ずご確認ください。
             %p.sell--content5__p
               またブランド品でシリアルナンバー等がある場合はご記載ください。
-              = link_to '偽ブランドの販売', new_items_path, class: 'submit__text'
+              = link_to '偽ブランドの販売', new_item_path, class: 'submit__text'
               は犯罪であり処罰される可能性があります。
             %p.sell--content5__p
               また、出品をもちまして
-              = link_to '加盟店規約', new_items_path, class: 'submit__text'
+              = link_to '加盟店規約', new_item_path, class: 'submit__text'
               に同意したことになります。
-
+              
 .exhibit-page__footer
   .exhibit-page__footer__content
     .exhibit-page__footer__content__main
