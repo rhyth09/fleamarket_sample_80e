@@ -57,7 +57,7 @@
               width: 152px;
               margin: 0;
               padding: 8px;
-              background-color: #DDDDDD;
+              background-color: #EEEEEE;
               border: solid 1px black;
             }
             table td {
@@ -215,6 +215,7 @@
   
   .productLists{
     .productList{
+      // opacity: 0.6;
       // background-color: #fff;
       width: 233.33px;
       height: 245px;
@@ -274,6 +275,23 @@
   }
 }
 
+// .productList a:hover {
+//   opacity: 0.3;
+//   // filter: alpha(opacity=70);
+//   // -ms-filter: "alpha(opacity=70)";
+// }
+
+.productList:hover {
+  opacity: 0.5;
+}
+
+// a:hover {
+//   opacity: 0.5;
+// }
+
+// img:hover {
+//   opacity: 0.5;
+// }
 
 // .productList{
 //   background-color: #fff;
