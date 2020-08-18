@@ -19,7 +19,7 @@
   & > img {
     margin-bottom: 5px;
   }
-  .img-dele-btn {
+  .img-dele-btn, .data-dele-btn {
     border: 1px solid #3ccace;
     border-radius: 3px;
     margin: 0 auto;
@@ -41,4 +41,8 @@
   .js-file {
     display: none;
   }
+}
+
+.hidden-destroy {
+  display: none;
 }
