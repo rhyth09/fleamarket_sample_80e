@@ -54,6 +54,9 @@ $furima-color: #3ccace;
     padding: 40px 65px;
     border-bottom: 1px solid $lightgray;
     text-align: center;
+    p {
+      font-size: 14px;
+    }
     .SignUpBtn {
       display: block;
       width: 100%;
