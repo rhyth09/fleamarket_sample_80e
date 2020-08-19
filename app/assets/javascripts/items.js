@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', ()=> {
   // プレビュー生成のための関数
   const buildImage = (index, url) => {
     const html = `<div class="preview">
-                    <img data-index="${index}" src="${url}" width="120px" height="120px">
+                    <img data-index="${index}" src="${url}">
                     <div class="img-dele-btn" id="delete_btn_${index}">削除</div>
                   </div>`;
     return html;

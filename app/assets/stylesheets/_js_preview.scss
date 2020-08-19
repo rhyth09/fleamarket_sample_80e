@@ -18,6 +18,9 @@
   align-items: center;
   & > img {
     margin-bottom: 5px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
   }
   .img-dele-btn, .data-dele-btn {
     border: 1px solid #3ccace;
