@@ -42,6 +42,7 @@ $(document).on('turbolinks:load', ()=> {
     // 削除ボタンを押された画像と同じ番号を持つチェックボックスの取得とチェック
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     hiddenCheck.prop('checked', true);
+    // 5枚保存されていた画像が1枚でも削除された場合
     if ($('.preview').length < 5) {
       $('#image-box').append(buildFileField(fileIndex[0]));
       // labelの再表示とindex番号の追加
@@ -51,10 +52,8 @@ $(document).on('turbolinks:load', ()=> {
   });
 
 
-
-
   // 画像用input要素に入力があったときの処理
-  $('#image-box').on('change', '.js-file', function(e) {
+  $('#image-box').on('change', '.js-file_group', function(e) {
     const targetIndex = $(this).parent().data('index');
     // 画像URLの取得
     const file = e.target.files[0];
@@ -91,5 +90,5 @@ $(document).on('turbolinks:load', ()=> {
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }  
   });
-  
+
 });
