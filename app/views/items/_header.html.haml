@@ -1,7 +1,7 @@
 .header
   .header-top
     .header-top__logo
-      = image_tag 'material/logo/logo.png' , alt: '使用例の画像', :size => '140x40'
+      = link_to image_tag('material/logo/logo.png' , alt: '使用例の画像', :size => '140x40'), root_path
     %form.header-top__search-bar
       %input.item-search{name: "keyword", placeholder: "キーワードから探す", type: "search", value: ""}
       .search-icon
@@ -12,8 +12,9 @@
         =link_to "カテゴリーから探す"
       %li 
         =link_to "ブランドから探す"
-    %ul.header-bottom__right
-      %li 
-        =link_to "ログイン"
-      %li
-        =link_to "新規会員登録"
+    .header-bottom__right
+      - if user_signed_in?
+        = link_to "マイページ", "/users/:id"
+      - else
+        = link_to "ログイン", new_user_session_path, class: "post"
+        = link_to "新規登録", new_user_registration_path, class: "post", data: {"turbolinks": false}
