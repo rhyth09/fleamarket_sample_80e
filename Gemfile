@@ -76,7 +76,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 
+
 gem 'rails-i18n', '~> 6.0.0'
 
 gem 'jquery-rails'
 gem 'font-awesome-sass'
+

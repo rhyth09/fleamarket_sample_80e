@@ -1,6 +1,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "reset";
+
+
+@import "show";
+
 @import "user";
 @import "error_message";
 @import "new";
@@ -30,3 +34,4 @@ input:-webkit-autofill {
 label {
   cursor: pointer;
 }
+
