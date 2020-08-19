@@ -19,7 +19,7 @@
                   - @item.images.each_with_index do |image, i|
                     .preview
                       %label{for: "item_images_attributes_#{i}_src"}
-                        = image_tag image.src.url, data: {index: i}, width: "120px", height: "120px"
+                        = image_tag image.src.url, data: {index: i}, width: "120px", height: "120px", id: "reselect-image"
                       %div{class: "data-dele-btn", id: "delete-num-#{i}"} 削除
                 %label{for: "item_images_attributes_0_src", class: "dropbox__img"}
                   = icon('fas', 'camera')
@@ -27,7 +27,7 @@
                   %p クリックしてファイルをアップロード
 
               = f.fields_for :images do |image|
-                %div{data: {index: image.index}}
+                %div{ data: {index: image.index}, class: "reselection" }
                   = image.file_field :src, class: "js-file"
                   - if @item.persisted?
                     = image.check_box :_destroy, data: { index: image.index }, class: "hidden-destroy"
