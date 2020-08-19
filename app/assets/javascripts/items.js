@@ -51,10 +51,9 @@ $(document).on('turbolinks:load', ()=> {
     }
   });
 
-
   // 画像用input要素に入力があったときの処理
   $('#image-box').on('change', '.js-file_group', function(e) {
-    const targetIndex = $(this).parent().data('index');
+    const targetIndex = $(this).data('index');
     // 画像URLの取得
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
