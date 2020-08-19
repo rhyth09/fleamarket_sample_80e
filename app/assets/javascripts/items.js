@@ -29,6 +29,8 @@ $(document).on('turbolinks:load', ()=> {
 
   // データベースに保存されていた画像の削除ボタンが押されたときの処理
   $(document).on('click', '.data-dele-btn', function() {
+    // プレビュー部分の削除
+    $(this).parent().remove();
     // 削除ボタンの番号の取得
     let targetIndex = $(this).attr('id').slice(11);
     // 削除ボタンを押された画像と同じ番号を持つチェックボックスの取得
