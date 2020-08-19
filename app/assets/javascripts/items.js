@@ -25,7 +25,13 @@ $(document).on('turbolinks:load', ()=> {
   let lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
   count = fileIndex[0];
-  $('label').prop('for', `item_images_attributes_${count}_src`);
+
+  // 画像が5枚揃っている場合
+  $('.dropbox__img').prop('for', `item_images_attributes_${count}_src`);
+  if ($('.preview').length === 5) {
+    $('.dropbox__img').hide();
+  }
+  
 
   // データベースに保存されていた画像の削除ボタンが押されたときの処理
   $(document).on('click', '.data-dele-btn', function() {
@@ -33,12 +39,18 @@ $(document).on('turbolinks:load', ()=> {
     $(this).parent().remove();
     // 削除ボタンの番号の取得
     let targetIndex = $(this).attr('id').slice(11);
-    // 削除ボタンを押された画像と同じ番号を持つチェックボックスの取得
+    // 削除ボタンを押された画像と同じ番号を持つチェックボックスの取得とチェック
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
-    if (hiddenCheck) {
-      hiddenCheck.prop('checked', true);
+    hiddenCheck.prop('checked', true);
+    if ($('.preview').length < 5) {
+      $('#image-box').append(buildFileField(fileIndex[0]));
+      // labelの再表示とindex番号の追加
+      $('.dropbox__img').show();
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
+
+
 
 
   // 画像用input要素に入力があったときの処理
@@ -50,10 +62,10 @@ $(document).on('turbolinks:load', ()=> {
 
     count ++;
     // for属性を指定したlabelの追加
-    $('.dropbox__img').attr('for', `item_images_attributes_${count}_src`).before(buildImage(targetIndex, blobUrl));
+    $('.dropbox__img').prop('for', `item_images_attributes_${count}_src`).before(buildImage(targetIndex, blobUrl));
     // 画像が5枚になったらlabelの除去
     if ($('.preview').length === 5) {
-      $('label').hide();
+      $('.dropbox__img').hide();
     }
     
     // 画像用input要素に入れるindex番号の削除と追加
@@ -75,7 +87,7 @@ $(document).on('turbolinks:load', ()=> {
     if ($('.preview').length < 5) {
       $('#image-box').append(buildFileField(fileIndex[0]));
       // labelの再表示とindex番号の追加
-      $('label').show();
+      $('.dropbox__img').show();
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }  
   });
