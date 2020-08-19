@@ -2,6 +2,8 @@ ja:
   activerecord:
     models:
       item: 商品
+      user: ユーザー
+      address: 住所
     attributes:
       item:
         category: カテゴリー
@@ -13,3 +15,26 @@ ja:
         postage_id: 配送料の負担
         shipping_date_id: 発送までの日数
         images: 写真
+      user:
+        nickname: ニックネーム 
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+        last_name: お名前（名字）
+        first_name: お名前（名前）
+        last_name_kana: お名前カナ（名字）
+        first_name_kana: お名前カナ（名前）
+        birth_year: 生年月日（年）
+        birth_month: 生年月日（月）
+        birth_day: 生年月日（日）
+      address:
+        send_last_name: 送付先氏名（名字）
+        send_first_name: 送付先氏名（名前）
+        send_last_name_kana: 送付先氏名カナ（名字）
+        send_first_name_kana: 送付先氏名カナ（名前）
+        postal_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        address: 番地
+        build_name: 建物名と部屋番号
+        phone_number: お届け先の電話番号
