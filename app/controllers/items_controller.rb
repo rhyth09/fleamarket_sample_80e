@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:images)
+    @items = Item.includes(:user)
   end
 
   def new
@@ -29,16 +30,14 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @category_id = @item.category_id
-    @category_parent = Category.find(@category_id).parent.parent
-    @category_child = Category.find(@category_id).parent
-    @category_grandchild = Category.find(@category_id)
+    @item = Item.find(params[:id])
+    @parents = Category.limit(607)
   end
 
 
   private
   def item_params
-    params.require(:item).permit(:name, :price, :explain, :size, :prefecture_id, :brand, :shipping_date_id, :item_status_id, :postage_id, :category_id, images_attributes: [:src]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :price, :explain, :size, :prefecture_id, :brand, :shipping_date_id, :item_status_id, :postage_id, :category_id, images_attributes: [:src]).merge(seller_id: current_user.id, user_id: current_user.id)
   end
 
   def set_category  

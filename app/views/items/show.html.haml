@@ -1,0 +1,31 @@
+%table.product-details__page__main__content__right
+  %tbody
+    %tr
+      %th 出品者
+      %td
+        =@item.user.nickname
+- @parents.each do |parent|
+  - if @item.category_id == parent.id
+    = link_to "#" do
+      = parent.parent.parent.name #親カテゴリー
+      %br
+    = link_to "#" do
+      = parent.parent.name #子カテゴリー
+      %br
+    = link_to "#" do
+      = parent.name #孫カテゴリー
+.product-buy__btn__box
+%ul.more_list
+  %li
+    -# = link_to '詳細', "/items/#{@item.id}", method: :get
+    -# ←ここ!!
+  - if user_signed_in? && current_user.id == @item.user_id
+    %li
+      = link_to '編集', "/items/#{@item.id}/edit", method: :get
+  -# - if user_signed_in? && current_user.id == @items.user_id
+  -# = link_to "#" do
+  -#   = 削除する
+  -# = link_to "#" do
+  -#   = 編集する
+  -# = link_to "削除する", product_path(@product.id), method: :delete,class:"product-details-delete__btn"
+  -# = link_to "編集する", edit_product_path(@product.id),class:"product-details-edit__btn"
