@@ -25,27 +25,21 @@
       %table
         %tbody
           %tr
-            %th
-              出品者
-            %td
-              あああ
+            %th 出品者
+            %td あああ
           %tr
-          - @parents.each do |parent|
-            - if @item.category_id == parent.id
-            %th
-              カテゴリー
-            %td
-              = link_to "#", root_path, class: 'itemTable__link1'
-                = parent.parent.parent.name #親カテゴリー
-              -# = link_to 'レディース', root_path, class: 'itemTable__link1'
-              %br
-              = link_to "#", root_path, class: 'itemTable__link2'
-                = parent.parent.name #子カテゴリー
-              -# = link_to 'トップス', root_path, class: 'itemTable__link2'
-              %br
-              = link_to "#", root_path, class: 'itemTable__link3'
-                = parent.name #孫カテゴリー
-              -# = link_to 'Tシャツ/カットソー(半袖/袖なし)', root_path, class: 'itemTable__link3'
+            %th カテゴリー
+            - @parents.each do |parent|
+              - if @item.category_id == parent.id
+                %td
+                  = link_to "#" do
+                    = parent.parent.parent.name #親カテゴリー
+                    %br
+                  = link_to "#" do
+                    = parent.parent.name #子カテゴリー
+                    %br
+                  = link_to "#" do
+                    = parent.name #孫カテゴリー
           %tr
             %th
               ブランド

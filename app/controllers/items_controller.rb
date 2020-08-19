@@ -46,7 +46,4 @@ class ItemsController < ApplicationController
   def buy
   end
 
-  def show
-  end
-
 end
