@@ -3,7 +3,7 @@
 .showMain
   .itembox
     %h1.itembox__name
-      テスト
+      = @item.name
     .itembox__body
       %ul
         %li
@@ -13,20 +13,22 @@
               = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', size: "140x87"
     .itembox__price
       %span
-        ¥10000
+        ¥
+        =@item.price
       .itembox__price__detail
         %span
           (税込)
         %span
           送料込み
     .itemDetail
-      テストテストテストテストテストテスト
+      =@item.explain
     .itemTable
       %table
         %tbody
           %tr
             %th 出品者
-            %td あああ
+            %td 
+              =@item.user.nickname
           %tr
             %th カテゴリー
             - @parents.each do |parent|
@@ -52,22 +54,22 @@
             %th
               商品の状態
             %td
-              新品/未使用
+              = @item.item_status.choice
           %tr
             %th
               配送料の負担
             %td
-              送料込み(出品者負担)
+              = @item.postage.choice
           %tr
             %th
               発送元の地域
             %td
-              = link_to '北海道', root_path, class: 'itemTable__link4'
+              = @item.prefecture.name
           %tr
             %th
               発送日の目安
             %td
-              1-2日で発送
+              = @item.shipping_date.choice
 
     .optionalBtn
       .optionalBtn__likeBtn
