@@ -11,18 +11,21 @@ $(document).on('turbolinks:load', ()=> {
   // プレビュー生成のための関数
   const buildImage = (index, url) => {
     const html = `<div class="preview">
-                    <img data-index="${index}" src="${url}">
+                    <label for="item_images_attributes_${index}_src">
+                      <img data-index="${index}" src="${url}" id="image-preview" class="image-${index}" width="120px" height="120px">
+                    </label>
                     <div class="img-dele-btn" id="delete_btn_${index}">削除</div>
                   </div>`;
     return html;
   }
 
+  // labelのfor属性につける値のカウント
   let count = 0;
   //  画像用input要素に入れるindex番号
   let fileIndex = [0, 1, 2, 3, 4, 5, 6];
 
   // データベースに保存されていた画像分のfileIndex番号を除外
-  let lastIndex = $('.js-file_group:last').data('index');
+  const lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
   count = fileIndex[0];
 
@@ -32,7 +35,6 @@ $(document).on('turbolinks:load', ()=> {
     $('.dropbox__img').hide();
   }
   
-
   // データベースに保存されていた画像の削除ボタンが押されたときの処理
   $(document).on('click', '.data-dele-btn', function() {
     // プレビュー部分の削除
@@ -51,37 +53,46 @@ $(document).on('turbolinks:load', ()=> {
     }
   });
 
-
-  // データベース保存済み画像の変更があったときの処理
+  // データベース保存済み画像に変更があったときの処理
   $('#image-box').on('change', '.reselection', function(e) {
-    const targetIndex = $(this).data('index');
     // 画像URLの取得
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
     // プレビュー画像の差し替え
     $('#reselect-image').prop('src', blobUrl);
   });
-  
 
   // 画像用input要素に入力があったときの処理
   $('#image-box').on('change', '.js-file_group', function(e) {
     const targetIndex = $(this).data('index');
-    // 画像URLの取得
-    const file = e.target.files[0];
-    const blobUrl = window.URL.createObjectURL(file);
-
-    count ++;
-    // for属性を指定したlabelの追加
-    $('.dropbox__img').prop('for', `item_images_attributes_${count}_src`).before(buildImage(targetIndex, blobUrl));
-    // 画像が5枚になったらlabelの除去
-    if ($('.preview').length === 5) {
-      $('.dropbox__img').hide();
-    }
     
-    // 画像用input要素に入れるindex番号の削除と追加
-    $('#image-box').append(buildFileField(fileIndex[1]));
-    fileIndex.shift();
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+    // 一度選択済みの場合
+    if ($.inArray(targetIndex, fileIndex) === -1) {
+      const findImage = $(`.image-${targetIndex}`);
+      // 画像URLの取得
+      const file = e.target.files[0];
+      const blobUrl = window.URL.createObjectURL(file);
+      // プレビュー画像の差し替え
+      findImage.prop('src', blobUrl);
+    }
+    else {
+      // 画像URLの取得
+      const file = e.target.files[0];
+      const blobUrl = window.URL.createObjectURL(file);
+  
+      count ++;
+      // for属性を指定したlabelの追加
+      $('.dropbox__img').prop('for', `item_images_attributes_${count}_src`).before(buildImage(targetIndex, blobUrl));
+      // 画像が5枚になったらlabelの除去
+      if ($('.preview').length === 5) {
+        $('.dropbox__img').hide();
+      }
+      // 画像用input要素に入れるindex番号の削除と追加
+      $('#image-box').append(buildFileField(fileIndex[1]));
+      fileIndex.shift();
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+    }
+
   });
 
   // 削除ボタンが押されたときの処理
