@@ -19,7 +19,7 @@
   }
   &__items {
     margin: 0 auto;
-    width: 1100px;
+    min-width: 1100px;
     display: flex;
   }
 }
