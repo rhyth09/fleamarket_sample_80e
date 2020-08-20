@@ -29,10 +29,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @category_id = @item.category_id
-    @category_parent = Category.find(@category_id).parent.parent
-    @category_child = Category.find(@category_id).parent
-    @category_grandchild = Category.find(@category_id)
+    @item = Item.find(params[:id])
+    @parents = Category.limit(607)
   end
 
 
@@ -46,9 +44,6 @@ class ItemsController < ApplicationController
   end
 
   def buy
-  end
-
-  def show
   end
 
 end
