@@ -1,36 +1,116 @@
-%table.product-details__page__main__content__right
-  %tbody
-    %tr
-      %th 出品者
-      %td
-        =@item.user.nickname
-- @parents.each do |parent|
-  - if @item.category_id == parent.id
-    = link_to "#" do
-      = parent.parent.parent.name #親カテゴリー
+= render partial: 'header'
+
+.showMain
+  .itembox
+    %h1.itembox__name
+      テスト
+    .itembox__body
+      %ul
+        %li
+          = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', size: "560x346"
+          %ul
+            %li
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', size: "140x87"
+    .itembox__price
+      %span
+        ¥10000
+      .itembox__price__detail
+        %span
+          (税込)
+        %span
+          送料込み
+    .itemDetail
+      テストテストテストテストテストテスト
+    .itemTable
+      %table
+        %tbody
+          %tr
+            %th 出品者
+            %td あああ
+          %tr
+            %th カテゴリー
+            - @parents.each do |parent|
+              - if @item.category_id == parent.id
+                %td
+                  = link_to "#" do
+                    = parent.parent.parent.name #親カテゴリー
+                    %br
+                  = link_to "#" do
+                    = parent.parent.name #子カテゴリー
+                    %br
+                  = link_to "#" do
+                    = parent.name #孫カテゴリー
+          %tr
+            %th
+              ブランド
+            %td
+          %tr
+            %th
+              商品のサイズ
+            %td
+          %tr
+            %th
+              商品の状態
+            %td
+              新品/未使用
+          %tr
+            %th
+              配送料の負担
+            %td
+              送料込み(出品者負担)
+          %tr
+            %th
+              発送元の地域
+            %td
+              = link_to '北海道', root_path, class: 'itemTable__link4'
+          %tr
+            %th
+              発送日の目安
+            %td
+              1-2日で発送
+
+    .optionalBtn
+      .optionalBtn__likeBtn
+        = icon('fa', 'star')
+        お気に入り１
+      .optionalBtn__hata
+        = icon('fa', 'flag')
+        = link_to '不適切な商品の通報', root_path, class: 'optionalBtn__hata__link'
+
+  .commentBox
+    %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
+    %p.commentBox__noticeMsg
+      相手のことを考え丁寧なコメントを心がけましょう。
       %br
-    = link_to "#" do
-      = parent.parent.name #子カテゴリー
-      %br
-    = link_to "#" do
-      = parent.name #孫カテゴリー
-.product-buy__btn__box
-%ul.more_list
-  %li
-    -# = link_to '詳細', "/items/#{@item.id}", method: :get
-    -# ←ここ!!
-  - if current_user.id == @item.user_id
-    = link_to '編集', "/items/#{@item.id}/edit", method: :get
-    = link_to '削除', "/items/#{@item.id}", method: :delete
-  - elsif user_signed_in?
-    = link_to "購入画面に進む", buy_item_path(@item.id), data: {"turbolinks" => false} , class: "pay"
--if user_signed_in?
-  %form.text_area 
-  %p.note
-    相手のことを考え丁寧なコメントを心がけましょう。
-    %br 不快な言葉遣いなどは利用制限や退会処分となることがあります。
-  %button.submit 
-    コメントする
-- else
-  %p.note
-    商品の購入、コメントの投稿には新規会員登録/ログインが必要です
+      不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %button.commentBox__commentBtn{type: "submit"}
+      = icon('fa', 'comment')
+      コメントする
+
+  .links
+    .links__before
+      = icon('fa', 'angle-left', class: "links__before__icon")
+      = link_to '前の商品', root_path, class: 'links__before__Btn'
+    .links__after
+      = link_to '後ろの商品', root_path, class: 'links__after__Btn'        
+      = icon('fa', 'angle-right', class: "links__after__icon")
+
+  .relatedItems
+    = link_to 'レディースをもっと見る', root_path, class: 'relatedItems__Btn'
+    .productLists
+      .productList
+        = link_to '', root_path
+        = image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png', alt: '商品の画像', class: 'productList__img')
+        .productList__body
+          %p.productList__body__name product1
+          .productList__body__details
+            %ul.productList__body__details__kakaku
+              %li.productList__body__details__yen 10000円
+              %li.productList__body__details__kakaku__icon
+                = icon('fa', 'star')
+                1
+            %p.productList__body__details__zei (税込)
+
+= render partial: 'sell_btn'
+= render partial: 'footer_invitation'
+= render partial: 'footer.html.haml'
