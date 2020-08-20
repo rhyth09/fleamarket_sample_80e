@@ -1,3 +1,5 @@
+= render partial: 'items/header'
+
 .card
   .card__main
     .card__main__title
@@ -47,3 +49,7 @@
         %br
       .card__main__submit
         %input{type:"submit",value:"登録", class: "submit-btn"}
+
+= render partial: 'items/sell_btn'
+= render partial: 'items/footer_invitation'
+= render partial: 'items/footer'

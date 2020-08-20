@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index,]
-  resources :cards, only: [:new]
+  resources :cards, only: [:index, :new]
 
 
 
