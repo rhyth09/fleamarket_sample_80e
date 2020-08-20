@@ -9,7 +9,6 @@
   background-color: #FFFFFF;
   width: 700px;
   margin: 0 auto;
-  height: 1230px;
   padding: 24px 40px 40px;
   &__name{
     text-align: center;
@@ -123,12 +122,15 @@
     margin-top: 5px;
     background-color: red;
   }
+  .login_btn{
+    @include buy-btn;
+    background-color: #3CCACE;
+  }
 }
 
 .commentBox{
   background-color: white;
   width: 700px;
-  height: 304px;
   margin-top:10px;
   margin-right:auto;
   margin-bottom:10px;
@@ -220,9 +222,7 @@
 
 .productList{
   background-color: #fff;
-  text-align: center;
   width: 233.33px;
-  height: 245px;
   position: relative;
   & a {
     position: absolute;
