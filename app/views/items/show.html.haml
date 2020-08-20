@@ -47,6 +47,7 @@
             %th
               ブランド
             %td
+              = @item.brand
           %tr
             %th
               商品のサイズ
@@ -79,12 +80,12 @@
       .optionalBtn__hata
         = icon('fa', 'flag')
         = link_to '不適切な商品の通報', root_path, class: 'optionalBtn__hata__link'
-
+  .item-buy__btn__box
     - if current_user.id == @item.user_id
-      = link_to '編集', "/items/#{@item.id}/edit", method: :get
-      = link_to '削除', "/items/#{@item.id}", method: :delete
+      = link_to '商品の編集', "/items/#{@item.id}/edit", method: :get, class: "edit_btn"
+      = link_to 'この商品を削除する', "/items/#{@item.id}", method: :delete, class: "delete_btn"
     - elsif user_signed_in?
-      = link_to "購入画面に進む", buy_item_path(@item.id), data: {"turbolinks" => false} , class: "pay"
+      = link_to "購入画面に進む", buy_item_path(@item.id), class: "pay_btn"
 
   .commentBox
     -if user_signed_in?

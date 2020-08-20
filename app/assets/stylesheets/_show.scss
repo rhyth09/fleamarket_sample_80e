@@ -1,3 +1,4 @@
+@import "mixin";
 .showMain{
   background-color: #EEEEEE;
   width:100%;
@@ -96,6 +97,32 @@
       color:#333333;
       text-decoration: none;
     }
+  }
+}
+
+.item-buy__btn__box{
+  background-color: white;
+  width: 700px;
+  margin: 0 auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding: 24px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  .edit_btn{
+    @include buy-btn;
+    background-color: #3CCACE;
+  }
+  .delete_btn{
+    @include buy-btn;
+    margin-top: 5px;
+    background-color: gray;
+  }
+  .pay_btn{
+    @include buy-btn;
+    margin-top: 5px;
+    background-color: red;
   }
 }
 
