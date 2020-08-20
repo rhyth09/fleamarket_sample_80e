@@ -26,7 +26,8 @@ class ItemsController < ApplicationController
     if item.update(item_params)
       redirect_to root_path
     else
-      render :edit
+      flash[:alert] = "必須項目が空欄なので更新できませんでした"
+      redirect_to edit_item_path
     end
   end
 
