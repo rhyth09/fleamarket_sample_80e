@@ -80,15 +80,24 @@
         = link_to '不適切な商品の通報', root_path, class: 'optionalBtn__hata__link'
 
   .commentBox
-    %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
-    %p.commentBox__noticeMsg
-      相手のことを考え丁寧なコメントを心がけましょう。
-      %br
-      不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    %button.commentBox__commentBtn{type: "submit"}
-      = icon('fa', 'comment')
-      コメントする
-
+    -if user_signed_in?
+      %p.commentBox__noticeMsg
+        相手のことを考え丁寧なコメントを心がけましょう。
+        %br
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
+      
+      %button.commentBox__commentBtn{type: "submit"}
+        = icon('fa', 'comment')
+        コメントする
+    - else
+      %p.commentBox__noticeMsg
+        相手のことを考え丁寧なコメントを心がけましょう。
+        %br
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
+      %p.not_comment
+        ※商品の購入、コメントの投稿には新規会員登録/ログインが必要です※
   .links
     .links__before
       = icon('fa', 'angle-left', class: "links__before__icon")
