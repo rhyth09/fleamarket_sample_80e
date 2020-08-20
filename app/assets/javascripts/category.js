@@ -1,11 +1,11 @@
-$(function(){
+$(document).on('turbolinks:load', ()=> {
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
     let html = `<option value="${category.id}">${category.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
-  function appendChidrenBox(insertHTML){
+  function appendChildrenBox(insertHTML){
     let childSelectHtml = '';
     childSelectHtml = `<div class='select--wrap' id= 'children_wrapper'>
                         <select id="child__category" name="item[category_id]" class="select--wrap__box1">
@@ -45,7 +45,7 @@ $(function(){
         children.forEach(function(child){
           insertHTML += appendOption(child);
         });
-        appendChidrenBox(insertHTML);
+        appendChildrenBox(insertHTML);
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
