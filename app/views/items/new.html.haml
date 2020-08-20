@@ -50,7 +50,7 @@
                 カテゴリー
                 %span.form--caution 必須
                 .select--wrap
-                  = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "選択してください"}, {class: "select--wrap__box"}
+                  =f.collection_select :category_id, @category_parent_array, :id, :name,{ include_blank: "選択してください"},class:"select--wrap__box1"
                   = render partial: 'error_message', locals: { column: :category }
   
             .product-details__form__brand
@@ -126,7 +126,7 @@
               また、出品をもちまして
               = link_to '加盟店規約', new_item_path, class: 'submit__text'
               に同意したことになります。
-
+              
 .exhibit-page__footer
   .exhibit-page__footer__content
     .exhibit-page__footer__content__main
