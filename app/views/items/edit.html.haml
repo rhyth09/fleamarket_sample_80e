@@ -39,8 +39,6 @@
                 %div{ data: {index: @item.images.count}, class: "js-file_group" }
                   = file_field_tag "item_images_attributes_#{@item.images.count}_src", name: "item[images_attributes][#{@item.images.count}][src]", class: "js-file"
                 
-                  
-                
               = render partial: 'error_message', locals: { column: :images }
 
         .sell--content
