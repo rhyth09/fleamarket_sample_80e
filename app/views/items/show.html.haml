@@ -5,12 +5,13 @@
     %h1.itembox__name
       = @item.name
     .itembox__body
-      %ul
-        %li
-          = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', size: "560x346"
-          %ul
-            %li
-              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', size: "140x87"
+      %ul.image__main
+        %li.image__main__list
+          = image_tag @item.images.first.src.url, size: "560x346"
+          %ul.image__sub
+            - @item.images.each do |img|
+              %li.image__sub__list
+                = image_tag(img.src.url, class: "sub__photo", size: "90x90")
     .itembox__price
       %span
         ¥
@@ -78,6 +79,12 @@
       .optionalBtn__hata
         = icon('fa', 'flag')
         = link_to '不適切な商品の通報', root_path, class: 'optionalBtn__hata__link'
+
+    - if current_user.id == @item.user_id
+      = link_to '編集', "/items/#{@item.id}/edit", method: :get
+      = link_to '削除', "/items/#{@item.id}", method: :delete
+    - elsif user_signed_in?
+      = link_to "購入画面に進む", buy_item_path(@item.id), data: {"turbolinks" => false} , class: "pay"
 
   .commentBox
     -if user_signed_in?
