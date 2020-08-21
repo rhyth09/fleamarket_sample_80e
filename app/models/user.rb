@@ -23,5 +23,4 @@ class User < ApplicationRecord
   has_many :bought_items, foreign_key: "buyer_id", class_name: "Item"
   has_many :sales_items, -> { where buyer_id: nil }, foreign_key: "seller_id", class_name: "Item"
   has_many :sold_items, -> { where.not buyer_id: nil }, foreign_key: "seller_id", class_name: "Item"
-  has_many :items
 end
