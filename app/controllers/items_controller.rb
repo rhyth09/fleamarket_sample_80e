@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :update, :show]
   before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
   def index
@@ -20,12 +21,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.update(item_params)
+    if @item.update(item_params)
       redirect_to root_path
     else
       flash[:alert] = "必須項目が空欄なので更新できませんでした"
@@ -34,7 +33,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @parents = Category.limit(607)
   end
 
@@ -49,6 +47,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :price, :explain, :size, :prefecture_id, :brand, :shipping_date_id, :item_status_id, :postage_id, :category_id, images_attributes: [:src, :_destroy, :id]).merge(seller_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def set_category  
