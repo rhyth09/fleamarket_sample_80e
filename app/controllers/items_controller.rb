@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @parents = Category.limit(607)
+    @parents = Category.all
   end
 
   def get_category_children
