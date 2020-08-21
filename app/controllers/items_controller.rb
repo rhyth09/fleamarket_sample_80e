@@ -21,6 +21,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @grandchild = @item.category
+    @child = @grandchild.parent
+    @parent = @item.category.root
   end
 
   def update
