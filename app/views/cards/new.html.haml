@@ -4,19 +4,30 @@
   .card__main
     .card__main__title
       %h2 クレジットカード情報入力
-    %form{action:""}
+    = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
       .card__main__number
         .card__main__number__text カード番号
-        %input{type:"text", name:"card-number" ,placeholder:"半角数字のみ/16桁" ,maxlength:16, class:"card-number"}
-        %br
-      .card__main__name
-        .card__main__name__text カード名義
-        %input{type:"text",name:"name",class:"card-name"}
-        %br
+        = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ/16桁" ,maxlength: "16", type: "text", id: "card_number"
+      %br
+        %ul
+        %li
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?238737266",width:"49px",height:"20px"
+        %li
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?238737266",width:"34px",height:"20px"
+        %li
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?238737266",width:"30px",height:"20px"
+        %li
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?238737266",width:"32px",height:"20px"
+        %li
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?238737266",width:"21px",height:"20px"
+        %li
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?238737266",width:"32px",height:"20px"
+        %li
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?238737266",width:"32px",height:"20px"
       .card__main__expiration-date
         .card__main__expiration-date__text 有効期限(月/年)
-        %select{name:"expiration_month",type:"text",required:"", class:"month"}
-          %option{value: ""}--
+        %select#exp_month{name: "exp_month", type: "text"}
+          %option{value: ""} --
           %option{value: "1"}01
           %option{value: "2"}02
           %option{value: "3"}03
@@ -29,26 +40,28 @@
           %option{value: "10"}10
           %option{value: "11"}11
           %option{value: "12"}12
-        %select{name:"expiration_year",type:"text",required:"",class:"year"}
-          %option{value: ""}--
-          %option{value: "20"}20
-          %option{value: "21"}21
-          %option{value: "22"}22
-          %option{value: "23"}23
-          %option{value: "24"}24
-          %option{value: "25"}25
-          %option{value: "26"}26
-          %option{value: "27"}27
-          %option{value: "28"}28
-          %option{value: "29"}29
-          %option{value: "30"}30
-          %option{value: "31"}31    
+        %span 月/
+        %select#exp_year{name: "exp_year", type: "text"}
+          %option{value: ""} --
+          %option{value: "2020"}20
+          %option{value: "2021"}21
+          %option{value: "2022"}22
+          %option{value: "2023"}23
+          %option{value: "2024"}24
+          %option{value: "2025"}25
+          %option{value: "2026"}26
+          %option{value: "2027"}27
+          %option{value: "2028"}28
+          %option{value: "2029"}29
+          %option{value: "2030"}30
+        %span 年
       .card__main__security-code
         .card__main__security-code__text セキュリティコード
-        %input{type:"text", name:"security-number",placeholder:"半角数字のみ",maxlength:4, class:"number"}
+        = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
         %br
       .card__main__submit
-        %input{type:"submit",value:"登録", class: "submit-btn"}
+        #card_token
+        = submit_tag "追加する", id: "token_submit", class: "submit-btn"
 
 = render partial: 'items/sell_btn'
 = render partial: 'items/footer_invitation'
