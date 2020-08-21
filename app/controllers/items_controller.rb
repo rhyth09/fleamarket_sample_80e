@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item, only: [:edit, :update, :show]
   before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
@@ -21,6 +22,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @grandchild = @item.category
+    @child = @grandchild.parent
+    @parent = @item.category.root
   end
 
   def update
