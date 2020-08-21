@@ -1,4 +1,6 @@
-.User-items {
+.User-my-page {
+  background-color: #fff;
+  width: 900px;
   padding: 20px;
   & > h1 {
     margin-bottom: 10px;
@@ -6,14 +8,13 @@
     font-size: 28px;
     font-weight: bold;
   }
-  &__content {
+  &__main {
     height: 1100px;
     overflow-y: scroll;
   }
 }
 
-.Sales-item {
-  // background-color: black;
+.My-page-content {
   padding: 20px;
   width: 100%;
   display: flex;
@@ -25,7 +26,6 @@
     }
   }
   &__contents {
-    // background-color: orange;
     flex-grow: 2;
     padding: 5px 30px;
     height: 120px;

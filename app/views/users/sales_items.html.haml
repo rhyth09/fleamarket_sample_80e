@@ -48,21 +48,20 @@
       %li
         = link_to "ログアウト", logout_user_path
 
-  .main-content
-    .User-items
-      %h1 出品中の商品
-      .User-items__content
-        - @sales_items.each do |sales_item|
-          .Sales-item
-            .Sales-item__image
-              = link_to image_tag(sales_item.images.first.src.url, alt: '商品画像', width: '120px', height: '120px'), edit_item_path(sales_item.id)
-            .Sales-item__contents
-              %h1= sales_item.name
-              .Sales-item__contents--price
-                %span 税込価格
-                %p= sales_item.price
-              .Sales-item__contents--explain
-                %span 商品説明
-                %p= sales_item.explain
+  .User-my-page
+    %h1 出品中の商品
+    .User-my-page__main
+      - @sales_items.each do |sales_item|
+        .My-page-content
+          .My-page-content__image
+            = link_to image_tag(sales_item.images.first.src.url, alt: '商品画像', width: '120px', height: '120px'), edit_item_path(sales_item.id)
+          .My-page-content__contents
+            %h1= sales_item.name
+            .My-page-content__contents--price
+              %span 税込価格
+              %p= sales_item.price
+            .My-page-content__contents--explain
+              %span 商品説明
+              %p= sales_item.explain
 
 = render partial: 'items/footer'
