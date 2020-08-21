@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-
+  root 'items#destroy'
 
 
 
@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
 
-  root 'items#index'
-  resources :items, only: [:new, :create, :show] do
+  # root 'items#index'
+  resources :items, only: [:new, :create, :show, :destroy] do
     member do
       get 'buy'
       get 'get_category_children', defaults: { format: 'json' }

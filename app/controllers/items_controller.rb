@@ -35,6 +35,8 @@ class ItemsController < ApplicationController
     @category_grandchild = Category.find(@category_id)
   end
 
+  def destroy
+  end
 
   private
   def item_params
