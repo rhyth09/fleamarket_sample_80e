@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :items, only: [:new, :create, :show, :destroy] do
+ 
 
   root 'items#index'
   
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :items, only: [:new, :create, :edit, :update, :show] do
+  resources :items, only: [:new, :create, :edit, :update, :show, :destroy] do
 
     member do
       get 'buy'

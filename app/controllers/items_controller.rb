@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :show]
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
   before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
   def index
@@ -38,8 +38,14 @@ class ItemsController < ApplicationController
 
 
   def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      flash.now[:alert] = '削除できませんでした'
+      render :show
+    end
   end
-  
+
   def get_category_children
     @category_children = Category.find("#{params[:parent_id]}").children
 
