@@ -8,7 +8,17 @@ Rails.application.routes.draw do
   end
 
   root 'items#index'
-  resources :items, only: [:new, :create, :show] do
+  
+  resources :categories, only: [:index,]
+  resources :cards, only: [:new]
+
+  resources :users, only: [:show] do
+    member do
+      get 'logout'
+    end
+  end
+  
+  resources :items, only: [:new, :create, :edit, :update, :show] do
     member do
       get 'buy'
       get 'get_category_children', defaults: { format: 'json' }
@@ -24,17 +34,5 @@ Rails.application.routes.draw do
       get 'update_done'
     end
   end
-
-  resources :categories, only: [:index,]
-  resources :cards, only: [:new]
-
-
-
-  resources :users, only: [:show] do
-    member do
-      get 'logout'
-    end
-  end
-
 
 end
