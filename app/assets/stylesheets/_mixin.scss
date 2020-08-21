@@ -37,3 +37,13 @@
   text-align: center;
   text-decoration: none;
 }
+@mixin buy-btn {
+  width: 650px;
+  height: 45px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 5px;
+  color: white;
+}
