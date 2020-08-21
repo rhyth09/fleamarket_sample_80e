@@ -55,7 +55,7 @@
         - @sales_items.each do |sales_item|
           .Sales-item
             .Sales-item__image
-              = link_to image_tag(sales_item.images.first.src.url, alt: 'Download on the App Store', width: '120px', height: '120px'), edit_item_path
+              = link_to image_tag(sales_item.images.first.src.url, alt: '商品画像', width: '120px', height: '120px'), edit_item_path(sales_item.id)
             .Sales-item__contents
               %h1= sales_item.name
               .Sales-item__contents--price
