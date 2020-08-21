@@ -16,10 +16,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  & > img {
+  & img {
+    background-color: #000;
     margin-bottom: 5px;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
   }
-  .img-dele-btn {
+  .img-dele-btn, .data-dele-btn {
     border: 1px solid #3ccace;
     border-radius: 3px;
     margin: 0 auto;
@@ -41,4 +45,12 @@
   .js-file {
     display: none;
   }
+}
+
+.hidden-destroy {
+  display: none;
+}
+
+.reselection {
+  display: none;
 }

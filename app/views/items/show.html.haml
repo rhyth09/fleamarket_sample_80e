@@ -3,47 +3,51 @@
 .showMain
   .itembox
     %h1.itembox__name
-      テスト
+      = @item.name
     .itembox__body
-      %ul
-        %li
-          = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', size: "560x346"
-          %ul
-            %li
-              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', size: "140x87"
+      %ul.image__main
+        %li.image__main__list
+          = image_tag @item.images.first.src.url, size: "560x346"
+          %ul.image__sub
+            - @item.images.each do |img|
+              %li.image__sub__list
+                = image_tag(img.src.url, class: "sub__photo", size: "90x90")
     .itembox__price
       %span
-        ¥10000
+        ¥
+        =@item.price
       .itembox__price__detail
         %span
           (税込)
         %span
           送料込み
     .itemDetail
-      テストテストテストテストテストテスト
+      =@item.explain
     .itemTable
       %table
         %tbody
           %tr
-            %th
-              出品者
-            %td
-              あああ
+            %th 出品者
+            %td 
+              =@item.seller.nickname
           %tr
-            %th
-              カテゴリー
-            %td
-              = link_to 'レディース', root_path, class: 'itemTable__link1'
-              %br
-            
-              = link_to 'トップス', root_path, class: 'itemTable__link2'
-              %br
-            
-              = link_to 'Tシャツ/カットソー(半袖/袖なし)', root_path, class: 'itemTable__link3'
+            %th カテゴリー
+            - @parents.each do |parent|
+              - if @item.category_id == parent.id
+                %td
+                  = link_to "#" do
+                    = parent.parent.parent.name #親カテゴリー
+                    %br
+                  = link_to "#" do
+                    = parent.parent.name #子カテゴリー
+                    %br
+                  = link_to "#" do
+                    = parent.name #孫カテゴリー
           %tr
             %th
               ブランド
             %td
+              = @item.brand
           %tr
             %th
               
@@ -52,22 +56,22 @@
             %th
               商品の状態
             %td
-              新品/未使用
+              = @item.item_status.choice
           %tr
             %th
               配送料の負担
             %td
-              送料込み(出品者負担)
+              = @item.postage.choice
           %tr
             %th
               発送元の地域
             %td
-              = link_to '北海道', root_path, class: 'itemTable__link4'
+              = @item.prefecture.name
           %tr
             %th
               発送日の目安
             %td
-              1-2日で発送
+              = @item.shipping_date.choice
 
     .optionalBtn
       .optionalBtn__likeBtn
@@ -76,17 +80,33 @@
       .optionalBtn__hata
         = icon('fa', 'flag')
         = link_to '不適切な商品の通報', root_path, class: 'optionalBtn__hata__link'
-
+  .item-buy__btn__box
+    - if user_signed_in? && current_user.id == @item.seller_id
+      = link_to '商品の編集', "/items/#{@item.id}/edit", method: :get, class: "edit_btn"
+      = link_to 'この商品を削除する', "/items/#{@item.id}", method: :delete, class: "delete_btn"
+    - elsif user_signed_in?
+      = link_to "購入画面に進む", buy_item_path(@item.id), class: "pay_btn"
+    - else user_signed_in?
+      = link_to "新規会員登録/ログインが必要です", new_user_session_path, class: "login_btn"
   .commentBox
-    %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
-    %p.commentBox__noticeMsg
-      相手のことを考え丁寧なコメントを心がけましょう。
-      %br
-      不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    %button.commentBox__commentBtn{type: "submit"}
-      = icon('fa', 'comment')
-      コメントする
-
+    -if user_signed_in?
+      %p.commentBox__noticeMsg
+        相手のことを考え丁寧なコメントを心がけましょう。
+        %br
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
+      
+      %button.commentBox__commentBtn{type: "submit"}
+        = icon('fa', 'comment')
+        コメントする
+    - else
+      %p.commentBox__noticeMsg
+        相手のことを考え丁寧なコメントを心がけましょう。
+        %br
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
+      %p.not_comment
+        ※コメントの投稿には新規会員登録/ログインが必要です※
   .links
     .links__before
       = icon('fa', 'angle-left', class: "links__before__icon")
