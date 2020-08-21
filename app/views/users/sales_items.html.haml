@@ -4,7 +4,7 @@
   .side-bar
     %ul.my-page
       %li
-        = link_to "マイページ",'/'
+        = link_to "マイページ", user_path(current_user.id)
       %li
         = link_to "お知らせ"
       %li
