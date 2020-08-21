@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def sales_items
+    @sales_items = User.find(params[:id]).sales_items.includes(:images)
   end
   
   def logout
