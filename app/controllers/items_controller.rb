@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
-      redirect_to root_path
+      redirect_to delete_done_items_path
     else
       flash.now[:alert] = '削除できませんでした'
       render :show
