@@ -23,17 +23,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @grandchild = @item.category
-    @child = @grandchild.parent
-    @parent = @item.category.root
   end
 
   def update
     if @item.update(item_params)
       redirect_to root_path
     else
-      flash[:alert] = "必須項目が空欄なので更新できませんでした"
-      redirect_to edit_item_path
+      render :edit
     end
   end
 

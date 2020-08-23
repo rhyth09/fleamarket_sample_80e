@@ -1,4 +1,3 @@
-= render partial: 'notifications'
 .exhibit__page
   = form_with model: @item, local: true do |f|
     .exhibit__page__main
@@ -62,12 +61,12 @@
                 カテゴリー
                 %span.form--caution 必須
                 .select--wrap
-                  = f.collection_select :category_id, @category_parent_array, :id, :name,{ selected: @parent.id },class:"select--wrap__box1"
-                  .select--wrap#children_wrapper
-                    = f.collection_select :category_id, @item.category.parent.parent.children, :id, :name,{ selected: @child.id },class:"select--wrap__box1",id:"child__category"
-                  .select--wrap#grandchildren_wrapper
-                    = f.collection_select :category_id, @item.category.parent.children, :id, :name,{ selected: @grandchild.id },class:"select--wrap__box1"
-                  = render partial: 'error_message', locals: { column: :category }
+                  = f.collection_select :category_id, @category_parent_array, :id, :name,{ selected: @item.category.root.id },class:"select--wrap__box1"
+                .select--wrap#children_wrapper
+                  = f.collection_select :category_id, @item.category.parent.parent.children, :id, :name,{ selected: @item.category.parent.id },class:"select--wrap__box1",id:"child__category"
+                .select--wrap#grandchildren_wrapper
+                  = f.collection_select :category_id, @item.category.parent.children, :id, :name,{ selected:  @item.category.id},class:"select--wrap__box1"
+                = render partial: 'error_message', locals: { column: :category }
   
             .product-details__form__brand
               %h3.product-details__form__brand__name
