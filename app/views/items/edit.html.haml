@@ -60,12 +60,17 @@
               %h3.product-details__form__category__name
                 カテゴリー
                 %span.form--caution 必須
-                .select--wrap
-                  = f.collection_select :category_id, @category_parent_array, :id, :name,{ selected: @item.category.root.id },class:"select--wrap__box1"
-                .select--wrap#children_wrapper
-                  = f.collection_select :category_id, @item.category.parent.parent.children, :id, :name,{ selected: @item.category.parent.id },class:"select--wrap__box1",id:"child__category"
-                .select--wrap#grandchildren_wrapper
-                  = f.collection_select :category_id, @item.category.parent.children, :id, :name,{ selected:  @item.category.id},class:"select--wrap__box1"
+                - if @item.category != nil
+                  .select--wrap
+                    = f.collection_select :category_id, @category_parent_array, :id, :name,{ selected: @item.category.root.id },class:"select--wrap__box1"
+                  .select--wrap#children_wrapper
+                    = f.collection_select :category_id, @item.category.parent.parent.children, :id, :name,{ selected: @item.category.parent.id },class:"select--wrap__box1"
+                  .select--wrap#grandchildren_wrapper
+                    = f.collection_select :category_id, @item.category.parent.children, :id, :name,{ selected:  @item.category.id},class:"select--wrap__box1"
+                - else
+                  .select--wrap
+                    = f.collection_select :category_id, @category_parent_array, :id, :name, { include_blank: "選択してください"}, class:"select--wrap__box1"
+                  
                 = render partial: 'error_message', locals: { column: :category }
   
             .product-details__form__brand
