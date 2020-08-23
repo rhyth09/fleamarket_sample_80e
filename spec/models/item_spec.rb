@@ -70,6 +70,12 @@ RSpec.describe Item, type: :model do
         expect(item.errors[:price]).to include("を入力してください")
       end
 
+      it 'seller（出品ユーザーのID）が必須であること' do
+        item = build(:item, seller: nil)
+        item.valid?
+        expect(item.errors[:seller]).to include("を入力してください")
+      end
+
       it '画像の投稿が必須であること' do
         item = Item.new(name: "sample", price: 300, explain: "sample", prefecture_id: 1, shipping_date_id: 1, item_status_id: 2, postage_id: 2, category_id:1)
         item.valid?
