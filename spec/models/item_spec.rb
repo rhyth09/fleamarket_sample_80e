@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  describe '#create' do
 
+  describe '#create' do
     context 'can save' do
       it '必須項目があれば登録できること' do
         item = build(:item)
@@ -44,7 +44,6 @@ RSpec.describe Item, type: :model do
         item.valid?
         expect(item.errors[:item_status_id]).to include("を入力してください")
       end
-    
       
       it 'postage_id（配送料の負担についての情報）が必須であること' do
         item = build(:item, postage_id: "")
@@ -80,8 +79,8 @@ RSpec.describe Item, type: :model do
         item = Item.new(name: "sample", price: 300, explain: "sample", prefecture_id: 1, shipping_date_id: 1, item_status_id: 2, postage_id: 2, category_id:1)
         item.valid?
         expect(item.errors[:images]).to include("は一枚以上必須です")
-      end
-      
+      end  
     end
   end
+  
 end
