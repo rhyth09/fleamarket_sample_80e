@@ -7,28 +7,31 @@
     height: 250px;
     width: 700px;
     margin: 0 auto;
-    background: #fff;
-    .sakujyo-page__form {
-      padding: 64px;
-      .sakujyo-page__btn {
-        max-width: 320px;
-        margin: 0 auto;
-        .btn-default {
-          margin: 40px 0 0;
-          background: #3ccace;
-          border: 1px solid #3ccace;
-          border-radius: 4px;
-          color: #fff;
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          border: 1px solid;
-          cursor: pointer;
-          text-align: center;
-          text-decoration: none;
-        }
-      }
-    }
+    background: #fff;   
   }
+}
+
+.sakujyo-page__form {
+  padding: 64px;      
+}
+
+.sakujyo-page__btn {
+  max-width: 320px;
+  margin: 0 auto;       
+}
+
+.btn-default {
+  margin: 40px 0 0;
+  background: #3ccace;
+  border: 1px solid #3ccace;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 }
