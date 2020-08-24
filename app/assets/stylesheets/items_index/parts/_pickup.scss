@@ -75,19 +75,3 @@
   text-indent: -999px;
   z-index: 2;
 }
-
-.Pickup__items__sold{
-  width: 30px;
-  border-top: 50px solid #FF3333;
-  border-left: 50px solid #FF3333;
-  border-right: 50px solid transparent;
-  border-bottom: 50px solid transparent;
-  position: absolute;
-  &__inner{
-    position: absolute;
-    top: -20px;
-    right: -10px;
-    color: #ffffff;
-    transform: rotate(-45deg);
-  }
-}
