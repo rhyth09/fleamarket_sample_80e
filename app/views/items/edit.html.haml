@@ -15,14 +15,25 @@
               
             #image-box
               #previews
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    .preview
+                      %label{for: "item_images_attributes_#{i}_src"}
+                        = image_tag image.src.url, data: {index: i}, width: "120px", height: "120px", id: "reselect-image", class: "image-#{i}"
+                      %div{class: "data-dele-btn", id: "delete-num-#{i}"} 削除
                 %label{for: "item_images_attributes_0_src", class: "dropbox__img"}
                   = icon('fas', 'camera')
                   -# %p ドラッグアンドドロップ<br>または
                   %p クリックしてファイルをアップロード
 
-                = f.fields_for :images, @item.images.build do |image|
-                  %div.js-file_group{data: {index: image.index}}
-                    = image.file_field :src, class: "js-file"
+              = f.fields_for :images do |image|
+                %div{ data: {index: image.index}, class: "reselection" }
+                  = image.file_field :src, class: "js-file"
+                  - if @item.persisted?
+                    = image.check_box :_destroy, data: { index: image.index }, class: "hidden-destroy"
+              - if @item.persisted?
+                %div{ data: {index: @item.images.count}, class: "js-file_group" }
+                  = file_field_tag "item_images_attributes_#{@item.images.count}_src", name: "item[images_attributes][#{@item.images.count}][src]", class: "js-file"
                 
               = render partial: 'error_message', locals: { column: :images }
 
@@ -49,9 +60,18 @@
               %h3.product-details__form__category__name
                 カテゴリー
                 %span.form--caution 必須
-                .select--wrap
-                  =f.collection_select :category_id, @category_parent_array, :id, :name,{ include_blank: "選択してください"},class:"select--wrap__box1"
-                  = render partial: 'error_message', locals: { column: :category }
+                - if @item.category != nil
+                  .select--wrap
+                    = f.collection_select :category_id, @category_parent_array, :id, :name, { selected: @item.category.root.id }, class:"select--wrap__box1"
+                  .select--wrap#children_wrapper
+                    = f.collection_select :category_id, @item.category.parent.parent.children, :id, :name, { selected: @item.category.parent.id }, class:"select--wrap__box1", id:"child__category"
+                  .select--wrap#grandchildren_wrapper
+                    = f.collection_select :category_id, @item.category.parent.children, :id, :name, { selected:  @item.category.id }, class:"select--wrap__box1"
+                - else
+                  .select--wrap
+                    = f.collection_select :category_id, @category_parent_array, :id, :name, { include_blank: "選択してください"}, class:"select--wrap__box1"
+                  
+                = render partial: 'error_message', locals: { column: :category }
   
             .product-details__form__brand
               %h3.product-details__form__brand__name
@@ -111,8 +131,8 @@
             
         .submit-button
           .actions
-            = f.submit "出品する", class: "btn--lightblue"
-          = link_to 'もどる', root_path, class: 'btn--bule'
+            = f.submit "更新する", class: "btn--lightblue"
+          = link_to 'もどる', new_item_path, class: 'btn--bule'
           .subimit-button__text
             = link_to '禁止されている出品', new_item_path, class: 'submit__text'
             、
@@ -126,7 +146,7 @@
               また、出品をもちまして
               = link_to '加盟店規約', new_item_path, class: 'submit__text'
               に同意したことになります。
-              
+
 .exhibit-page__footer
   .exhibit-page__footer__content
     .exhibit-page__footer__content__main

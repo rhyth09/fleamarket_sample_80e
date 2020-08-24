@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', ()=> {
   $('#passcheck').change(function(){
     if ($(this).prop('checked')) {
       $('#js-password').attr('type','text');

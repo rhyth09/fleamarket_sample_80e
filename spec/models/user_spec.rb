@@ -84,13 +84,13 @@ RSpec.describe User do
       it 'パスワードが入力されていても確認用のパスワードが入力されていない場合は登録できないこと' do
         user = build(:user, password_confirmation: "")
         user.valid?
-        expect(user.errors[:password_confirmation]).to include("とPasswordの入力が一致しません")
+        expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
       end
       
       it 'パスワードと確認用のパスワードが一致しない場合は登録できないこと' do
         user = build(:user, password_confirmation: "12345678")
         user.valid?
-        expect(user.errors[:password_confirmation]).to include("とPasswordの入力が一致しません")
+        expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
       end
       
       it 'ユーザー本名の名字が入力されていない場合は登録できないこと' do
