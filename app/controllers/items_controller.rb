@@ -2,10 +2,11 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:edit, :update, :show, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :permit_only_seller, only: [:edit, :update, :destroy]
   before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
   def index
-    @items = Item.includes(:images, :user)
+    @items = Item.includes(:images).order('created_at DESC').limit(5)
   end
 
   def new
@@ -23,17 +24,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @grandchild = @item.category
-    @child = @grandchild.parent
-    @parent = @item.category.root
   end
 
   def update
     if @item.update(item_params)
       redirect_to root_path
     else
-      flash[:alert] = "必須項目が空欄なので更新できませんでした"
-      redirect_to edit_item_path
+      render :edit
     end
   end
 
@@ -46,9 +43,10 @@ class ItemsController < ApplicationController
     if @item.destroy
       redirect_to delete_done_items_path
     else
-      flash.now[:alert] = '削除できませんでした'
+      flash[:alert] = '削除できませんでした'
       render :show
     end
+
   end
 
   def get_category_children
@@ -61,6 +59,11 @@ class ItemsController < ApplicationController
   end
   
   private
+
+  def permit_only_seller
+    redirect_to root_path, alert: "出品者のみが許可されるページです" unless set_item.seller_id == current_user.id
+  end
+
   def item_params
     params.require(:item).permit(:name, :price, :explain, :size, :prefecture_id, :brand, :shipping_date_id, :item_status_id, :postage_id, :category_id, images_attributes: [:src, :_destroy, :id]).merge(seller_id: current_user.id)
   end
