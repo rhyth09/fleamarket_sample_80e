@@ -1,11 +1,10 @@
-.wrapper
-  = render partial: 'items/header'
+= render partial: 'items/header'
 
 .my-page-main
   .side-bar
     %ul.my-page
       %li
-        = link_to "マイページ",'/'
+        = link_to "マイページ", user_path(current_user.id)
       %li
         = link_to "お知らせ"
       %li
@@ -13,7 +12,7 @@
       %li
         = link_to "いいね！一覧"
       %li
-        = link_to "出品する"
+        = link_to "出品する", new_item_path
       %li
         = link_to "下書き一覧"
       %li
@@ -49,11 +48,21 @@
       %li
         = link_to "ログアウト", logout_user_path
 
-  .main-content
-    .main-content__photo
-      = link_to image_tag('material/icon/member_photo_noimage_thumb.png' , alt: 'プロフィール画像', :size => '200x200')
-    .main-content__name
-      name
-    .main-content__text
+  .User-my-page
+    %h1 出品中の商品
+    .User-my-page__main
+      - @sales_items.each do |sales_item|
+        .My-page-content
+          = link_to '', edit_item_path(sales_item.id)
+          .My-page-content__image
+            = image_tag(sales_item.images.first.src.url, alt: '商品画像', width: '120px', height: '120px')
+          .My-page-content__contents
+            %h1= sales_item.name
+            .My-page-content__contents--price
+              %span 税込価格
+              %p= sales_item.price
+            .My-page-content__contents--explain
+              %span 商品説明
+              %p= sales_item.explain
 
 = render partial: 'items/footer'
