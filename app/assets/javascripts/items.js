@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', ()=> {
 
   $('.hidden-destroy').prop('checked', false);
-  
+
   // 画像追加用のinput要素
   const buildFileField = (index) => {
     const html = `<div class="js-file_group" data-index="${index}">
