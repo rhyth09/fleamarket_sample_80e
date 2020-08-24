@@ -9,6 +9,7 @@ FactoryBot.define do
     item_status_id   {2}
     postage_id       {2}
     category
+    seller           {create(:user)}
     after(:build) do |item|
       item.images << build(:image, item: item)
     end
