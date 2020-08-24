@@ -1,16 +1,25 @@
 = render partial: 'items/header'
 
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag(card_path(current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
-
+.card-page
+  .card
+    = render partial: "users/side_bar"
+    .card__main
+      .card__main__title
+        %h2 クレジット情報の確認/削除
+      .card__main__info
+        .card__main__body
+          .card__main__body__title
+            Your Credit Card
+          .card__main__body__data
+            = "**** **** **** " + @default_card_information.last4
+          .card__main__body__data
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + "月 / " + exp_year + "年"
+        .delete_btn
+        = form_tag(card_path(current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
+          %input{ type: "hidden", name: "card_id", value: "" }
+          %button.btn 削除する
 
 = render partial: 'items/sell_btn'
 = render partial: 'items/footer_invitation'
