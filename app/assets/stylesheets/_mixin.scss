@@ -37,3 +37,14 @@
   text-align: center;
   text-decoration: none;
 }
+
+@mixin caution-item {
+  display: inline-block;
+  line-height: 14px;
+  margin-left: 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: $white;
+  font-size: 12px;
+  vertical-align: top;
+}
