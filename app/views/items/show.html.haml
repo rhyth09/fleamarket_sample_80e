@@ -1,3 +1,4 @@
+= render partial: 'items/notifications'
 = render partial: 'header'
 
 .showMain
@@ -83,7 +84,7 @@
   .item-buy__btn__box
     - if user_signed_in? && current_user.id == @item.seller_id
       = link_to '商品の編集', "/items/#{@item.id}/edit", method: :get, class: "edit_btn"
-      = link_to 'この商品を削除する', "/items/#{@item.id}", method: :delete, class: "delete_btn"
+      = link_to 'この商品を削除する', item_path(@item.id), method: :delete, class: "delete_btn"
     - elsif user_signed_in?
       = link_to "購入画面に進む", buy_item_path(@item.id), class: "pay_btn"
     - else user_signed_in?

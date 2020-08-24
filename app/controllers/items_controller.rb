@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
+
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :permit_only_seller, only: [:edit, :update, :destroy]
-  before_action :set_item, only: [:edit, :update, :show]
   before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
   def index
@@ -37,8 +38,20 @@ class ItemsController < ApplicationController
     @parents = Category.all
   end
 
+
+  def destroy
+    if @item.destroy
+      redirect_to delete_done_items_path
+    else
+      flash[:alert] = '削除できませんでした'
+      render :show
+    end
+
+  end
+
   def get_category_children
     @category_children = Category.find("#{params[:parent_id]}").children
+
   end
 
   def get_category_grandchildren
