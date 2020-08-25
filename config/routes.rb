@@ -8,10 +8,6 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
 
-
-
- 
-
   root 'items#index'
   
   resources :categories, only: [:index,]
@@ -24,8 +20,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :items, only: [:new, :create, :edit, :update, :show, :destroy] do
-
+  resources :items, only: [:index, :new, :create, :edit, :update, :show, :destroy] do
     member do
       get 'buy'
       get 'get_category_children', defaults: { format: 'json' }
