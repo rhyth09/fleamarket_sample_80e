@@ -2,10 +2,11 @@
 
 <h1 align="center">フリーマーケットサイト</h1>
 
+![top_page](https://github.com/rhyth09/fleamarket_sample_80e/blob/master/5f8ad3d59bbf3a99c045666419a31795.jpg)
 - メルカリクローンのフリーマーケットサイトです。
 - テックキャンプ エンジニア転職 80期短期集中コースEチームで作成。
 - 作成期間 2020/8/4 ~ 2020/8/28
-- ![top_page](https://github.com/rhyth09/fleamarket_sample_80e/blob/master/5f8ad3d59bbf3a99c045666419a31795.jpg)
+
 
 
 ## 機能紹介
