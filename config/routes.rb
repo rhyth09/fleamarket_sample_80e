@@ -24,8 +24,8 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :items, only: [:new, :create, :edit, :update, :show, :destroy] do
-
+  resources :items do
+    resources :comments,  only: [:create, :destroy]
     member do
       get 'buy'
       get 'get_category_children', defaults: { format: 'json' }
@@ -40,6 +40,7 @@ Rails.application.routes.draw do
       get 'detail_search'
       get 'update_done'
     end
+
   end
 
 end
