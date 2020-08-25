@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   root 'items#index'
   
   resources :categories, only: [:index,]
-  resources :cards, only: [:new]
 
   resources :users, only: [:show] do
     member do
@@ -37,5 +36,13 @@ Rails.application.routes.draw do
       get 'update_done'
     end
   end
+
+
+  resources :cards, only: [:new, :show, :destroy] do
+    collection do
+      post 'pay', to: 'cards#pay'
+    end
+  end
+
 
 end
