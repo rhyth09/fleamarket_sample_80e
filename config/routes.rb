@@ -36,6 +36,12 @@ Rails.application.routes.draw do
       get 'detail_search'
       get 'update_done'
     end
+    resources :purchase, only: [:index] do
+      collection do
+        get 'done', to: 'purchase#done'
+        post 'pay', to: 'purchase#pay'
+      end
+    end
   end
 
 
