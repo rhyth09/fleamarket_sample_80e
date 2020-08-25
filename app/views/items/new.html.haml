@@ -115,6 +115,7 @@
           .Sales-price.profit
             %p 販売利益
             %span#profit ー
+            = f.hidden_field :price, value: "", id: "hidden-price"
             
         .submit-button
           .actions
