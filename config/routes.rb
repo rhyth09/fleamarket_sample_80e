@@ -22,10 +22,13 @@ Rails.application.routes.draw do
       get 'sales_items'
       get 'logout'
     end
+    collection do
+      get 'commented_items'
+    end
   end
   
   resources :items do
-    resources :comments,  only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
     member do
       get 'buy'
       get 'get_category_children', defaults: { format: 'json' }
