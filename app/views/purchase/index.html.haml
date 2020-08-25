@@ -24,10 +24,10 @@
           .buy-price-money
             = "¥#{@item.price.to_s}"
     .buy-content.buy-user-info
-      .buy-content-inner
+      .buy-content-info
         %h3 支払方法
-        .payment-content__creditcards
-          = link_to '変更する', '#', class: 'creditcard'
+        = link_to '変更する', '#', class: 'creditcard'
+      .payment-content__creditcards
         .user-info-text
         - if @default_card_information.blank?
           %br /
@@ -39,10 +39,10 @@
           = "有効期限 " + exp_month + " / " + exp_year
           %br
     .buy-content.buy-user-info
-      .buy-content-inner
+      .buy-content-info
         %h3 配送先
-        .delivery-content__addresses
-          = link_to '変更する', '#', class: 'address'
+        = link_to '変更する', '#', class: 'address'
+      .delivery-content__addresses
         .user-info-text
           〒
           = current_user.address.postal_code
