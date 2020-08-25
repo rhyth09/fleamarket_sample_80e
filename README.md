@@ -62,6 +62,9 @@
 
 # DB設計
 
+## ER図
+![er](https://github.com/rhyth09/fleamarket_sample_80e/blob/master/dee28fd636236fbae9f7a5ee344a01a6.png)
+
 ## Usersテーブル
 |Column|Type|Options|
 |------|----|-------|
