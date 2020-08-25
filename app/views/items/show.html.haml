@@ -128,25 +128,23 @@
                 .comment__text
                   = comment.comment
                 .comment__bottom
-                  .date
-                    = icon('far', 'clock')
-                    = comment.days_passed
                   .comment__icon
                     .flag
                       = icon('far', 'flag')
                     .trash
                       = link_to item_comment_path(comment.item.id, comment.id), "item_id": :@item, method: :delete do
                         = icon('fa', 'trash')
+                  .date
+                    = icon('far', 'clock')
+                    = comment.days_passed
     -if user_signed_in?
       = form_with model: [@item, @comment], local: true, class: "new_comment", id: "comment_form" do |f|
-        = f.text_area :comment, required: "required", class: "text_area"
         %p.commentBox__noticeMsg
-        相手のことを考え丁寧なコメントを心がけましょう。
-        %br
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        = f.submit "コメントする", class: "commentBox__commentBtn"
-        -# = f.submit "コメントする", class: "commentBox__commentBtn"
-        -# %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = f.text_area :comment, required: "required", class: "text_area"
+        = f.submit "コメントする", class: "commentBtn"
     - else
       -# %p.commentBox__noticeMsg
       -#   相手のことを考え丁寧なコメントを心がけましょう。
