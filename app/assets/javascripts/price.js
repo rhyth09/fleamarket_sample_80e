@@ -5,6 +5,8 @@ $(document).on('turbolinks:load', ()=> {
     const profit = this.value - fee;
     $('#fee').text(`¥ ${fee}`);
     $('#profit').text(`¥ ${profit}`);
+
+    $('#hidden-price').prop('value', profit);
   });
 
 });
