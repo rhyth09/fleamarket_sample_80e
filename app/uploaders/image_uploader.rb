@@ -4,6 +4,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   process resize_to_limit: [720, 720]
 
+  def size_range
+    1.byte..1.megabytes
+  end
+
   # Choose what kind of storage to use for this uploader:
   # storage :file
   storage :fog
