@@ -1,49 +1,51 @@
-.card
-  .card__main
-    .card__main__title
-      %h2 クレジットカード情報入力
-    %form{action:""}
-      .card__main__number
-        .card__main__number__text カード番号
-        %input{type:"text", name:"card-number" ,placeholder:"半角数字のみ/16桁" ,maxlength:16, class:"card-number"}
-        %br
-      .card__main__name
-        .card__main__name__text カード名義
-        %input{type:"text",name:"name",class:"card-name"}
-        %br
-      .card__main__expiration-date
-        .card__main__expiration-date__text 有効期限(月/年)
-        %select{name:"expiration_month",type:"text",required:"", class:"month"}
-          %option{value: ""}--
-          %option{value: "1"}01
-          %option{value: "2"}02
-          %option{value: "3"}03
-          %option{value: "4"}04
-          %option{value: "5"}05
-          %option{value: "6"}06
-          %option{value: "7"}07
-          %option{value: "8"}08
-          %option{value: "9"}09
-          %option{value: "10"}10
-          %option{value: "11"}11
-          %option{value: "12"}12
-        %select{name:"expiration_year",type:"text",required:"",class:"year"}
-          %option{value: ""}--
-          %option{value: "20"}20
-          %option{value: "21"}21
-          %option{value: "22"}22
-          %option{value: "23"}23
-          %option{value: "24"}24
-          %option{value: "25"}25
-          %option{value: "26"}26
-          %option{value: "27"}27
-          %option{value: "28"}28
-          %option{value: "29"}29
-          %option{value: "30"}30
-          %option{value: "31"}31    
-      .card__main__security-code
-        .card__main__security-code__text セキュリティコード
-        %input{type:"text", name:"security-number",placeholder:"半角数字のみ",maxlength:4, class:"number"}
-        %br
-      .card__main__submit
-        %input{type:"submit",value:"登録", class: "submit-btn"}
+= render partial: 'items/header'
+
+.card-page
+  .card
+    = render partial: "users/side_bar"
+    .card__main
+      .card__main__title
+        %h2 クレジットカード情報入力
+      .card__main__info
+        = form_with url: pay_cards_path, method: :post, html: { name: "inputForm" } do |f|
+          .card__main__number
+          = f.label :カード番号
+          %span.RequiredItem
+            必須
+          = f.text_field :card_number, type: 'text', class: 'number', placeholder: '半角数字のみ/16桁', maxlength: "16"
+          %ul
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?238737266",width:"49px",height:"20px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?238737266",width:"34px",height:"20px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?238737266",width:"30px",height:"20px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?238737266",width:"32px",height:"20px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?238737266",width:"21px",height:"20px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?238737266",width:"32px",height:"20px"
+            %li
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?238737266",width:"32px",height:"20px"
+          .card__main__expiration-date
+            = f.label :有効期限
+            %span.RequiredItem
+              必須
+            .card__main__multi-input-box
+              = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'exp_month'
+              %span 月
+              = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029],["30",2030]],{} , class: 'exp_year'
+              %span 年
+          .card__main__security-code
+          = f.label :セキュリティコード
+          %span.RequiredItem
+            必須
+          = f.text_field :cvc, type: 'text', class: 'cvc', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
+          .card__main__submit
+            #card_token
+            = f.submit '追加する', class: 'btn', id: 'token_submit'
+
+= render partial: 'items/sell_btn'
+= render partial: 'items/footer_invitation'
+= render partial: 'items/footer'

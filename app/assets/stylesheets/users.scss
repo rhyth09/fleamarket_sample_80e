@@ -1,24 +1,25 @@
+.side-bar {
+  margin-right: 40px;
+  width: 300px;
+  ul.my-page {
+    background-color: #ffffff;
+    li {
+      border-bottom: 1px solid #f8f8f8;
+      font-size: 14px;
+      a {
+        margin-left: 10px;
+        line-height: 50px;
+        text-decoration: none;
+        color: #000000;
+      }
+    }
+  }
+}
+
 .my-page-main{
   padding: 40px;
   display: flex;
   background-color: #f8f8f8;
-  .side-bar {
-    margin-right: 40px;
-    width: 300px;
-    ul.my-page {
-      background-color: #ffffff;
-      li {
-        border-bottom: 1px solid #f8f8f8;
-        font-size: 14px;
-        a {
-          margin-left: 10px;
-          line-height: 50px;
-          text-decoration: none;
-          color: #000000;
-        }
-      }
-    }
-  }
   .main-content {
     width: 700px;
     margin: 0 auto;
