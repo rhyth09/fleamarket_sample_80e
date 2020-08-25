@@ -1,6 +1,6 @@
 .buy-main{
   min-height: 100vh;
-  background-color: #EEEEEE;
+  background-color: #f5f5f5;
 } 
 
 .buy-item-container{
@@ -20,7 +20,7 @@
 
 .buy-content{
   border-top: 1px solid #f5f5f5;
-  padding: 32px 16px;
+  padding: 32px 0;
   max-width: 375px;
   margin: 0 auto;
   &-inner{
@@ -91,8 +91,8 @@
     justify-content: center;
     align-items: center;
     & > img {
-      width: 220px;
-      height: 120px;
+      // width: 220px;
+      // height: 120px;
       object-fit: contain;
       vertical-align: bottom;
     }
@@ -196,7 +196,7 @@
   justify-content: space-between;
   max-width: 375px;
   margin: 0 auto;
-  padding: 30px ;
+  padding: 30px 0;
   &__left {
     font-size: 14px;
     font-weight: bold;

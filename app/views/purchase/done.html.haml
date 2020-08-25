@@ -1,6 +1,6 @@
-.buy-main
-  = render partial: 'devise/shared/header'
+= render partial: 'devise/shared/header'
 
+.buy-main
   .buy-item-container
     %h1.buy-content__attention
       %i.far.fa-clock
@@ -29,4 +29,5 @@
               = "¥#{@item.price.to_s}"
           .buy-content__submit
             = link_to "トップページへ戻る", root_path, class: 'buy-content__submit__btn'
-  = render partial: 'devise/shared/footer'
+
+= render partial: 'devise/shared/footer'
