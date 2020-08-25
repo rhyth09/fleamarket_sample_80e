@@ -36,6 +36,8 @@ class ItemsController < ApplicationController
 
   def show
     @parents = Category.all
+    @comment = Comment.new
+    @comments = @item.comments.includes(:seller)
   end
 
 
