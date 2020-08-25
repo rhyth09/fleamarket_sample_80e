@@ -105,9 +105,16 @@
                 販売価格
               %span.form--caution 必須
             .select--wrap
-              ¥
-              = f.number_field :price, in: 300..9999999, step:1, class: "select--wrap__box"
+              .price-field
+                %span ¥
+                = f.number_field :price, in: 300..9999999, step:1, class: "select--wrap__box", id: "price"
               = render partial: 'error_message', locals: { column: :price }
+          .Sales-price.fee
+            %p 販売手数料 (10%)
+            %span#fee ー
+          .Sales-price.profit
+            %p 販売利益
+            %span#profit ー
             
         .submit-button
           .actions
