@@ -7,12 +7,12 @@
       .card__main__title
         %h2 クレジットカード情報入力
       .card__main__info
-        = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm", class: "card__main__input") do
+        = form_with url: pay_cards_path, method: :post, html: { name: "inputForm" } do |f|
           .card__main__number
-          %label カード番号
+          = f.label :カード番号
           %span.RequiredItem
             必須
-          = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ/16桁" ,maxlength: "16", type: "text", id: "card_number"
+          = f.text_field :card_number, type: 'text', class: 'number', placeholder: '半角数字のみ/16桁', maxlength: "16"
           %ul
             %li
               = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?238737266",width:"49px",height:"20px"
@@ -29,47 +29,22 @@
             %li
               = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?238737266",width:"32px",height:"20px"
           .card__main__expiration-date
-            %label 有効期限(月/年)
+            = f.label :有効期限
             %span.RequiredItem
               必須
             .card__main__multi-input-box
-              %select#exp_month{name: "exp_month", type: "text", class: "exp_month"}
-                %option{value: ""} --
-                %option{value: "1"}01
-                %option{value: "2"}02
-                %option{value: "3"}03
-                %option{value: "4"}04
-                %option{value: "5"}05
-                %option{value: "6"}06
-                %option{value: "7"}07
-                %option{value: "8"}08
-                %option{value: "9"}09
-                %option{value: "10"}10
-                %option{value: "11"}11
-                %option{value: "12"}12
+              = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'exp_month'
               %span 月
-              %select#exp_year{name: "exp_year", type: "text", class: "exp_year"}
-                %option{value: ""} --
-                %option{value: "2020"}20
-                %option{value: "2021"}21
-                %option{value: "2022"}22
-                %option{value: "2023"}23
-                %option{value: "2024"}24
-                %option{value: "2025"}25
-                %option{value: "2026"}26
-                %option{value: "2027"}27
-                %option{value: "2028"}28
-                %option{value: "2029"}29
-                %option{value: "2030"}30
+              = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029],["30",2030]],{} , class: 'exp_year'
               %span 年
           .card__main__security-code
-          %label セキュリティコード
+          = f.label :セキュリティコード
           %span.RequiredItem
             必須
-          = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+          = f.text_field :cvc, type: 'text', class: 'cvc', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
           .card__main__submit
             #card_token
-            = submit_tag "追加する", id: "token_submit", class: "btn"
+            = f.submit '追加する', class: 'btn', id: 'token_submit'
 
 = render partial: 'items/sell_btn'
 = render partial: 'items/footer_invitation'
