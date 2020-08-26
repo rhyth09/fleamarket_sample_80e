@@ -75,15 +75,10 @@
     text-align: right;
   }
   &-image{
-    // height: 80px;
-    // width: 80px;
-    // min-width: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     & > img {
-      // width: 220px;
-      // height: 120px;
       object-fit: contain;
       vertical-align: bottom;
     }
