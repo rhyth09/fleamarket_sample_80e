@@ -1,0 +1,40 @@
+= render partial: 'header'
+
+.Search
+  .Search__side
+
+  .Search__main
+    .Search__main--title
+      %span.bold あいうえお
+      %span の検索結果
+    .Search__main--count
+      %span 5件表示
+    .Search__main--contents  
+      .Searched-item
+        = image_tag('material/pict/pict-reason-01.jpg')
+        .Searched-item__price
+          %span ¥500
+        .Searched-item__name
+          この商品の名前が入ります
+      .Searched-item
+        = image_tag('material/pict/pict-reason-01.jpg')
+        .Searched-item__price
+          %span ¥500
+        .Searched-item__name
+          この商品の名前が入ります
+      .Searched-item
+        = image_tag('material/pict/pict-reason-01.jpg')
+        .Searched-item__price
+          %span ¥500
+        .Searched-item__name
+          この商品の名前が入ります
+      .Searched-item
+        = image_tag('material/pict/pict-reason-01.jpg')
+        .Searched-item__price
+          %span ¥500
+        .Searched-item__name
+          この商品の名前が入ります
+
+= render partial: 'sell_btn'
+= render partial: 'footer_invitation'
+= render partial: 'footer'
