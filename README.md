@@ -20,7 +20,7 @@
 - has_one :credit_card, dependent: :destroy
 - has_one :address, dependent: :destroy
 
-## Credit_cardsテーブル
+## Cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |customer_id|string|null: false|
