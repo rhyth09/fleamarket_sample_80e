@@ -2,35 +2,36 @@
   padding: 40px 150px 40px 60px;
   display: flex;
   justify-content: space-between;
-  &__side {
-    border: 1px solid #4d4d4d;
-    width: 260px;
-  }
+
   &__main {
     background-color: #f5f5f5;
-    padding: 30px;
+    padding: 40px 30px 60px 50px;
     width: 900px;
     &--title {
+      height: 25px;
       display: flex;
+      line-height: 20px;
       font-size: 20px;
       & .bold {
+        padding-right: 10px;
         font-size: 22px;
         font-weight: bold;
-        padding-right: 10px;
       }
-    }
-    &--count {
-      padding: 20px 20px 0;
-      line-height: 20px;
-      font-size: 12px;
-      display: flex;
-      color: gray;
+      &__count {
+        padding-left: 30px;
+        font-size: 12px;
+        display: flex;
+        color: gray;
+        & > span {
+          padding-left: 5px;
+        }
+      }
     }
     &--contents {
       width: 830px;
       margin-top: 30px;
       display: flex;
-      justify-content: center;
+      justify-content: start;
       flex-wrap: wrap;
     }
   }
@@ -43,6 +44,13 @@
   width: 160px;
   height: 240px;
   position: relative;
+  & a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 240px;
+  }
   & > img {
     background-color: #dcdcdc;
     width: 150px;
