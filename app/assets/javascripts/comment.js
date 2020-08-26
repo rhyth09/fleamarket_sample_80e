@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', ()=> {
   function buildHTML(comment){
     let html = `<div class="commentBox__comment">
                   <div class="profile">
