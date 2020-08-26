@@ -1,12 +1,16 @@
 class CommentsController < ApplicationController
 
+  # def index
+  #   @comment = Comment.new
+  #   @comments = Comment.all
+  # end
+
   def create
     @item = Item.find(params[:item_id])
-    @comment = Comment.new(comment_params)
-    if @comment.save
-      redirect_to item_path(@comment.item.id)
-    else
-      render :show
+    @comment = Comment.create(comment_params)
+    respond_to do |format|
+      format.html  { redirect_to item_path(params[:item_id]) }
+      format.json
     end
   end
 
