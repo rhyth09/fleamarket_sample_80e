@@ -146,11 +146,6 @@
         = f.text_area :comment, required: "required", class: "text_area"
         = f.submit "コメントする", class: "commentBtn"
     - else
-      -# %p.commentBox__noticeMsg
-      -#   相手のことを考え丁寧なコメントを心がけましょう。
-      -#   %br
-      -#   不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      -# %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
       %p.not_comment
         ※コメントの投稿には新規会員登録/ログインが必要です※
   .links
