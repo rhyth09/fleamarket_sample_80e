@@ -35,7 +35,6 @@
     background-color: $white;
     width: 220px;
     height: 250px;
-    position: relative;
     z-index: 1;
     & > img {
       width: 220px;
@@ -47,21 +46,25 @@
       padding: 16px;
       text-align: left;
     }
-    .Pickup__items__sold{
-      top: 0px;
-      width: 30px;
-      border-top: 50px solid #FF3333;
-      border-left: 50px solid #FF3333;
-      border-right: 50px solid transparent;
-      border-bottom: 50px solid transparent;
+  }
+}
+
+.Pickup__items {
+  position: relative;
+  &__sold{
+    top: 0px;
+    width: 30px;
+    border-top: 50px solid #FF3333;
+    border-left: 50px solid #FF3333;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    position: absolute;
+    &__inner{
       position: absolute;
-      &__inner{
-        position: absolute;
-        top: -20px;
-        right: -10px;
-        color: #ffffff;
-        transform: rotate(-45deg);
-      }
+      top: -20px;
+      right: -10px;
+      color: #ffffff;
+      transform: rotate(-45deg);
     }
   }
 }
