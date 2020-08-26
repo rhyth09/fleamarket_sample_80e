@@ -129,44 +129,147 @@
 }
 
 .commentBox{
-  background-color: white;
   width: 700px;
-  margin-top:10px;
-  margin-right:auto;
-  margin-bottom:10px;
-  margin-left:auto;
+  margin: 0 auto;
   padding: 24px;
-  &__Form{
-    resize: none;
-    width: 652px;
-    height: 104px;
+  background-color: #fff;
+
+  text-align: center;
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3ccace;
+    margin-bottom: 10px;
+  }
+
+  &__comment {
     padding: 10px;
+
+    .profile {
+      display: flex;
+      justify-content: flex-end;
+      &__name {
+        @include name();
+        margin-right: 20px;
+      }
+      .image {
+        font-size: 50px;
+        margin-bottom: 5px;
+      }
+      .seller_or_buyer {
+        font-size: 12px;
+        padding: 2px;
+        border-radius: 8px;
+        background-color: #3ccace;
+        color: #fff;
+      }
+    }
+    .comment {
+      background-color: #dedede;
+      width: 83%;
+      padding: 8px;
+      margin-top: -55px;
+      border-radius: 12px;
+      margin-left: 49px;
+
+      &__text {
+        text-align: left;
+        word-break: break-all;
+        padding-left: 10px;
+      } 
+      &__bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        margin-top: 5px;
+        color: #6d6d6d;
+        font-size: 12px;
+
+        a {
+          text-decoration: none;
+          color: #6d6d6d;
+        }
+      }
+    }
+    &__other {
+      padding: 10px;
+      display: flex;
+      .profile__right{
+        justify-content: flex-start;
+        .image {
+          font-size: 50px;
+          margin-bottom: 5px;
+        }
+        .seller_or_buyer {
+          font-size: 12px;
+          padding: 2px;
+          border-radius: 8px;
+          background-color: #3ccace;
+          color: #fff;
+        }
+      }
+      .profile__name {
+        @include name();
+        margin-left: 20px;
+      }
+      .comment {
+        background-color: #cdf4f4;
+        width: 82%;
+        padding: 8px;
+        margin: 25px 0px 0px -40px;
+        border-radius: 12px;
+
+
+        &__text {
+          text-align: right;
+          width: 100%;
+          word-break: break-all;
+          padding-right: 10px;
+        } 
+        &__bottom {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 10px;
+          margin-top: 5px;
+          color: #6d6d6d;
+          font-size: 12px;
+
+          a {
+            text-decoration: none;
+            color: #6d6d6d;
+          }
+        }
+        &__icon {
+          display: flex;
+          .flag {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
   }
-  &__noticeMsg{
-    background-color: #F8F8F8;
-    width: 652px;
-    height: 58px;
+}
+.new_comment{
+  margin-top: 40px;
+  .text_area{
+    width: 100%;
+    min-height: 104px;
+    padding: 10px;
+    resize: none
+  }
+  .commentBox__noticeMsg{
     padding: 8px;
-    margin: 10px 0px;
     font-size: 14px;
-  }
-  &__commentBtn{
-    width: 391.19px;
-    height: 52px;
-    padding: 1px 6px;
-    font-size: 18px;
-    color:#FFFFFF;
-    background-color: #3CCACE;
-    border: solid 1px #3CCACE;
-    border-radius: 100px;
-    display: block;
+    background-color: #f8f8f8;
+    margin: 10px 0;
     text-align: center;
-    margin: 0 auto;
   }
-  .not_comment{
-    text-align: center;
-    margin-top: 20px;
-  }
+}
+
+.commentBtn{
+  @include blue_link();
+  @include opacity();
 }
 
 .links{

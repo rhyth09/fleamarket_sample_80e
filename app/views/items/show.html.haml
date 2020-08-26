@@ -90,22 +90,62 @@
     - else user_signed_in?
       = link_to "新規会員登録/ログインが必要です", new_user_session_path, class: "login_btn"
   .commentBox
+    .title
+      コメント一覧
+    .commentBox__comments
+      - if @comments
+        - @comments.each do |comment|
+          -if comment.seller_id == @item.seller_id
+            .commentBox__comment
+              .profile
+                .profile__name
+                  = comment.seller.nickname
+                .profile__right
+                  .image
+                    = icon('fas', 'user-circle')
+                  .seller_or_buyer
+                    出品者
+              .comment
+                .comment__text
+                  = comment.comment
+                .comment__bottom
+                  .comment__date
+                    = icon('far', 'clock')
+                    = comment.days_passed
+                  .comment__trash
+                    = link_to item_comment_path(comment.item.id, comment.id), "item_id": :@item, method: :delete do
+                      = icon('fa', 'trash')
+          - else
+            .commentBox__comment__other
+              .profile__right
+                .image
+                  = icon('far', 'user-circle')
+                .seller_or_buyer
+                  お客様
+              .profile__name
+                = comment.seller.nickname
+              .comment
+                .comment__text
+                  = comment.comment
+                .comment__bottom
+                  .comment__icon
+                    .flag
+                      = icon('far', 'flag')
+                    .trash
+                      = link_to item_comment_path(comment.item.id, comment.id), "item_id": :@item, method: :delete do
+                        = icon('fa', 'trash')
+                  .date
+                    = icon('far', 'clock')
+                    = comment.days_passed
     -if user_signed_in?
-      %p.commentBox__noticeMsg
-        相手のことを考え丁寧なコメントを心がけましょう。
-        %br
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
-      
-      %button.commentBox__commentBtn{type: "submit"}
-        = icon('fa', 'comment')
-        コメントする
+      = form_with model: [@item, @comment], local: true, class: "new_comment", id: "comment_form" do |f|
+        %p.commentBox__noticeMsg
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = f.text_area :comment, required: "required", class: "text_area"
+        = f.submit "コメントする", class: "commentBtn"
     - else
-      %p.commentBox__noticeMsg
-        相手のことを考え丁寧なコメントを心がけましょう。
-        %br
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %textarea.commentBox__Form{type: "textarea", placeholder: ' ',rows:' 5 '}
       %p.not_comment
         ※コメントの投稿には新規会員登録/ログインが必要です※
   .links

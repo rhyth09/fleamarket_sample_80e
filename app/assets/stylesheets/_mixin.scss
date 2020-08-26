@@ -59,3 +59,25 @@
   padding-top: 5px;
   color: white;
 }
+
+@mixin blue_link(){
+  line-height: 48px;
+  background: #3ccace;
+  border: 1px solid #3ccace;
+  color: #fff;
+  width: 60%;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+
+@mixin opacity(){
+  &:hover{
+    opacity: 0.5;
+  }
+}
+@mixin name{
+  font-weight: bold;
+  font-size: 7px;
+  color: blue;
+}
