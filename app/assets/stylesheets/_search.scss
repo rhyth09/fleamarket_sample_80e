@@ -3,6 +3,43 @@
   display: flex;
   justify-content: space-between;
 
+  &__side {
+    border: 1px solid #696969;
+    padding: 20px;
+    width: 260px;
+    & > h2 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    & > h3 {
+      padding-top: 40px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #4d4d4d;
+    }
+    &--btns {
+      padding: 50px 0;
+      width: 200px;
+      display: flex;
+      justify-content: space-between;
+      & > div {
+        border-radius: 5px;
+        padding: 10px 0;
+        width: 85px;
+        height: 40px;
+        text-align: center;
+        line-height: 20px;
+        color: #fff;
+      }
+      .clear {
+        background-color: #4d4d4d;
+      }
+      .complete {
+        background-color: #3ccace;
+      }
+    }
+  }
+
   &__main {
     background-color: #f5f5f5;
     padding: 40px 30px 60px 50px;
