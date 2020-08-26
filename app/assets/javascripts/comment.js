@@ -34,7 +34,7 @@ $(function(){
   }
 
   function buildHTMLother(comment){
-    let html = `<div class="commentBox__comment">
+    let html = `<div class="commentBox__comment__other">
                   <div class="profile__right">
                     <div class="image">
                       <i class="far fa-user-circle"></i>
@@ -51,10 +51,6 @@ $(function(){
                       ${comment.comment}
                     </div>
                     <div class="comment__bottom">
-                      <div class="date">
-                        <i class="far fa-clock"></i>
-                        本日
-                      </div>
                       <div class="comment__icon">
                         <div class="flag">
                           <i class="far fa-flag"></i>
@@ -62,6 +58,10 @@ $(function(){
                         <div class="trash">
                           <a item_id="@item" rel="nofollow" data-method="delete" href="/items/${comment.item_id}/comments/${comment.comment_id}"><i class="fa fa-trash"></i></a>
                         </div>
+                      </div>
+                      <div class="date">
+                        <i class="far fa-clock"></i>
+                          本日
                       </div>
                     </div>
                   </div>
