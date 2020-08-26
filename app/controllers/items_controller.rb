@@ -49,6 +49,8 @@ class ItemsController < ApplicationController
   end
 
   def search
+    @keyword = params[:keyword]
+    @items = Item.search(params[:keyword]).includes(:images).order('created_at DESC')
   end
 
   def get_category_children
