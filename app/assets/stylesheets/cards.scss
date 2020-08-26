@@ -1,85 +1,101 @@
-.card {
-  display: flex;
-  justify-content: center;
-  &__main{
-    &__title{
-      width:430px;
-      display:flex;
-      justify-content: center;
-      background-color: #e0ffff;
-      border: 1px solid #c8c8c8;
-    }  
-    &__number{
-      display: flex;
-      &__text{
-        line-height: 50px;
-        width:150px;
-        border: 1px solid #c8c8c8;
-        background-color: #f0f0f0;
+.card-page {
+  background-color: #f5f5f5;
+  .card {
+    display: flex;
+    padding: 40px 210px;
+    justify-content: center;
+    &__main{
+      width:700px;
+      height: 600px;
+      background-color: #fff;
+      &__title{
+        padding: 32px 16px;
+        border-bottom: 1px solid #f5f5f5;
+        h2 {
+          text-align: center;
+          font-size: 24px;
+          font-weight: 600;
+        }
+      } 
+      &__info {
+        max-width: 375px;
+        margin: 0 auto;
+        padding: 35px 0;
+        label {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .RequiredItem {
+          @include caution-item;
+          background-color:#ea352d;
+        }
+        ul {
+          display: flex;
+          li {
+            margin: 5px;
+          }
+        }
       }
-      input.card-number{
-        width: 280px;
-        font-size: 20px;
-        border: 1px solid #c8c8c8;
-        padding-left: 5px;
+      &__expiration-date{
+        margin-top: 28px;
       }
-    }
-    &__name{
-      display: flex;
-      &__text{
-        line-height: 50px;
-        width:150px;
-        border: 1px solid #c8c8c8;
-        background-color: #f0f0f0;
+      &__security-code {
+        margin-top: 28px;
       }
-      input.card-name{
-        width: 280px;
-        font-size: 25px;
-        border: 1px solid #c8c8c8;
-        padding: 0px 5px;
+      &__multi-input-box {
+        margin-top: 16px;
       }
-    }
-    &__expiration-date{
-      display: flex;
-      &__text{
-        width: 150px;
-        border: 1px solid #c8c8c8;
-        background-color: #f0f0f0;
-      }
-      .month{
-        width: 140px;
-        border: 1px solid #c8c8c8;
-      }
-      .year{
-        width: 140px;
-        border: 1px solid #c8c8c8;
-      }
-    
-    }
-    &__security-code{
-      display: flex;
-      &__text{
-        width:150px;
-        border: 1px solid #c8c8c8;
-        background-color: #f0f0f0;
-      }
-      .number{
-        width: 280px;
-        border: 1px solid #c8c8c8;
-        padding-left: 5px;
-      }
-    }
-
-    &__submit{
-      display: flex;
-      justify-content: center;
-      margin: 20px 0;
-      .submit-btn{
-        height:40px;
-        width: 100px;
-        background-color: #00bfff;
-        color: #ffffff;
+      &__body {
+        width: 100%;
+        height: 240px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 4px solid #3ccace;
+        border-radius: 8px;
+        background-color: #fff;
+        font-weight: bold;
+        text-align: center;
+        &__title {
+          margin-bottom: 40px;
+          padding-bottom: 20px;
+          border-bottom: 4px solid #3ccace;
+          color: #3ccace;
+          font-size: 22px;
+        }
+        &__data {
+          margin-top: 10px;
+          font-size: 20px;
+        }
       }
     }
   }
+}
+
+.number, .cvc{
+  width: 100%;
+  line-height: 48px;
+  margin-top: 16px;
+  padding: 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.exp_month, .exp_year {
+  width: 150px;
+  height: 48px;
+  padding: 0 56px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  background-color: #3ccace;
+  color: #fff;
+  margin-top: 32px;
+  width: 100%;
+  font-size:17px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-style: none;
+  border-radius: 4px;
 }

@@ -21,7 +21,7 @@
 - has_one :address, dependent: :destroy
 - has_many :comments, dependent: :destroy
 
-## Credit_cardsテーブル
+## Cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |customer_id|string|null: false|
