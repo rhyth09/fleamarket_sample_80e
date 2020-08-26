@@ -21,4 +21,12 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_date
   belongs_to_active_hash :item_status
   belongs_to_active_hash :postage
+
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end
