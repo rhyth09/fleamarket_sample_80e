@@ -2,7 +2,11 @@ class CommentsController < ApplicationController
   def create
     @item = Item.find(params[:item_id])
     @comment = Comment.create(comment_params)
-    redirect_to "/items/#{@comment.item.id}"
+    if @comment.save
+      redirect_to item_path(@comment.item.id)
+    else
+      render :show
+    end
   end
 
   def destroy
