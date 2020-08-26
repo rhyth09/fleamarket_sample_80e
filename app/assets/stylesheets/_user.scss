@@ -22,9 +22,10 @@ $furima-color: #3ccace;
   background-color: $lightgray;
   color: #333;
   font-size: 14px;
- }
+}
 
 .AccountPageHeader {
+  background-color: $lightgray;
   height: 130px;
   text-align: center;
   h1 {
@@ -168,6 +169,7 @@ $furima-color: #3ccace;
 .AccountPageFooter {
   height: 220px;
   padding: 40px;
+  background-color: $lightgray;
   text-align: center;
   &__list {
     display: inline-block;
