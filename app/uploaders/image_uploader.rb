@@ -5,7 +5,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   process resize_to_limit: [720, 720]
 
   def size_range
-    1.byte..1.megabytes
+    1.byte..100.kilobytes
   end
 
   # Choose what kind of storage to use for this uploader:
