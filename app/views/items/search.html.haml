@@ -5,35 +5,26 @@
 
   .Search__main
     .Search__main--title
-      %span.bold あいうえお
+      - if @keyword == ""
+        .bold すべての商品
+      .bold= @keyword
       %span の検索結果
-    .Search__main--count
-      %span 5件表示
-    .Search__main--contents  
-      .Searched-item
-        = image_tag('material/pict/pict-reason-01.jpg')
-        .Searched-item__price
-          %span ¥500
-        .Searched-item__name
-          この商品の名前が入ります
-      .Searched-item
-        = image_tag('material/pict/pict-reason-01.jpg')
-        .Searched-item__price
-          %span ¥500
-        .Searched-item__name
-          この商品の名前が入ります
-      .Searched-item
-        = image_tag('material/pict/pict-reason-01.jpg')
-        .Searched-item__price
-          %span ¥500
-        .Searched-item__name
-          この商品の名前が入ります
-      .Searched-item
-        = image_tag('material/pict/pict-reason-01.jpg')
-        .Searched-item__price
-          %span ¥500
-        .Searched-item__name
-          この商品の名前が入ります
+      .Search__main--title__count
+        = @items.length
+        %span 件表示
+    .Search__main--contents
+      - if @items.length == 0
+        %p お探しの商品は見つかりませんでした
+      - @items.each do |item|
+        .Searched-item
+          = link_to '', item_path(item.id)
+          = image_tag(item.images.first.src.url)
+          .Searched-item__price
+            %span ¥
+            %span= item.price
+          .Searched-item__name
+            = item.name
+
 
 = render partial: 'sell_btn'
 = render partial: 'footer_invitation'
