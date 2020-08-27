@@ -1,0 +1,41 @@
+= render partial: 'header'
+
+.Search
+  .Search__side
+    %h2 詳細検索
+    %h3 キーワードを追加する
+    %h3 カテゴリーを選択する
+    %h3 価格
+    %h3 商品の状態
+    %h3 配送料の負担
+    %h3 販売状況
+    .Search__side--btns
+      .clear クリア
+      .complete 完了
+
+  .Search__main
+    .Search__main--title
+      - if @keyword == ""
+        %h2.bold すべての商品
+      %h2.bold= @keyword
+      %span の検索結果
+      .Search__main--title__count
+        = @items.length
+        %span 件表示
+    .Search__main--contents
+      - if @items.length == 0
+        %p お探しの商品は見つかりませんでした
+      - @items.each do |item|
+        .Searched-item
+          = link_to '', item_path(item.id)
+          = image_tag(item.images.first.src.url)
+          .Searched-item__price
+            %span ¥
+            %span= item.price
+          .Searched-item__name
+            = item.name
+
+
+= render partial: 'sell_btn'
+= render partial: 'footer_invitation'
+= render partial: 'footer'

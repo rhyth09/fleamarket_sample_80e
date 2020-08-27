@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :set_item, only: [:edit, :update, :show, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :permit_only_seller, only: [:edit, :update, :destroy]
   before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
@@ -48,12 +48,15 @@ class ItemsController < ApplicationController
       flash[:alert] = '削除できませんでした'
       render :show
     end
+  end
 
+  def search
+    @keyword = params[:keyword]
+    @items = Item.search(params[:keyword]).includes(:images).order('created_at DESC')
   end
 
   def get_category_children
     @category_children = Category.find("#{params[:parent_id]}").children
-
   end
 
   def get_category_grandchildren
