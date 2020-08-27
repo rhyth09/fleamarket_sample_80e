@@ -83,3 +83,5 @@ gem 'jquery-rails'
 gem 'font-awesome-sass'
 
 gem 'dotenv-rails'
+
+gem "gretel"
