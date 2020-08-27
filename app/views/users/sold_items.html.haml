@@ -1,0 +1,22 @@
+= render partial: 'items/header'
+
+.my-page-main
+  = render partial: "side_bar"
+  .User-my-page
+    %h1 売却済みの商品
+    .User-my-page__main
+      - @sold_items.each do |sold_item|
+        .My-page-content
+          = link_to '', item_path(sold_item.id)
+          .My-page-content__image
+            = image_tag(sold_item.images.first.src.url, alt: '商品画像', width: '120px', height: '120px')
+          .My-page-content__contents
+            %h1= sold_item.name
+            .My-page-content__contents--price
+              %span 税込価格
+              %p= sold_item.price
+            .My-page-content__contents--explain
+              %span 商品説明
+              %p= sold_item.explain
+
+= render partial: 'items/footer' 
