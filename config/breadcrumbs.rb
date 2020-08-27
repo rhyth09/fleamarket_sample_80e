@@ -1,5 +1,5 @@
 crumb :root do
-  link "トップページ", root_path
+  link "トップ", root_path
 end
 
 crumb :mypage do
@@ -18,5 +18,10 @@ end
 
 crumb :logout do
   link "ログアウト", logout_user_path(current_user.id)
+  parent :mypage
+end
+
+crumb :search do
+  link "検索結果", search_items_path
   parent :mypage
 end
