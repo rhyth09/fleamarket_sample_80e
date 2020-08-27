@@ -12,7 +12,7 @@
           %ul.image__sub
             - @item.images.each do |img|
               %li.image__sub__list
-                = image_tag(img.src.url, class: "sub__photo", size: "90x90")
+                = image_tag(img.src.url, class: "sub__photo", size: "90x90", id: "thumbnail")
     .itembox__price
       %span
         ¥
