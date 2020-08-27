@@ -1,12 +1,12 @@
 .Search {
-  padding: 40px 150px 40px 60px;
+  padding: 40px 150px 40px 40px;
   display: flex;
   justify-content: space-between;
 
   &__side {
     border: 1px solid #696969;
     padding: 20px;
-    width: 260px;
+    width: 300px;
     & > h2 {
       font-size: 18px;
       font-weight: bold;

@@ -74,3 +74,18 @@
     }
   }
 }
+
+.breadcrumbs {
+  position: absolute;
+  top: 122px;
+  left: 40px;
+  font-size: 12px;
+  & > a {
+    padding: 0 5px;
+    color: #000;
+    &:hover {
+      color: #3ccace;
+    }
+  }
+
+}
