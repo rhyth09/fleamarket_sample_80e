@@ -11,6 +11,11 @@ crumb :sales_items do
   parent :mypage
 end
 
+crumb :sold_items do
+  link "売却済みの商品", sold_items_user_path(current_user.id)
+  parent :mypage
+end
+
 crumb :logout do
   link "ログアウト", logout_user_path(current_user.id)
   parent :mypage
