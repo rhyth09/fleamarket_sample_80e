@@ -8,7 +8,7 @@
 - 作成期間 2020/8/4 ~ 2020/8/28
 
 ## 主な使用言語
-- Ruby・Ruby on Rails・JavaScript・Haml・SCSS・AWS
+- Ruby、Ruby on Rails、JavaScript、Haml、SCSS、AWS
 
 ## 機能紹介
 - 新規会員登録・ログインをすると商品の購入、出品ができます。
