@@ -23,5 +23,4 @@ end
 
 crumb :search do
   link "検索結果", search_items_path
-  parent :mypage
 end
