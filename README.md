@@ -12,7 +12,6 @@
 <a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/71774548-731b2900-2fb4-11ea-99ba-565546c5acb4.png" height="60px;" /></a> <!-- RubyOnRailsのロゴ -->
 <a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/71774618-b32edb80-2fb5-11ea-9050-d5929a49e9a5.png" height="60px;" /></a> <!-- Hamlのロゴ -->
 <a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/71774644-115bbe80-2fb6-11ea-822c-568eabde5228.png" height="60px" /></a> <!-- Scssのロゴ -->
-<a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/71774786-37825e00-2fb8-11ea-8b90-bd652a58f1ad.png" height="60px;" /></a> <!-- AWSのロゴ -->
 <a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/javascript_eyecatch.jpg" height="65px;" /></a> <!-- Javascriptのロゴ -->
 
 ## 機能紹介
