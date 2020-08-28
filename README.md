@@ -1,4 +1,90 @@
+<h1 align="center">フリーマーケットサイト『FURIMA』</h1>
+
+![top_page](https://github.com/rhyth09/fleamarket_sample_80e/blob/master/24ca3b3def8269d4d685fe37a65fb1b3.jpg)
+
+## 概要
+- メルカリクローンのフリーマーケットサイトです。
+- テックキャンプ エンジニア転職 80期短期集中コースEチームで作成。
+- 作成期間 2020/8/4 ~ 2020/8/28
+
+## 主な使用言語
+<a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/71774533-1ddf1780-2fb4-11ea-8560-753bed352838.png" width="70px;" /></a> <!-- rubyのロゴ -->
+<a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/71774548-731b2900-2fb4-11ea-99ba-565546c5acb4.png" height="60px;" /></a> <!-- RubyOnRailsのロゴ -->
+<a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/71774618-b32edb80-2fb5-11ea-9050-d5929a49e9a5.png" height="60px;" /></a> <!-- Hamlのロゴ -->
+<a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/71774644-115bbe80-2fb6-11ea-822c-568eabde5228.png" height="60px" /></a> <!-- Scssのロゴ -->
+<a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/javascript_eyecatch.jpg" height="65px;" /></a> <!-- Javascriptのロゴ -->
+
+## 機能紹介
+- 新規会員登録・ログインをすると商品の購入、出品ができます。
+- 新規会員登録、ログインがお済みでない方も商品の一覧、詳細を閲覧可能です。
+- 決済方法は、ご自身のクレジットカードを登録して購入できます。
+
+## 制作メンバー&実装内容の紹介
+### 熊谷諒
+- スクラムマスター
+- 必要なDBの変更、更新
+- ユーザー新規登録、ログイン、ログアウト機能(ビュー、サーバーサイド)
+- クレジットカード登録、確認、削除機能(ビュー、サーバーサイド)
+- 商品購入機能(サーバーサイド)
+
+### 小林成美
+- ER図作成
+- 必要なDBの変更、更新
+- トップページ(ビュー)
+- 商品出品機能(サーバーサイド)
+- 商品情報編集機能(サーバーサイド)
+- ルーティング調整
+- 商品検索機能(サーバーサイド)
+- パンくずリスト機能
+
+### 熊谷直樹
+- ER図作成
+- 必要なDBの変更、更新
+- 商品出品ページ(ビュー)
+- 商品購入確認ページ(ビュー)
+- 商品カテゴリ機能(サーバーサイド)
+- 商品詳細表示(サーバーサイド)
+- 商品についての質問・コメント機能(サーバーサイド)
+
+### 村松大輔
+- デプロイ担当
+- 必要なDBの変更、更新
+- マイページ(ビュー)
+- 商品一覧表示(サーバーサイド)
+
+### 牧田鹿文彦
+- READ.ME作成
+- 必要なDBの変更、更新
+- 商品詳細ページ(ビュー)
+- 商品削除機能(サーバーサイド)
+
+## サイトURL紹介
+### URL
+- IPアドレス:18.177.240.139
+
+### Basic認証
+- ID：techcamp80e
+- Pass：fleamarket80e
+
+### テスト用アカウント
+#### 購入者用
+- メールアドレス：buyer_user@gmail.com
+- パスワード：buyer_user
+#### 購入用カード情報
+- 番号：4242424242424242
+- 期限：12/20
+- セキュリティコード：123
+#### 出品者用
+- メールアドレス：seller_user@gmail.com
+- パスワード：seller_user
+
+
+
+
 # DB設計
+
+## ER図
+![er](https://github.com/rhyth09/fleamarket_sample_80e/blob/master/98169dee329d5e79043b5c11c5dc2199.png)
 
 ## Usersテーブル
 |Column|Type|Options|
