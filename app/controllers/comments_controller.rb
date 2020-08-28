@@ -1,10 +1,5 @@
 class CommentsController < ApplicationController
 
-  # def index
-  #   @comment = Comment.new
-  #   @comments = Comment.all
-  # end
-
   def create
     @item = Item.find(params[:item_id])
     @comment = Comment.create(comment_params)
