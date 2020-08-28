@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @users = User.select("nickname")
   end
 
   def sales_items

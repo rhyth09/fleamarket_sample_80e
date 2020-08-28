@@ -9,7 +9,7 @@
     .main-content__photo
       = link_to image_tag('material/icon/member_photo_noimage_thumb.png' , alt: 'プロフィール画像', :size => '200x200')
     .main-content__name
-      name
+      = current_user.nickname
     .main-content__text
 
 = render partial: 'items/sell_btn'
