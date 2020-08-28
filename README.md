@@ -1,6 +1,6 @@
 <h1 align="center">フリーマーケットサイト『FURIMA』</h1>
 
-![top_page](https://github.com/rhyth09/fleamarket_sample_80e/blob/master/5f8ad3d59bbf3a99c045666419a31795.jpg)
+![top_page](https://github.com/rhyth09/fleamarket_sample_80e/blob/master/24ca3b3def8269d4d685fe37a65fb1b3.jpg)
 
 ## 概要
 - メルカリクローンのフリーマーケットサイトです。
@@ -80,7 +80,7 @@
 # DB設計
 
 ## ER図
-![er](https://github.com/rhyth09/fleamarket_sample_80e/blob/master/dee28fd636236fbae9f7a5ee344a01a6.png)
+![er](https://github.com/rhyth09/fleamarket_sample_80e/blob/master/98169dee329d5e79043b5c11c5dc2199.png)
 
 ## Usersテーブル
 |Column|Type|Options|
@@ -102,7 +102,7 @@
 - has_one :credit_card, dependent: :destroy
 - has_one :address, dependent: :destroy
 
-## Credit_cardsテーブル
+## Cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |customer_id|string|null: false|
