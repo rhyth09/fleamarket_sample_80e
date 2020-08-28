@@ -9,6 +9,7 @@
 
 ## 主な使用言語
 <a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/71774533-1ddf1780-2fb4-11ea-8560-753bed352838.png" width="70px;" /></a> <!-- rubyのロゴ -->
+<a><img src="https://github.com/rhyth09/fleamarket_sample_80e/blob/master/71774548-731b2900-2fb4-11ea-99ba-565546c5acb4.png" height="60px;" /></a> <!-- RubyOnRailsのロゴ -->
 
 ## 機能紹介
 - 新規会員登録・ログインをすると商品の購入、出品ができます。
